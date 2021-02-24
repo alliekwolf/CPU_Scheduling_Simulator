@@ -2,143 +2,241 @@
  * Brian Steele, Cole Walsh, Allie Wolf
  * CS 405: Operating Systems
  * Project 2: CPU Scheduler
- * Date: 2/21/2021
+ * Date: 2/23/2021
  */
 
-import java.util.ArrayList;
 import java.util.Queue;
-
 
 public class Scheduler {
 	
-	//Data members
-	int systemTimer;
-	float cpuUtilization;
-	float throughPut;
-	float avgWaitTime;
-	float avgResponseTime;
-	int simulationMode;
-	float simulationTime;
-	int quantumTimeSlice;
-	//Algorithm selectedAlgorithm;
-	Process currentCPUProcess;
-	Process currentIOProcess;
-	ScenarioReader sReader;
-	Queue readyQueue;
-	Queue ioWaitQueue;
+	// Data Members
+	private int systemTimer;
+	private float cpuUtilization;
+	private float throughPut;
+	private float avgWaitTime;
+	private float avgResponseTime;
+	private int simulationMode;
+	private float simulationTime;
+	private int quantumTimeSlice;
+	private Process currentCPUProcess;
+	private Process currentIOProcess;
+	private Algorithm algorithm;
+	private ScenarioReader sReader;
+	private Queue<Process> readyQueue;
+	private Queue<Process> ioWaitQueue;
 	
-	// Constructor
-	public Scheduler(int simulationMode,
-					int quantumTimeSlice,
-					//Algorithm selectedAlgorithm,
-					ScenarioReader sReader) {
-		
+	// Constructors
+	public Scheduler() {
+		// default Constructor
+	}
+	
+	public Scheduler(int simulationMode, int quantumTimeSlice, Algorithm algorithm, ScenarioReader sReader) {
 		this.simulationMode = simulationMode;
 		this.quantumTimeSlice = quantumTimeSlice;
-		//this.selectedAlgorithm = selectedAlgorithm;
+		this.algorithm = algorithm;
 		this.sReader = sReader;
-		}
-
-	/**
-	 * @return the simulationMode
-	 */
-	public int getSimulationMode() {
-		return simulationMode;
 	}
-
+	
+	// Getters and Setters
 	/**
-	 * @param simulationMode the simulationMode to set
+	 * @return systemTimer
 	 */
-	public void setSimulationMode(int simulationMode) {
-		this.simulationMode = simulationMode;
+	public int getSystemTimer() {
+		return systemTimer;
 	}
-
 	/**
-	 * @return the simulationTime
+	 * @param systemTimer to set the systemTimer
 	 */
-	public float getSimulationTime() {
-		return simulationTime;
+	public void setSystemTimer(int systemTimer) {
+		this.systemTimer = systemTimer;
 	}
-
+	
 	/**
-	 * @param simulationTime the simulationTime to set
-	 */
-	public void setSimulationTime(float simulationTime) {
-		this.simulationTime = simulationTime;
-	}
-
-	/**
-	 * @return the quantumTimeSlice
-	 */
-	public int getQuantumTimeSlice() {
-		return quantumTimeSlice;
-	}
-
-	/**
-	 * @param quantumTimeSlice the quantumTimeSlice to set
-	 */
-	public void setQuantumTimeSlice(int quantumTimeSlice) {
-		this.quantumTimeSlice = quantumTimeSlice;
-	}
-
-	/**
-	 * @return the currentCPUProcess
-	 */
-	public Process getCurrentCPUProcess() {
-		return currentCPUProcess;
-	}
-
-	/**
-	 * @param currentCPUProcess the currentCPUProcess to set
-	 */
-	public void setCurrentCPUProcess(Process currentCPUProcess) {
-		this.currentCPUProcess = currentCPUProcess;
-	}
-
-	/**
-	 * @return the currentIOProcess
-	 */
-	public Process getCurrentIOProcess() {
-		return currentIOProcess;
-	}
-
-	/**
-	 * @param currentIOProcess the currentIOProcess to set
-	 */
-	public void setCurrentIOProcess(Process currentIOProcess) {
-		this.currentIOProcess = currentIOProcess;
-	}
-
-	/**
-	 * @return the cpuUtilization
+	 * @return cpuUtilization
 	 */
 	public float getCpuUtilization() {
 		return cpuUtilization;
 	}
-
+	
 	/**
-	 * @return the throughPut
+	 * @param cpuUtilization to set the cpuUtilization
+	 */
+	public void setCpuUtilization(float cpuUtilization) {
+		this.cpuUtilization = cpuUtilization;
+	}
+	
+	/**
+	 * @return throughPut
 	 */
 	public float getThroughPut() {
 		return throughPut;
 	}
-
+	
 	/**
-	 * @return the avgWaitTime
+	 * @param throughPut to set the throughPut
+	 */
+	public void setThroughPut(float throughPut) {
+		this.throughPut = throughPut;
+	}
+	
+	/**
+	 * @return avgWaitTime
 	 */
 	public float getAvgWaitTime() {
 		return avgWaitTime;
 	}
-
+	
 	/**
-	 * @return the avgResponseTime
+	 * @param avgWaitTime to set the avgWaitTime
+	 */
+	public void setAvgWaitTime(float avgWaitTime) {
+		this.avgWaitTime = avgWaitTime;
+	}
+	
+	/**
+	 * @return avgResponseTime
 	 */
 	public float getAvgResponseTime() {
 		return avgResponseTime;
 	}
 	
+	/**
+	 * @param avgResponseTime to set the avgResponseTime
+	 */
+	public void setAvgResponseTime(float avgResponseTime) {
+		this.avgResponseTime = avgResponseTime;
+	}
 	
+	/**
+	 * @return simulationMode
+	 */
+	public int getSimulationMode() {
+		return simulationMode;
+	}
+	
+	/**
+	 * @param simulationMode to set the simulationMode
+	 */
+	public void setSimulationMode(int simulationMode) {
+		this.simulationMode = simulationMode;
+	}
+	
+	/**
+	 * @return simulationTime
+	 */
+	public float getSimulationTime() {
+		return simulationTime;
+	}
+	
+	/**
+	 * 
+	 * @param simulationTime to set the simulationTime
+	 */
+	public void setSimulationTime(float simulationTime) {
+		this.simulationTime = simulationTime;
+	}
+	
+	/**
+	 * @return quantumTimeSlice
+	 */
+	public int getQuantumTimeSlice() {
+		return quantumTimeSlice;
+	}
+	
+	/**
+	 * @param quantumTimeSlice to set the quantumTimeSlice
+	 */
+	public void setQuantumTimeSlice(int quantumTimeSlice) {
+		this.quantumTimeSlice = quantumTimeSlice;
+	}
+	
+	/**
+	 * @return currentCPUProcess
+	 */
+	public Process getCurrentCPUProcess() {
+		return currentCPUProcess;
+	}
+	
+	/**
+	 * @param currentCPUProcess to set the currentCPUProcess
+	 */
+	public void setCurrentCPUProcess(Process currentCPUProcess) {
+		this.currentCPUProcess = currentCPUProcess;
+	}
+	
+	/**
+	 * @return currentIOProcess
+	 */
+	public Process getCurrentIOProcess() {
+		return currentIOProcess;
+	}
+	
+	/**
+	 * @param currentIOProcess to set the currentIOProcess
+	 */
+	public void setCurrentIOProcess(Process currentIOProcess) {
+		this.currentIOProcess = currentIOProcess;
+	}
+	
+	/**
+	 * @return algorithm
+	 */
+	public Algorithm getAlgorithm() {
+		return algorithm;
+	}
+	
+	/**
+	 * @param algorithm to set the algorithm
+	 */
+	public void setAlgorithm(Algorithm algorithm) {
+		this.algorithm = algorithm;
+	}
+	
+	/**
+	 * @return sReader
+	 */
+	public ScenarioReader getsReader() {
+		return sReader;
+	}
+	
+	/**
+	 * 
+	 * @param sReader to set the sReader
+	 */
+	public void setsReader(ScenarioReader sReader) {
+		this.sReader = sReader;
+	}
+	
+	/**
+	 * @return readyQueue
+	 */
+	public Queue<Process> getReadyQueue() {
+		return this.readyQueue;
+	}
+	
+	/**
+	 * @param readyQueue to set the readyQueue
+	 */
+	public void setReadyQueue(Queue<Process> readyQueue) {
+		this.readyQueue = readyQueue;
+	}
+	
+	/**
+	 * @return ioWaitQueue
+	 */
+	public Queue<Process> getIoWaitQueue() {
+		return ioWaitQueue;
+	}
+	/**
+	 * @param ioWaitQueue to set the ioWaitQueue
+	 */
+	public void setIoWaitQueue(Queue<Process> ioWaitQueue) {
+		this.ioWaitQueue = ioWaitQueue;
+	}
+	
+	// Methods
+	public void start() {
+		this.algorithm.apply();
+	}
 	
 }
-
-

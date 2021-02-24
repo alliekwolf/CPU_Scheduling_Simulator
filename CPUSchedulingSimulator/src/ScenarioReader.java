@@ -7,6 +7,7 @@
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class ScenarioReader {
@@ -31,8 +32,8 @@ public class ScenarioReader {
 	
 	
 	// Methods
-	public ArrayList<Process> createProcesses() throws IOException {
-		ArrayList<Process> processList = new ArrayList<Process>();
+	public LinkedList<Process> createProcesses() throws IOException {
+		LinkedList<Process> processList = new LinkedList<Process>();
 		String line;
 		while ((line = br.readLine()) != null) {
 			String id = "";

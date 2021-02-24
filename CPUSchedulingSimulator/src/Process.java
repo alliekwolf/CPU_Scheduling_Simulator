@@ -19,19 +19,21 @@ public class Process {
 	private int waitTime;
 	private int ioWaitTime;
 	private int turnaroundTime;
-	private ArrayList<Integer> cpuBurstArray;
-	private ArrayList<Integer> ioBurstArray;
+	private int burstStep;
+	private ArrayList<Integer> cpuBurstList;
+	private ArrayList<Integer> ioBurstList;
 	
 	// Constructor
-	public Process(String id, int arrivalTime, int priorityLevel, ArrayList<Integer> cpuBurstArray,
-			ArrayList<Integer> ioBurstArray) {
+	public Process(String id, int arrivalTime, int priorityLevel, ArrayList<Integer> cpuBurstList,
+			ArrayList<Integer> ioBurstList) {
 		super();
 		this.id = id;
 		this.arrivalTime = arrivalTime;
 		this.priorityLevel = priorityLevel;
-		this.cpuBurstArray = cpuBurstArray;
-		this.ioBurstArray = ioBurstArray;
-		this.isReady();
+		this.cpuBurstList = cpuBurstList;
+		this.ioBurstList = ioBurstList;
+		this.burstStep = 0;
+		this.isWaiting();
 	}
 	
 	// Getters and Setters
@@ -107,20 +109,28 @@ public class Process {
 		this.turnaroundTime = turnaroundTime;
 	}
 	
-	// cpuBurstArray
-	public ArrayList<Integer> getCpuBurstArray() {
-		return cpuBurstArray;
+	// burstStep
+	public int getBurstStep() {
+		return burstStep;
 	}
-	public void setCpuBurstArray(ArrayList<Integer> cpuBurstArray) {
-		this.cpuBurstArray = cpuBurstArray;
+	public void setBurstStep(int burstStep) {
+		this.burstStep = burstStep;
+	}
+	
+	// cpuBurstArray
+	public ArrayList<Integer> getCpuBurstList() {
+		return cpuBurstList;
+	}
+	public void setCpuBurstList(ArrayList<Integer> cpuBurstList) {
+		this.cpuBurstList = cpuBurstList;
 	}
 	
 	// ioBurstArray
-	public ArrayList<Integer> getIoBurstArray() {
-		return ioBurstArray;
+	public ArrayList<Integer> getIoBurstList() {
+		return ioBurstList;
 	}
-	public void setIoBurstArray(ArrayList<Integer> ioBurstArray) {
-		this.ioBurstArray = ioBurstArray;
+	public void setIoBurstList(ArrayList<Integer> ioBurstList) {
+		this.ioBurstList = ioBurstList;
 	}
 	
 	// toString
@@ -130,8 +140,8 @@ public class Process {
 				"\nState: " + state + 
 				"\nArrival Time: " + arrivalTime + 
 				"\nPriority: " + priorityLevel + 
-				"\nCPU Bursts: " + cpuBurstArray + 
-				"\nIO Bursts: " + ioBurstArray;
+				"\nCPU Bursts: " + cpuBurstList + 
+				"\nIO Bursts: " + ioBurstList;
 	}
 	
 	// Methods
