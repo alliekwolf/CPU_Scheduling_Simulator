@@ -7,6 +7,16 @@
 
 import java.util.Queue;
 
+/**
+ * The Scheduler class models a CPU scheduler in an effort to 
+ * simulate CPU process scheduling according to a variety of different
+ * scheduling models. 
+ * 
+ * 
+ * @author Brian Steele, Cole Walsh, Allie Wolf
+ *
+ */
+
 public class Scheduler {
 	
 	// Data Members
@@ -26,10 +36,31 @@ public class Scheduler {
 	private Queue<Process> ioWaitQueue;
 	
 	// Constructors
+	/**
+	 * 
+	 * Generic constructor
+	 */
 	public Scheduler() {
 		// default Constructor
 	}
 	
+	
+	/**
+	 * 
+	 * Constructor for Scheduler
+	 * 
+	 * @param simulationMode - must be either 0, for "auto" mode, or 1 for "manual" mode.
+	 * 			will determine how the simulation runs - in auto mode the simulation will run
+	 * 			without intervention from the user. In manual mode, the user will step through
+	 * 			each iteration of the simulation.
+	 * @param quantumTimeSlice - represents the quantum of time given to each process in a 
+	 * 			round-robin scheduling model.
+	 * @param algorithm - An object that extends the Algorithm class, which will determine how
+	 * 			processes are organized into the cpu, i/o, read queue and i/o ready queue during the 
+	 * 			simulation
+	 * @param sReader - A ScenerioReader object which will open and process a file that contains the 
+	 * 			information to model processes running in this scenario.
+	 */
 	public Scheduler(int simulationMode, int quantumTimeSlice, Algorithm algorithm, ScenarioReader sReader) {
 		this.simulationMode = simulationMode;
 		this.quantumTimeSlice = quantumTimeSlice;
@@ -235,6 +266,10 @@ public class Scheduler {
 	}
 	
 	// Methods
+	
+	/**
+	 * Apply the algorithm's sorting method.
+	 */
 	public void start() {
 		this.algorithm.apply();
 	}

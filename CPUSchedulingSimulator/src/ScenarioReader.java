@@ -10,6 +10,17 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
+/**
+ * The ScenarioReader is part of a CPU scheduling simulator. The class
+ * contains methods to read a file with a list of information about processes
+ * and their arrival time, priority, cpu burst times, and IO burst times. The
+ * class will create a linkedList of Process objects from the file to be used
+ * by the Scheduler object.
+ * 
+ * 
+ * @author Brian Steele, Cole Walsh, Allie Wolf
+ *
+ */
 public class ScenarioReader {
 	
 	// Data Members
@@ -17,6 +28,10 @@ public class ScenarioReader {
 	private String fileName;
 	
 	// Constructor
+	/**
+	 * Constructor for the ScenarioReader
+	 * @param fileName String containing the name of the file with process information.
+	 */
 	public ScenarioReader(String fileName) {
 		super();
 		this.fileName = fileName;
@@ -32,6 +47,12 @@ public class ScenarioReader {
 	
 	
 	// Methods
+	/**
+	 * Creates a list of Process objects based on the information in the 
+	 * file with process information.
+	 * @return
+	 * @throws IOException
+	 */
 	public LinkedList<Process> createProcesses() throws IOException {
 		LinkedList<Process> processList = new LinkedList<Process>();
 		String line;
@@ -63,7 +84,11 @@ public class ScenarioReader {
 		return processList;
 	}
 	
+	/**
+	 * Closes the text file with the process information.
+	 */
 	public void closeFile() {
+		//TODO implement closeFile()
 		
 	}
 	
