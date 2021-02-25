@@ -38,12 +38,11 @@ public class Scheduler {
 	// Constructors
 	/**
 	 * 
-	 * Generic constructor
+	 * Default constructor
 	 */
 	public Scheduler() {
-		// default Constructor
+		
 	}
-	
 	
 	/**
 	 * 
@@ -258,6 +257,7 @@ public class Scheduler {
 	public Queue<Process> getIoWaitQueue() {
 		return ioWaitQueue;
 	}
+	
 	/**
 	 * @param ioWaitQueue to set the ioWaitQueue
 	 */
@@ -265,7 +265,7 @@ public class Scheduler {
 		this.ioWaitQueue = ioWaitQueue;
 	}
 	
-	// Methods
+	// Additional Methods
 	
 	/**
 	 * Apply the algorithm's sorting method.
