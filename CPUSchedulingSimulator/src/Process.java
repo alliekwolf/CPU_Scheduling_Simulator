@@ -1,12 +1,3 @@
-/*
- * Brian Steele, Cole Walsh, Allie Wolf
- * CS 405: Operating Systems
- * Project 2: CPU Scheduler
- * Date: 2/21/2021
- */
-
-import java.util.ArrayList;
-
 /**
  * The Process class simulates a process control block for a CPU
  * process schedule simulation. It also acts as a container for information
@@ -16,6 +7,9 @@ import java.util.ArrayList;
  * @author Brian Steele, Cole Walsh, Allie Wolf
  *
  */
+
+import java.util.ArrayList;
+
 public class Process {
 	
 	// Data Members
@@ -28,9 +22,10 @@ public class Process {
 	private int waitTime;
 	private int ioWaitTime;
 	private int turnaroundTime;
-	private int burstStep;
+	private int burstCycle;
 	private ArrayList<Integer> cpuBurstList;
 	private ArrayList<Integer> ioBurstList;
+	
 	
 	// Constructor
 	/**
@@ -52,12 +47,12 @@ public class Process {
 		this.priorityLevel = priorityLevel;
 		this.cpuBurstList = cpuBurstList;
 		this.ioBurstList = ioBurstList;
-		this.burstStep = 0;
+		this.burstCycle = 0;
 		this.isWaiting();
 	}
 	
+	
 	// Getters and Setters
-	// id
 	/**
 	 * Get the id of the process
 	 * @return String id, the name of the process
@@ -74,26 +69,15 @@ public class Process {
 		this.id = id;
 	}
 	
-	// state
 	/**
 	 * Get the state of the process. The returned value should be one of
 	 * 			the following: ["READY", "RUNNING", "WAITING"]
-	 * @return String containg the state of the process.
+	 * @return String containing the state of the process.
 	 */
 	public String getState() {
 		return state;
 	}
 	
-	/**
-	 * Set the state of the process. May only be one of 
-	 * 		the following: ["READY", "RUNNING", "WAITING"]
-	 * @param state String with the state of the process.
-	 */
-	public void setState(String state) {
-		this.state = state;
-	}
-	
-	// arrivalTime
 	/**
 	 * Get the time slice when the Process arrives at the CPU.
 	 * @return int containing time slice at which the Process arrives at the CPU.
@@ -110,7 +94,6 @@ public class Process {
 		this.arrivalTime = arrivalTime;
 	}
 	
-	// priorityLevel
 	/**
 	 * Get the priority level of the Process, lower value indicates higher priority.
 	 * @return int containing priority level of the Process.
@@ -126,8 +109,6 @@ public class Process {
 	public void setPriorityLevel(int priorityLevel) {
 		this.priorityLevel = priorityLevel;
 	}
-	
-	// startTime
 	
 	/**
 	 * Get the time slice when the Process first begins to run. This may not be the same as
@@ -149,10 +130,9 @@ public class Process {
 		this.startTime = startTime;
 	}
 	
-	// finishTime
 	/**
 	 * Get the time slice when the Process has completed running. This may be longer than
-	 * the length of the CPU and IO bursts, especially during the round-robin algorith.
+	 * the length of the CPU and IO bursts, especially during the round-robin algorithm.
 	 * @return finishTime int containing the time slice when the Process completes running.
 	 */
 	public int getFinishTime() {
@@ -161,14 +141,13 @@ public class Process {
 	
 	/**
 	 * Set the time slice when the Process has completed running. This may be longer than
-	 * the length of the CPU and IO bursts, especially during the round-robin algorith.
+	 * the length of the CPU and IO bursts, especially during the round-robin algorithm.
 	 * @param finishTime int containing the time slice when the Process completes running.
 	 */
 	public void setFinishTime(int finishTime) {
 		this.finishTime = finishTime;
 	}
 	
-	// waitTime
 	/**
 	 * Get the accumulated time that the Process has been waiting for the CPU.
 	 * @return int waitTime, the accumulated time that the Process has been waiting
@@ -185,8 +164,6 @@ public class Process {
 	public void setWaitTime(int waitTime) {
 		this.waitTime = waitTime;
 	}
-	
-	// ioWaitTime
 	
 	/**
 	 * Get the accumulated time that the Process has been waiting in the IO queue.
@@ -206,7 +183,6 @@ public class Process {
 		this.ioWaitTime = ioWaitTime;
 	}
 	
-	// turnaroundTime
 	/**
 	 * Get the total time from the time the Process arrives to the time the Process finishes.
 	 * In effect, getFinishTime - getStartTime.
@@ -224,31 +200,25 @@ public class Process {
 		this.turnaroundTime = turnaroundTime;
 	}
 	
-	// burstStep
 	/**
-	 * Gets the 
-	 * @return
+	 * Gets which cycle of bursts the Process is ready to execute.
+	 * @return burstCycle int
 	 */
-	public int getBurstStep() {
-		return burstStep;
-	}
-	// TODO - complete documentation for setBurstStep()
-	public void setBurstStep(int burstStep) {
-		this.burstStep = burstStep;
+	public int getBurstCycle() {
+		return burstCycle;
 	}
 	
-	// cpuBurstArray
 	/**
-	 * Gets an arrayList of ints that contain the CPU bursts of a Process.
-	 * @return cpuBurstList ArrayList<int>
+	 * Gets an arrayList of Integers that contain the CPU bursts of a Process.
+	 * @return cpuBurstList ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getCpuBurstList() {
 		return cpuBurstList;
 	}
 	
 	/**
-	 * Sets an arrayList of ints that contain the CPU bursts of a Process.
-	 * @param cpuBurstList ArrayList<int>
+	 * Sets an arrayList of Integers that contain the CPU bursts of a Process.
+	 * @param cpuBurstList ArrayList<Integer>
 	 */
 	public void setCpuBurstList(ArrayList<Integer> cpuBurstList) {
 		this.cpuBurstList = cpuBurstList;
@@ -256,16 +226,16 @@ public class Process {
 	
 	// ioBurstArray
 	/**
-	 * gets an arrayList of ints that contain the IO bursts of a Process.
-	 * @return ioBurstList ArrayList<int>
+	 * gets an arrayList of Integers that contain the IO bursts of a Process.
+	 * @return ioBurstList ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getIoBurstList() {
 		return ioBurstList;
 	}
 	
 	/**
-	 * Sets an arrayList of ints that contain the IO bursts of a Process.
-	 * @param ioBurstList ArrayList<int>
+	 * Sets an arrayList of Integers that contain the IO bursts of a Process.
+	 * @param ioBurstList ArrayList<Integer>
 	 */
 	public void setIoBurstList(ArrayList<Integer> ioBurstList) {
 		this.ioBurstList = ioBurstList;
@@ -306,6 +276,14 @@ public class Process {
 	 */
 	public void isWaiting() {
 		this.state = "WAITING";
+	}
+	
+	/**
+	 * Increments the Process burstCycle by one each time a 
+	 * cycle of CPU bursts finishes.
+	 */
+	public void incrementBurstCycle() {
+		this.burstCycle += 1;
 	}
 	
 }

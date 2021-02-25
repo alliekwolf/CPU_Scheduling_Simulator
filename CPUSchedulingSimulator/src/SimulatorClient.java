@@ -1,9 +1,4 @@
-/*
- * Brian Steele, Cole Walsh, Allie Wolf
- * CS 405: Operating Systems
- * Project 2: CPU Scheduler
- * Date: 2/21/2021
- */
+
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -41,7 +36,7 @@ public class SimulatorClient {
 		System.out.println("--------------------");
 		String result = "";
 		for (Process p: scheduler.getReadyQueue()) {
-			result += " - Process: " + p.getId() + "\n   Priority: " + p.getPriorityLevel() + "\n   CPU Bursts: " + p.getCpuBurstList() + "\n   I/O Bursts" + p.getIoBurstList() + "\n";
+			result += " - Process: " + p.getId() + "\n   Priority: " + p.getPriorityLevel() + "\n   CPU Bursts: " + p.getCpuBurstList() + "\n";
 		}
 		System.out.println(result + "\n");
 		result = "";
@@ -62,29 +57,16 @@ public class SimulatorClient {
 		
 		// Set Scheduler's algorithm to SJF, run it, then print output.
 		scheduler.setAlgorithm(new SJF(scheduler));
+		for (Process p: scheduler.getReadyQueue()) {  // Increments the CPU burst cycle by 2, so 
+			p.incrementBurstCycle();				  // it will compare the third cycle of bursts.
+			p.incrementBurstCycle();				  // Comment out for loop to compare first cycle
+		}											  // of bursts.
 		scheduler.start();
 		
 		System.out.println("   After SJF Sorting (CPU)   ");
 		System.out.println("-----------------------------");
 		for (Process p: scheduler.getReadyQueue()) {
 			result += " - Process: " + p.getId() + "\n   CPU Bursts: " + p.getCpuBurstList() + "\n";
-		}
-		System.out.println(result + "\n");
-		result = "";
-		
-		
-		// Set Scheduler's algorithm to SJF for I/O Wait Queue, run it, then print output.
-		// First, set burstStep to 1.
-		for (Process p: scheduler.getIoWaitQueue()) {
-			p.setBurstStep(1);
-		}
-		scheduler.setAlgorithm(new SJF(scheduler));
-		scheduler.start();
-		
-		System.out.println("   After SJF Sorting (I/O)   ");
-		System.out.println("-----------------------------");
-		for (Process p: scheduler.getReadyQueue()) {
-			result += " - Process: " + p.getId() + "\n   I/O Bursts: " + p.getIoBurstList() + "\n";
 		}
 		System.out.println(result + "\n");
 		result = "";

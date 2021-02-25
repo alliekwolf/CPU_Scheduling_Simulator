@@ -1,15 +1,3 @@
-/*
- * Brian Steele, Cole Walsh, Allie Wolf
- * CS 405: Operating Systems
- * Project 2: CPU Scheduler
- * Date: 2/23/2021
- */
-
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * 
  * Extends Algorithm class. This class organizes Process objects into
@@ -18,10 +6,16 @@ import java.util.Queue;
  * the FCFS object will organize Process objects in the Scheduler
  * object's readyQueue.
  * 
- * @author Brian Steele, Cole Walsh, Allie Worlf
+ * @author Brian Steele, Cole Walsh, Allie Wolf
  *
  */
-public class FCFS extends Algorithm implements /*Runnable,*/ Comparator<Process> {
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class FCFS extends Algorithm implements Comparator<Process> {
 	
 	// Data Members
 	Scheduler scheduler;
@@ -55,20 +49,6 @@ public class FCFS extends Algorithm implements /*Runnable,*/ Comparator<Process>
 		Comparator<Process> c = new FCFS();
 		Collections.sort(q, c);
 		this.scheduler.setReadyQueue(q);
-		
-	}
-	
-	/**
-	 * This method will sort the scheduler's IoWaitQueue according to the 
-	 * overridden compare() method, and will organize the schedules IoWaitQueue
-	 * by which job arrived at the CPU the earliest.
-	 */
-	@Override
-	public void sortIoWaitQueue() {
-		LinkedList<Process> q = (LinkedList<Process>)this.scheduler.getIoWaitQueue();
-		Comparator<Process> c = new FCFS();
-		Collections.sort(q, c);
-		this.scheduler.setIoWaitQueue(q);
 		
 	}
 	

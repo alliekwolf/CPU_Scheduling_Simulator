@@ -1,15 +1,3 @@
-/*
- * Brian Steele, Cole Walsh, Allie Wolf
- * CS 405: Operating Systems
- * Project 2: CPU Scheduler
- * Date: 2/21/2021
- */
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.StringTokenizer;
-
 /**
  * The ScenarioReader is part of a CPU scheduling simulator. The class
  * contains methods to read a file with a list of information about processes
@@ -21,6 +9,12 @@ import java.util.StringTokenizer;
  * @author Brian Steele, Cole Walsh, Allie Wolf
  *
  */
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.StringTokenizer;
+
 public class ScenarioReader {
 	
 	// Data Members

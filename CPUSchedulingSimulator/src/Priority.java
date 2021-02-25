@@ -1,14 +1,3 @@
-/*
- * Brian Steele, Cole Walsh, Allie Wolf
- * CS 405: Operating Systems
- * Project 2: CPU Scheduler
- * Date: 2/23/2021
- */
-
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
-
 /**
  * 
  * Extends Algorithm class. This class organizes Process objects into
@@ -17,11 +6,15 @@ import java.util.LinkedList;
  * of a Scheduler object - the Priority object will organize Process objects in the Scheduler
  * object's readyQueue.
  * 
- * @author Brian Steele, Cole Walsh, Allie Worlf
+ * @author Brian Steele, Cole Walsh, Allie Wolf
  *
  */
 
-public class Priority extends Algorithm implements /*Runnable,*/ Comparator<Process> {
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+
+public class Priority extends Algorithm implements Comparator<Process> {
 	
 	// Data Members
 	Scheduler scheduler;
@@ -56,17 +49,6 @@ public class Priority extends Algorithm implements /*Runnable,*/ Comparator<Proc
 		Comparator<Process> c = new Priority();
 		Collections.sort(q, c);
 		this.scheduler.setReadyQueue(q);
-	}
-	
-	/**
-	 * This method will sort the scheduler's IoWaitQueue. Not implemented yet.
-	 */
-	@Override
-	public void sortIoWaitQueue() {
-//		LinkedList<Process> q = (LinkedList<Process>)this.scheduler.getIoWaitQueue();
-//		Comparator<Process> c = new Priority();
-//		Collections.sort(q, c);
-//		this.scheduler.setIoWaitQueue(q);
 	}
 	
 	/**

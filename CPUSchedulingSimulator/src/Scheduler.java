@@ -1,12 +1,3 @@
-/*
- * Brian Steele, Cole Walsh, Allie Wolf
- * CS 405: Operating Systems
- * Project 2: CPU Scheduler
- * Date: 2/23/2021
- */
-
-import java.util.Queue;
-
 /**
  * The Scheduler class models a CPU scheduler in an effort to 
  * simulate CPU process scheduling according to a variety of different
@@ -16,6 +7,8 @@ import java.util.Queue;
  * @author Brian Steele, Cole Walsh, Allie Wolf
  *
  */
+
+import java.util.Queue;
 
 public class Scheduler {
 	
@@ -34,6 +27,7 @@ public class Scheduler {
 	private ScenarioReader sReader;
 	private Queue<Process> readyQueue;
 	private Queue<Process> ioWaitQueue;
+	
 	
 	// Constructors
 	/**
@@ -66,6 +60,7 @@ public class Scheduler {
 		this.algorithm = algorithm;
 		this.sReader = sReader;
 	}
+	
 	
 	// Getters and Setters
 	/**
@@ -265,8 +260,8 @@ public class Scheduler {
 		this.ioWaitQueue = ioWaitQueue;
 	}
 	
-	// Additional Methods
 	
+	// Additional Methods
 	/**
 	 * Apply the algorithm's sorting method.
 	 */

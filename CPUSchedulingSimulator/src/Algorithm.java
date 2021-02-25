@@ -1,10 +1,3 @@
-/*
- * Brian Steele, Cole Walsh, Allie Wolf
- * CS 405: Operating Systems
- * Project 2: CPU Scheduler
- * Date: 2/23/2021
- */
-
 /**
  * Algorithm is a superclass to be used as a parent for a group of classes that model
  * the behavior of a cpu process scheduler. This class defines some common methods that will
@@ -15,19 +8,13 @@
  *
  */
 
-public abstract class Algorithm /*implements Runnable*/ {
+public abstract class Algorithm {
 	
 	/**
 	 * Sorts the incoming processes into a ready queue according to the 
 	 * scheduling models rules - by priority for the Priority algorithm, for example
 	 */
 	public abstract void sortReadyQueue();
-	
-	/**
-	 * Sorts the incoming processes into a ready queue according to the 
-	 * scheduling models rules - by priority for the Priority algorithm, for example
-	 */
-	public abstract void sortIoWaitQueue();
 	
 	/**
 	 * Starts the sorting process for the algorithm.
