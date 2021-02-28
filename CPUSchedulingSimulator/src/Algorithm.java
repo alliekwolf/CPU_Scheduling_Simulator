@@ -1,10 +1,13 @@
 /**
+ * 
  * Algorithm is a superclass to be used as a parent for a group of classes that model
  * the behavior of a cpu process scheduler. This class defines some common methods that will
  * be used by FCFS, Priority, SJF, and Round-Robin classes that will implement scheduling models.
  * The classes will be used in the Scheduler class to organize the scheduler.readyQueue.
  * 
- * @author Brian Steele, Cole Walsh, Allie Wolf.
+ * @author Brian Steele
+ * @author Cole Walsh
+ * @author Allie Wolf
  *
  */
 

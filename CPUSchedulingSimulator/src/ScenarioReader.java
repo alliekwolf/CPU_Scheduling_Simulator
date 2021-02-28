@@ -1,4 +1,5 @@
 /**
+ * 
  * The ScenarioReader is part of a CPU scheduling simulator. The class
  * contains methods to read a file with a list of information about processes
  * and their arrival time, priority, cpu burst times, and IO burst times. The
@@ -6,7 +7,9 @@
  * by the Scheduler object.
  * 
  * 
- * @author Brian Steele, Cole Walsh, Allie Wolf
+ * @author Brian Steele
+ * @author Cole Walsh
+ * @author Allie Wolf
  *
  */
 
@@ -47,8 +50,8 @@ public class ScenarioReader {
 	 * @return
 	 * @throws IOException
 	 */
-	public LinkedList<Process> createProcesses() throws IOException {
-		LinkedList<Process> processList = new LinkedList<Process>();
+	public ArrayList<Process> createProcesses() throws IOException {
+		ArrayList<Process> processList = new ArrayList<Process>();
 		String line;
 		while ((line = br.readLine()) != null) {
 			String id = "";

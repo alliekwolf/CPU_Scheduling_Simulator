@@ -6,7 +6,9 @@
  * the SJF object will organize Process objects in the Scheduler
  * object's readyQueue.
  * 
- * @author Brian Steele, Cole Walsh, Allie Wolf
+ * @author Brian Steele
+ * @author Cole Walsh
+ * @author Allie Wolf
  *
  */
 

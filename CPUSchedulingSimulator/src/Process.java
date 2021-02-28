@@ -1,10 +1,13 @@
 /**
+ * 
  * The Process class simulates a process control block for a CPU
  * process schedule simulation. It also acts as a container for information
  * about the processes run in the simulator, including things like wait time
  * and turn around time.
  * 
- * @author Brian Steele, Cole Walsh, Allie Wolf
+ * @author Brian Steele
+ * @author Cole Walsh
+ * @author Allie Wolf
  *
  */
 
@@ -23,6 +26,7 @@ public class Process {
 	private int ioWaitTime;
 	private int turnaroundTime;
 	private int burstCycle;
+	private int currentBurst;
 	private ArrayList<Integer> cpuBurstList;
 	private ArrayList<Integer> ioBurstList;
 	
@@ -48,6 +52,7 @@ public class Process {
 		this.cpuBurstList = cpuBurstList;
 		this.ioBurstList = ioBurstList;
 		this.burstCycle = 0;
+		this.currentBurst = this.cpuBurstList.get(this.burstCycle);
 		this.isWaiting();
 	}
 	
@@ -208,6 +213,14 @@ public class Process {
 		return burstCycle;
 	}
 	
+	public int getCurrentBurst() {
+		return currentBurst;
+	}
+	
+	public void setCurrentBurst(int currentBurst) {
+		this.currentBurst = currentBurst;
+	}
+	
 	/**
 	 * Gets an arrayList of Integers that contain the CPU bursts of a Process.
 	 * @return cpuBurstList ArrayList<Integer>
@@ -279,11 +292,20 @@ public class Process {
 	}
 	
 	/**
-	 * Increments the Process burstCycle by one each time a 
-	 * cycle of CPU bursts finishes.
+	 * Increments the Process burstCycle by one each time a cycle 
+	 * of CPU bursts finishes.
 	 */
 	public void incrementBurstCycle() {
 		this.burstCycle += 1;
 	}
 	
+	/**
+	 * Decrements the Process's current burst cycle by one each time 
+	 * a burst is executed.
+	 */
+	public void decrementCurrentBurst() {
+		if (this.currentBurst > 0) {
+			--this.currentBurst;
+		}
+	}
 }
