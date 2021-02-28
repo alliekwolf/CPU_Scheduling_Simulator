@@ -396,11 +396,11 @@ public class Scheduler {
 	 * This method also calls the executeIOBurst() method.
 	 */
 	public void executeCPUBurst() {
+		this.executeIOBurst();  // Execute I/O burst.
+		
 		if (this.currentCPUProcess != null) {
 			this.currentCPUProcess.decrementCurrentBurst();
 			System.out.println("CPU burst: " + this.currentCPUProcess.getCurrentBurst());
-			
-			this.executeIOBurst();  // Execute I/O burst.
 			
 			// If current burst reaches 0 and there are more burst cycles to go, move Process to I/O wait queue.
 			// Else, if current burst reaches 0 and there are NO MORE burst cycles to go, Process is finished.
@@ -413,8 +413,6 @@ public class Scheduler {
 				System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
 				this.currentCPUProcess = null;
 			}
-		} else {
-			this.executeIOBurst();
 		}
 	}
 	

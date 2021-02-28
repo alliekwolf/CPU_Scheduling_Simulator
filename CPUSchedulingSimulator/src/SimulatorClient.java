@@ -54,28 +54,8 @@ public class SimulatorClient {
 			scheduler.addToCPU();
 			scheduler.addToIO();
 			
-			// Output data to show which processes are in which queues.
-			String rqStr = "Ready Queue: ";
-			for (Process p: scheduler.getReadyQueue()) {
-				rqStr += " [" + p.getId() + "]";
-			}
-			System.out.println(rqStr);
-			String wqStr = "I/O Wait Queue: ";
-			for (Process p: scheduler.getIoWaitQueue()) {
-				wqStr += " [" + p.getId() + "]";
-			}
-			// Output data to show which processes are in the CPU and I/O.
-			System.out.println(wqStr);
-			if (scheduler.getCurrentCPUProcess() != null) {
-				System.out.print("CPU: [" + scheduler.getCurrentCPUProcess().getId() + "]");
-			} else {
-				System.out.print("CPU: [     ]");
-			}
-			if (scheduler.getCurrentIOProcess() != null) {
-				System.out.print("   I/O: [" + scheduler.getCurrentIOProcess().getId() + "]\n");
-			} else {
-				System.out.print("   I/O: [     ]\n");
-			}
+			// Output which processes are in which queues, the CPU, and I/O.
+			printSchedulerQueues(scheduler);
 			
 			// Execute next burst (the executeCPUBurst() method also calls executeIOBurst().)
 			// Then, increment the system timer.
@@ -95,6 +75,38 @@ public class SimulatorClient {
 		}
 		
 		System.out.println("\n** ALL JOBS FINISHED. **");
+	}
+	
+	/**
+	 * Outputs print statements in the console to show which processes are in the 
+	 * Scheduler's ready and I/O wait queues, which process is in the CPU, and 
+	 * which process is in I/O.
+	 * 
+	 * @param scheduler
+	 */
+	public static void printSchedulerQueues(Scheduler scheduler) {
+		// Output data to show which processes are in which queues.
+		String rqStr = "Ready Queue: ";
+		for (Process p: scheduler.getReadyQueue()) {
+			rqStr += " [" + p.getId() + "]";
+		}
+		System.out.println(rqStr);
+		String wqStr = "I/O Wait Queue: ";
+		for (Process p: scheduler.getIoWaitQueue()) {
+			wqStr += " [" + p.getId() + "]";
+		}
+		// Output data to show which processes are in the CPU and I/O.
+		System.out.println(wqStr);
+		if (scheduler.getCurrentCPUProcess() != null) {
+			System.out.print("CPU: [" + scheduler.getCurrentCPUProcess().getId() + "]");
+		} else {
+			System.out.print("CPU: [     ]");
+		}
+		if (scheduler.getCurrentIOProcess() != null) {
+			System.out.print("   I/O: [" + scheduler.getCurrentIOProcess().getId() + "]\n");
+		} else {
+			System.out.print("   I/O: [     ]\n");
+		}
 	}
 	
 	
