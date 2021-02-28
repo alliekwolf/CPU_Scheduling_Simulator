@@ -398,11 +398,11 @@ public class Scheduler {
 	 * This method also calls the executeIOBurst() method.
 	 */
 	public void executeCPUBurst() {
-		this.executeIOBurst();  // Execute I/O burst.
-		
 		if (this.currentCPUProcess != null) {
 			this.currentCPUProcess.decrementCurrentBurst();					// Decrement current burst in the cycle.
 			System.out.println("CPU burst: " + this.currentCPUProcess.getCurrentBurst());
+			
+			this.executeIOBurst();											// Check I/O to execute I/O burst.
 			
 			// If current burst reaches 0 and there are more burst cycles to go, move Process to I/O wait queue.
 			// Else, if current burst reaches 0 and there are NO MORE burst cycles to go, Process is finished.
@@ -417,6 +417,8 @@ public class Scheduler {
 				System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
 				this.currentCPUProcess = null;
 			}
+		} else {															// If nothing is in the CPU, still check I/O 
+			this.executeIOBurst();											// to execute I/O burst.
 		}
 	}
 	
@@ -427,12 +429,11 @@ public class Scheduler {
 	 */
 	public void executeIOBurst() {
 		if (this.currentIOProcess != null) {
-			this.currentIOProcess.decrementCurrentBurst();			// Decrement current burst in the cycle.
+			this.currentIOProcess.decrementCurrentBurst();				// Decrement current burst in the cycle.
 			System.out.println("I/O burst: " + this.currentIOProcess.getCurrentBurst());
-			if (this.currentIOProcess.getCurrentBurst() == 0) {
-				this.currentIOProcess.incrementBurstCycle();		// Set next burst cycle.
-				this.currentIOProcess.setCurrentBurst(this.currentIOProcess.getCpuBurstList().get(this.currentIOProcess.getBurstCycle()));
-				this.addToReadyQueue(this.currentIOProcess);
+			if (this.currentIOProcess.getCurrentBurst() == 0) {			// If this was the last burst of the cycle...
+				this.currentIOProcess.incrementBurstCycle();			// Set next burst cycle.
+				this.addToReadyQueue(this.currentIOProcess);			// Move process to ready queue.
 				this.currentIOProcess = null;
 			}
 		}

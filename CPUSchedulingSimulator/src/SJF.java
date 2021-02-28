@@ -63,15 +63,6 @@ public class SJF extends Algorithm implements Comparator<Process> {
 	}
 	
 	/**
-	 * not yet implemented.
-	 */
-	@Override
-	public void printResult() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	/**
 	 * This method is implemented from the Comparator class to compare two Processes, and is used 
 	 * to sort the Scheduler's queue of Processes. In this instance, the comparator will compare 
 	 * the number of bursts in the next CPU burst cycle of each Process.

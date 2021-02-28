@@ -24,9 +24,4 @@ public abstract class Algorithm {
 	 */
 	public abstract void apply();
 	
-	/**
-	 * Not implemented yet
-	 */
-	public abstract void printResult();
-	
 }

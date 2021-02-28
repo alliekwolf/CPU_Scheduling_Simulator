@@ -64,15 +64,6 @@ public class Priority extends Algorithm implements Comparator<Process> {
 	}
 	
 	/**
-	 * not yet implemented.
-	 */
-	@Override
-	public void printResult() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	/**
 	 * Overridden compare method to make the comparator work. This method
 	 * subtracts the priority level of the second process from the first, and 
 	 * returns the result as an int. The result will be used to sort the processes

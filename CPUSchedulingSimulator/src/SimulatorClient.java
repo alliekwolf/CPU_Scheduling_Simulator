@@ -26,10 +26,7 @@ public class SimulatorClient {
 			e.printStackTrace();
 		}
 		
-//		scheduler.setAlgorithm(new Priority(scheduler));
-//		testQueueSorting(scheduler);
-		
-		scheduler.setAlgorithm(new Priority(scheduler));	// So far, both Priority and SJF work.
+		scheduler.setAlgorithm(new Priority(scheduler));	// Currently working algorithms include FCFS, SJF, and Priority.
 		runScheduler(scheduler);							// Change setAlgorithm() to test.
 		
 	}
@@ -71,7 +68,7 @@ public class SimulatorClient {
 				flag = true;
 			}
 			
-			Thread.sleep(500);
+			Thread.sleep(400);
 		}
 		
 		System.out.println("\n** ALL JOBS FINISHED. **");
@@ -122,56 +119,5 @@ public class SimulatorClient {
 		}
 	}
 	
-	
-	/**
-	 * This method is for testing the different sorting of the ready queue and I/O wait queue in the
-	 * Scheduler to make sure the different algorithms (SJF, Priority, etc.) are working properly.
-	 * 
-	 * @param scheduler
-	 * @param processList
-	 */
-	public static void testQueueSorting(Scheduler scheduler) {
-		for (Process p: scheduler.getJobQueue()) {
-			scheduler.addToReadyQueue(p);
-			scheduler.addToIoWaitQueue(p);
-		}
-		
-		System.out.println();
-		for (Process p: scheduler.getReadyQueue()) {
-			System.out.println(p + "\n");
-		}
-		System.out.println();
-		
-		String result = "";
-		
-		// Set Scheduler's algorithm to Priortiy, run it, then print output.
-		scheduler.setAlgorithm(new Priority(scheduler));
-		scheduler.applyAlgorithm();
-		
-		System.out.println("   After Priority Sorting   ");
-		System.out.println("----------------------------");
-		for (Process p: scheduler.getReadyQueue()) {
-			result += " - Process: " + p.getId() + "\n   Priority: " + p.getPriorityLevel() + "\n";
-		}
-		System.out.println(result + "\n");
-		result = "";
-		
-		
-		// Set Scheduler's algorithm to SJF, run it, then print output.
-		scheduler.setAlgorithm(new SJF(scheduler));
-		for (Process p: scheduler.getReadyQueue()) {  // Increments the CPU burst cycle by 2, so 
-			p.incrementBurstCycle();				  // it will compare the third cycle of bursts.
-			p.incrementBurstCycle();				  // Comment out this "for loop" to compare first 
-		}											  // cycle of bursts.
-		scheduler.applyAlgorithm();
-		
-		System.out.println("   After SJF Sorting (CPU)   ");
-		System.out.println("-----------------------------");
-		for (Process p: scheduler.getReadyQueue()) {
-			result += " - Process: " + p.getId() + "\n   CPU Bursts: " + p.getCpuBurstList() + "\n";
-		}
-		System.out.println(result + "\n");
-		result = "";
-	}
 
 }

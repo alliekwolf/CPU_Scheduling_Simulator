@@ -45,10 +45,6 @@ public class FCFS extends Algorithm implements Comparator<Process> {
 	 */
 	@Override
 	public void sortReadyQueue() {
-		LinkedList<Process> q = (LinkedList<Process>)this.scheduler.getReadyQueue();
-		Comparator<Process> c = new FCFS();
-		Collections.sort(q, c);
-		this.scheduler.setReadyQueue(q);
 		
 	}
 	
@@ -60,15 +56,6 @@ public class FCFS extends Algorithm implements Comparator<Process> {
 	@Override
 	public void apply() {
 		this.sortReadyQueue();
-	}
-	
-	/**
-	 * not yet implemented.
-	 */
-	@Override
-	public void printResult() {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	/**
