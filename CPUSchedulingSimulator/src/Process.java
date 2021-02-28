@@ -47,12 +47,13 @@ public class Process {
 			ArrayList<Integer> ioBurstList) {
 		super();
 		this.id = id;
+		this.state = null;
 		this.arrivalTime = arrivalTime;
 		this.priorityLevel = priorityLevel;
 		this.cpuBurstList = cpuBurstList;
 		this.ioBurstList = ioBurstList;
 		this.burstCycle = 0;
-		this.currentBurst = this.cpuBurstList.get(this.burstCycle);
+		this.currentBurst = 0;
 		this.isWaiting();
 	}
 	
@@ -271,24 +272,31 @@ public class Process {
 	
 	// Methods
 	/**
-	 * Changes the state of the Process to "READY"
+	 * Changes the state of the Process to "READY".
 	 */
 	public void isReady() {
 		this.state = "READY";
 	}
 	
 	/**
-	 * Changes the state of the Process to "Running"
+	 * Changes the state of the Process to "Running".
 	 */
 	public void isRunning() {
 		this.state = "RUNNING";
 	}
 	
 	/**
-	 * Changes the state of the Process to "Waiting"
+	 * Changes the state of the Process to "Waiting".
 	 */
 	public void isWaiting() {
 		this.state = "WAITING";
+	}
+	
+	/**
+	 * Changes the state of the Process to NULL.
+	 */
+	public void isDone() {
+		this.state = null;
 	}
 	
 	/**
@@ -296,7 +304,7 @@ public class Process {
 	 * of CPU bursts finishes.
 	 */
 	public void incrementBurstCycle() {
-		this.burstCycle += 1;
+		this.burstCycle++;
 	}
 	
 	/**

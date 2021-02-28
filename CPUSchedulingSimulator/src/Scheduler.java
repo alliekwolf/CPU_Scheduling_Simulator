@@ -349,8 +349,10 @@ public class Scheduler {
 	 * @param p to add new process to readyQueue
 	 */
 	public void addToReadyQueue(Process p) {
-		this.readyQueue.add(p);
-		this.applyAlgorithm();
+		p.isReady();													// Set process state to WAITING.
+		p.setCurrentBurst(p.getCpuBurstList().get(p.getBurstCycle()));	// Set num. of CPU bursts to execute to 
+		this.readyQueue.add(p);											// the num. in the index of the CPU burst 
+		this.applyAlgorithm();											// list matching the current burst cycle.
 	}
 	
 	/**
@@ -360,6 +362,7 @@ public class Scheduler {
 	public void addToCPU() {
 		if (this.currentCPUProcess == null && !this.readyQueue.isEmpty()) {
 			this.currentCPUProcess = this.readyQueue.poll();
+			this.currentCPUProcess.isRunning();   // Set process state to RUNNING.
 		}
 	}
 	
@@ -369,12 +372,10 @@ public class Scheduler {
 	 * @param p to add new process to ioWaitQueue
 	 */
 	public void addToIoWaitQueue(Process p) {
-		if (this.ioWaitQueue.isEmpty()) {
-			this.ioWaitQueue.add(p);
-			this.addToIO();
-		} else {
-			this.ioWaitQueue.add(p);
-		}
+		p.isWaiting();													// Set process state to WAITING.
+		p.setCurrentBurst(p.getIoBurstList().get(p.getBurstCycle()));	// Set num. of I/O bursts to execute to
+		this.ioWaitQueue.add(p);										// the num. in the index of the I/O burst 
+		this.addToIO();													// list matching the current burst cycle.
 	}
 	
 	/**
@@ -384,6 +385,7 @@ public class Scheduler {
 	public void addToIO() {
 		if (this.currentIOProcess == null && !this.ioWaitQueue.isEmpty()) {
 			this.currentIOProcess = ioWaitQueue.poll();
+			this.currentIOProcess.isRunning();   // Set process state to RUNNING.
 		}
 	}
 	
@@ -399,17 +401,19 @@ public class Scheduler {
 		this.executeIOBurst();  // Execute I/O burst.
 		
 		if (this.currentCPUProcess != null) {
-			this.currentCPUProcess.decrementCurrentBurst();
+			this.currentCPUProcess.decrementCurrentBurst();					// Decrement current burst in the cycle.
 			System.out.println("CPU burst: " + this.currentCPUProcess.getCurrentBurst());
 			
 			// If current burst reaches 0 and there are more burst cycles to go, move Process to I/O wait queue.
 			// Else, if current burst reaches 0 and there are NO MORE burst cycles to go, Process is finished.
 			if (this.currentCPUProcess.getCurrentBurst() == 0 && (this.currentCPUProcess.getBurstCycle()) < this.currentCPUProcess.getCpuBurstList().size()-1) {
-				this.currentCPUProcess.setCurrentBurst(this.currentCPUProcess.getIoBurstList().get(this.currentCPUProcess.getBurstCycle()));
-				this.addToIoWaitQueue(this.currentCPUProcess);
+				this.addToIoWaitQueue(this.currentCPUProcess);				// Add process to I/O wait queue.
 				this.currentCPUProcess = null;
 			} else if (this.currentCPUProcess.getCurrentBurst() == 0 && (this.currentCPUProcess.getBurstCycle()) == this.currentCPUProcess.getCpuBurstList().size()-1) {
-				this.terminatedProcesses.add(this.currentCPUProcess);
+				this.currentCPUProcess.isDone();							// Set process state to NULL.
+				this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set finish time to system timer.
+				this.terminatedProcesses.add(this.currentCPUProcess);		// Add to terminated processes. 
+				
 				System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
 				this.currentCPUProcess = null;
 			}
@@ -423,10 +427,10 @@ public class Scheduler {
 	 */
 	public void executeIOBurst() {
 		if (this.currentIOProcess != null) {
-			this.currentIOProcess.decrementCurrentBurst();
+			this.currentIOProcess.decrementCurrentBurst();			// Decrement current burst in the cycle.
 			System.out.println("I/O burst: " + this.currentIOProcess.getCurrentBurst());
 			if (this.currentIOProcess.getCurrentBurst() == 0) {
-				this.currentIOProcess.incrementBurstCycle();
+				this.currentIOProcess.incrementBurstCycle();		// Set next burst cycle.
 				this.currentIOProcess.setCurrentBurst(this.currentIOProcess.getCpuBurstList().get(this.currentIOProcess.getBurstCycle()));
 				this.addToReadyQueue(this.currentIOProcess);
 				this.currentIOProcess = null;

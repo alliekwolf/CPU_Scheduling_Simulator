@@ -55,7 +55,7 @@ public class SimulatorClient {
 			scheduler.addToIO();
 			
 			// Output which processes are in which queues, the CPU, and I/O.
-			printSchedulerQueues(scheduler);
+			printSchedulerOutput(scheduler);
 			
 			// Execute next burst (the executeCPUBurst() method also calls executeIOBurst().)
 			// Then, increment the system timer.
@@ -75,6 +75,11 @@ public class SimulatorClient {
 		}
 		
 		System.out.println("\n** ALL JOBS FINISHED. **");
+		String result = "";
+		for (Process p: scheduler.getTerminatedProcesses()) {
+			result += " - " + p.getId() + " Finish Time: " + p.getFinishTime() + "\n";
+		}
+		System.out.println(result);
 	}
 	
 	/**
@@ -84,16 +89,24 @@ public class SimulatorClient {
 	 * 
 	 * @param scheduler
 	 */
-	public static void printSchedulerQueues(Scheduler scheduler) {
+	public static void printSchedulerOutput(Scheduler scheduler) {
 		// Output data to show which processes are in which queues.
 		String rqStr = "Ready Queue: ";
-		for (Process p: scheduler.getReadyQueue()) {
-			rqStr += " [" + p.getId() + "]";
+		if (scheduler.getReadyQueue().isEmpty()) {
+			rqStr += " EMPTY";
+		} else {
+			for (Process p: scheduler.getReadyQueue()) {
+				rqStr += " [" + p.getId() + "]";
+			}
 		}
 		System.out.println(rqStr);
 		String wqStr = "I/O Wait Queue: ";
-		for (Process p: scheduler.getIoWaitQueue()) {
-			wqStr += " [" + p.getId() + "]";
+		if (scheduler.getIoWaitQueue().isEmpty()) {
+			wqStr += " EMPTY";
+		} else {
+			for (Process p: scheduler.getIoWaitQueue()) {
+				wqStr += " [" + p.getId() + "]";
+			}
 		}
 		// Output data to show which processes are in the CPU and I/O.
 		System.out.println(wqStr);
