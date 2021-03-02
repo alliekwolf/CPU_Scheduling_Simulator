@@ -26,7 +26,7 @@ public class Process {
 	private int ioWaitTime;
 	private int turnaroundTime;
 	private int burstCycle;
-	private int currentBurst;
+	private int remainingBursts;
 	private ArrayList<Integer> cpuBurstList;
 	private ArrayList<Integer> ioBurstList;
 	
@@ -53,7 +53,7 @@ public class Process {
 		this.cpuBurstList = cpuBurstList;
 		this.ioBurstList = ioBurstList;
 		this.burstCycle = 0;
-		this.currentBurst = 0;
+		this.remainingBursts = 0;
 		this.isWaiting();
 	}
 	
@@ -214,12 +214,12 @@ public class Process {
 		return burstCycle;
 	}
 	
-	public int getCurrentBurst() {
-		return currentBurst;
+	public int getRemainingBursts() {
+		return remainingBursts;
 	}
 	
-	public void setCurrentBurst(int currentBurst) {
-		this.currentBurst = currentBurst;
+	public void setRemainingBursts(int remainingBursts) {
+		this.remainingBursts = remainingBursts;
 	}
 	
 	/**
@@ -311,9 +311,9 @@ public class Process {
 	 * Decrements the Process's current burst cycle by one each time 
 	 * a burst is executed.
 	 */
-	public void decrementCurrentBurst() {
-		if (this.currentBurst > 0) {
-			--this.currentBurst;
+	public void decrementRemainingBursts() {
+		if (this.remainingBursts > 0) {
+			--this.remainingBursts;
 		}
 	}
 }

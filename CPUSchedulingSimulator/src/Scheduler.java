@@ -167,7 +167,7 @@ public abstract class Scheduler {
 	public void addNewProcess() {
 		for (int i = 0; i < this.jobQueue.size(); i++) {
 			if (this.systemTimer == this.jobQueue.get(i).getArrivalTime()) {
-				this.jobQueue.get(i).setCurrentBurst(this.jobQueue.get(i).getCpuBurstList().get(
+				this.jobQueue.get(i).setRemainingBursts(this.jobQueue.get(i).getCpuBurstList().get(
 						this.jobQueue.get(i).getBurstCycle()));		// Set current burst to first burst cycle.
 				this.addToReadyQueue(this.jobQueue.get(i));
 				this.sort();
@@ -177,7 +177,7 @@ public abstract class Scheduler {
 	}
 	
 	public void addToReadyQueue(Process p) {
-		p.isReady();								// Set process state to WAITING.
+		p.isReady();								// Set process state to READY.
 		this.readyQueue.add(p);
 		this.sort();
 	}
@@ -191,7 +191,7 @@ public abstract class Scheduler {
 	
 	public void addToIoWaitQueue(Process p) {
 		p.isWaiting();													// Set process state to WAITING.
-		p.setCurrentBurst(p.getIoBurstList().get(p.getBurstCycle()));	// Set num. of I/O bursts to next I/O burst cycle.
+		p.setRemainingBursts(p.getIoBurstList().get(p.getBurstCycle()));	// Set num. of I/O bursts to next I/O burst cycle.
 		this.ioWaitQueue.add(p);
 		this.addToIO();
 	}

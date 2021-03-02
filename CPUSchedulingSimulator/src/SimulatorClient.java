@@ -20,7 +20,7 @@ public class SimulatorClient {
 		ScenarioReader sr = new ScenarioReader("scenarioData2.txt");
 		Scheduler scheduler;
 		
-		scheduler = new SJF();
+		scheduler = new RoundRobin();
 		try {
 			scheduler.setJobQueue(sr.createProcesses());
 		} catch (IOException e) {
@@ -68,7 +68,7 @@ public class SimulatorClient {
 				flag = true;
 			}
 			
-			Thread.sleep(200);
+			Thread.sleep(800);
 		}
 		
 		System.out.println("\n** ALL JOBS FINISHED. **");
