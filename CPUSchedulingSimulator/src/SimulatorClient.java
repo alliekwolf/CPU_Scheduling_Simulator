@@ -1,3 +1,8 @@
+
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  * 
  * The SimulatorClient program is currently being used to test all of the classes in the 
@@ -9,24 +14,89 @@
  * @author Allie Wolf
  *
  */
-
-import java.io.IOException;
-
 public class SimulatorClient {
-
+	
+	public static Scanner console = new Scanner(System.in);
+	public static Scheduler scheduler;
+	
 	public static void main(String[] args) throws InterruptedException {
 		
 		// variables
 		ScenarioReader sr = new ScenarioReader("scenarioData2.txt");
-		Scheduler scheduler;
 		
-		scheduler = new RoundRobin();
+		// Print simulator menu.
+		mainMenu(scheduler);
+		
+		// Load initial job queue with processes created from a text file.
 		try {
 			scheduler.setJobQueue(sr.createProcesses());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		// Run scheduling simulator.
 		runScheduler(scheduler);
+		
+	}
+	
+	// Client Program Methods
+	
+	public static void createScheduler(Scheduler newScheduler) {
+		scheduler = newScheduler;
+	}
+	
+	public static void mainMenu(Scheduler scheduler) {
+		int userInput = -1;
+		System.out.println("\n-- CPU Scheduling Simulator --\n");
+		System.out.println("Choose a scheduling algorithm:\n\n" 
+							+ " 1 -- First Come, First Serve\n" 
+							+ " 2 -- Shortest Job First\n" 
+							+ " 3 -- Priority\n" 
+							+ " 4 -- Round Robin\n");
+		while (userInput < 1 || userInput > 4) {
+			System.out.print("Selection: ");
+			try {
+				userInput = console.nextInt();
+				if (userInput < 1 || userInput > 4) {
+					throw new Exception();
+				}
+			} catch (InputMismatchException e) {
+				console.nextLine();
+			} catch (Exception e) {
+				console.nextLine();
+			}
+			
+			switch (userInput) {
+				case 1: createScheduler(new FCFS());
+					break;
+				case 2: createScheduler(new SJF());
+					break;
+				case 3: createScheduler(new Priority());
+					break;
+				case 4:
+					int quantum = -1;
+					while (quantum <= 0) {
+						System.out.print("Enter quantum time slice: ");
+						try {
+							quantum = console.nextInt();
+							if (quantum < 1 || quantum > 4) {
+								throw new Exception();
+							}
+						} catch (InputMismatchException e) {
+							console.nextLine();
+						} catch (Exception e) {
+							console.nextLine();
+						}
+						if (quantum <= 0) {
+							System.out.println("  * Quantum time slice must be an integer greater than 0. *");
+						}
+					}
+					createScheduler(new RoundRobin(quantum));
+					break;
+				default:
+					System.out.println("  * Choose a number 1-4. *");
+			}
+		}
 		
 		
 	}
@@ -43,7 +113,20 @@ public class SimulatorClient {
 	 * @throws InterruptedException
 	 */
 	private static void runScheduler(Scheduler scheduler) throws InterruptedException {
-		scheduler.addNewProcess();
+		
+		String sName = scheduler.getClass().getName();
+		switch (scheduler.getClass().getName()) {
+			case "FCFS": sName = "First Come, First Serve";
+				break;
+			case "SJF": sName = "Shortest Job First";
+				break;
+			case "Priority": sName = "Priority";
+				break;
+			case "RoundRobin": sName = "Round Robin";
+		}
+		
+		System.out.println("\n-- " + sName + " Simulator --");
+		
 		boolean flag = false;
 		while (flag == false) {
 			System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
@@ -54,12 +137,12 @@ public class SimulatorClient {
 			// Output which processes are in which queues, the CPU, and I/O.
 			printSchedulerOutput(scheduler);
 			
-			// Execute next burst (the executeCPUBurst() method also calls executeIOBurst().)
+			// Execute next cycle of bursts (both CPU and I/O, if applicable).
 			// Then, increment the system timer.
-			scheduler.executeCPU();
+			scheduler.executeBursts();
 			scheduler.incrementSystemTimer();
 			
-			// If all queues, the CPU, and I/O are empty, terminate execution.
+			// If all queues are empty, and no processes are running, terminate execution.
 			if (scheduler.getJobQueue().isEmpty() &&
 				scheduler.getReadyQueue().isEmpty() &&
 				scheduler.getIoWaitQueue().isEmpty() &&
@@ -68,7 +151,7 @@ public class SimulatorClient {
 				flag = true;
 			}
 			
-			Thread.sleep(800);
+			Thread.sleep(400);
 		}
 		
 		System.out.println("\n** ALL JOBS FINISHED. **");

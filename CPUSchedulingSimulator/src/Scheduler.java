@@ -1,7 +1,15 @@
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 
+ * @author Brian Steele
+ * @author Cole Walsh
+ * @author Allie Wolf
+ *
+ */
 public abstract class Scheduler {
 	
 	// Data Members
@@ -43,6 +51,7 @@ public abstract class Scheduler {
 		this.terminatedProcesses = new ArrayList<Process>();
 	}
 	
+	// Getters and Setters
 	
 	public int getSystemTimer() {
 		return this.systemTimer;
@@ -164,6 +173,8 @@ public abstract class Scheduler {
 		this.terminatedProcesses = terminatedProcesses;
 	}
 	
+	// Methods
+	
 	public void addNewProcess() {
 		for (int i = 0; i < this.jobQueue.size(); i++) {
 			if (this.systemTimer == this.jobQueue.get(i).getArrivalTime()) {
@@ -200,6 +211,14 @@ public abstract class Scheduler {
 		if (this.currentIOProcess == null && !this.ioWaitQueue.isEmpty()) {
 			this.currentIOProcess = ioWaitQueue.poll();
 			this.currentIOProcess.isRunning();		// Set process state to RUNNING.
+		}
+	}
+	
+	public void executeBursts() {
+		if (this.currentCPUProcess != null) {
+			this.executeCPU();
+		} else {
+			this.executeIO();
 		}
 	}
 	
