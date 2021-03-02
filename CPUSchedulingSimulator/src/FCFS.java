@@ -1,79 +1,75 @@
-/**
- * 
- * Extends Algorithm class. This class organizes Process objects into
- * a ready queue based on which Process has the arrives at the CPU first.
- * This FCFS object will be a data member of a Scheduler object - 
- * the FCFS object will organize Process objects in the Scheduler
- * object's readyQueue.
- * 
- * @author Brian Steele, Cole Walsh, Allie Wolf
- *
- */
-
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
 
-public class FCFS extends Algorithm implements Comparator<Process> {
-	
-	// Data Members
-	Scheduler scheduler;
-	
+public class FCFS extends Scheduler {
+
 	// Constructors
 	/**
+	 * 
 	 * Default constructor
 	 */
 	public FCFS() {
-		// default constructor
+		this.systemTimer = 0;
+		this.cpuUtilization = 0;
+		this.throughput = 0;
+		this.avgWaitTime = 0;
+		this.avgResponseTime = 0;
+		this.simulationMode = 0;
+		this.simulationTime = 0;
+		this.quantumTimeSlice = 4;
+		this.currentCPUProcess = null;
+		this.currentIOProcess = null;
+		this.readyQueue = new LinkedList<Process>();
+		this.ioWaitQueue = new LinkedList<Process>();
+		this.jobQueue = new ArrayList<Process>();
+		this.terminatedProcesses = new ArrayList<Process>();
 	}
 	
-	/**
-	 * Constructor for FCFS object.
-	 * 
-	 * @param scheduler - a Scheduler object
-	 */
-	public FCFS(Scheduler scheduler) {
-		this.scheduler = scheduler;
-	}
-	
-	// Methods
-	/**
-	 * This method sorts the Scheduler object's ready queue according to the 
-	 * overridden compare() method, and will organize the scheduler readyQueue by
-	 * which Process arrived at the CPU earliest.
-	 */
 	@Override
-	public void sortReadyQueue() {
+	public void sort() {
+		// TODO Auto-generated method stub
 		
 	}
 	
-	/**
-	 * This method sorts the readyQueue of the Scheduler according to the overridden
-	 * compare module. In this case, it orders the processes in the queue by which processes
-	 * have the earliest arrival time.
-	 */
 	@Override
-	public void apply() {
-		this.sortReadyQueue();
+	public void executeCPU() {
+		if (this.currentCPUProcess != null) {
+			this.currentCPUProcess.decrementCurrentBurst();
+			System.out.println("CPU burst: " + this.currentCPUProcess.getCurrentBurst());
+			
+			this.executeIO();
+			
+			// If current burst reaches 0 and there are more burst cycles to go, move Process to I/O wait queue.
+			// Else, if current burst reaches 0 and there are NO MORE burst cycles to go, Process is finished.
+			if (this.currentCPUProcess.getCurrentBurst() == 0 && (this.currentCPUProcess.getBurstCycle() < currentCPUProcess.getCpuBurstList().size() - 1)) {
+				this.addToIoWaitQueue(this.currentCPUProcess);				// Add process to I/O wait queue.
+				this.currentCPUProcess = null;
+			} else if (this.currentCPUProcess.getCurrentBurst() == 0 && (this.currentCPUProcess.getBurstCycle() == currentCPUProcess.getCpuBurstList().size() - 1)) {
+				this.currentCPUProcess.isDone();								// Set process state to NULL.
+				this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set finish time to system timer.
+				this.terminatedProcesses.add(this.currentCPUProcess);		// Add to terminated processes. 
+				
+				System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
+				this.currentCPUProcess = null;
+			}
+		} else {						// If nothing is in the CPU, still check I/O 
+			this.executeIO();			// to execute I/O burst.
+		}
 	}
-	
-	/**
-	 * Overridden compare() method to make the comparator work. This method
-	 * subtracts the arrival time of the second process from the arrival time of the
-	 * first, and returns the result as an int. The result will be used to sort the processes
-	 * into the readyQueue of the scheduler, in this case by arrival time, earliest first.
-	 * 
-	 * @param o1 The first Process object to compare
-	 * @param o2 The second Process object to compare
-	 * @return difference int, the difference in the value of the arrival time of o1 and the
-	 * 			arrival time of o2.
-	 */
+
 	@Override
-	public int compare(Process o1, Process o2) {
-		int difference = o1.getArrivalTime() - o2.getArrivalTime();
-		return difference;
+	public void executeIO() {
+		if (this.currentIOProcess != null) {
+			this.currentIOProcess.decrementCurrentBurst();			// Decrement current burst in the cycle.
+			System.out.println("I/O burst: " + this.currentIOProcess.getCurrentBurst());
+			if (this.currentIOProcess.getCurrentBurst() == 0) {		// If this was the last burst of the cycle...
+				this.currentIOProcess.incrementBurstCycle();		// Set next burst cycle and reset current burst.
+				this.currentIOProcess.setCurrentBurst(this.currentIOProcess.getCpuBurstList().get(
+						this.currentIOProcess.getBurstCycle()));
+				this.addToReadyQueue(this.currentIOProcess);		// Move process to ready queue.
+				this.currentIOProcess = null;
+			}
+		}
 	}
-	
-	
+
 }

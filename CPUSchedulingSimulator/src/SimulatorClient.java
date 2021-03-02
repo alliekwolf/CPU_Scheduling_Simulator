@@ -17,17 +17,17 @@ public class SimulatorClient {
 	public static void main(String[] args) throws InterruptedException {
 		
 		// variables
-		ScenarioReader sr = new ScenarioReader("scenarioData.txt");
-		Scheduler scheduler = new Scheduler();
+		ScenarioReader sr = new ScenarioReader("scenarioData2.txt");
+		Scheduler scheduler;
 		
+		scheduler = new SJF();
 		try {
 			scheduler.setJobQueue(sr.createProcesses());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		runScheduler(scheduler);
 		
-		scheduler.setAlgorithm(new Priority(scheduler));	// Currently working algorithms include FCFS, SJF, and Priority.
-		runScheduler(scheduler);							// Change setAlgorithm() to test.
 		
 	}
 	
@@ -42,7 +42,7 @@ public class SimulatorClient {
 	 * @param scheduler
 	 * @throws InterruptedException
 	 */
-	public static void runScheduler(Scheduler scheduler) throws InterruptedException {
+	private static void runScheduler(Scheduler scheduler) throws InterruptedException {
 		scheduler.addNewProcess();
 		boolean flag = false;
 		while (flag == false) {
@@ -56,19 +56,19 @@ public class SimulatorClient {
 			
 			// Execute next burst (the executeCPUBurst() method also calls executeIOBurst().)
 			// Then, increment the system timer.
-			scheduler.executeCPUBurst();
+			scheduler.executeCPU();
 			scheduler.incrementSystemTimer();
 			
 			// If all queues, the CPU, and I/O are empty, terminate execution.
 			if (scheduler.getJobQueue().isEmpty() &&
-					scheduler.getReadyQueue().isEmpty() &&
-					scheduler.getIoWaitQueue().isEmpty() &&
-					scheduler.getCurrentCPUProcess() == null &&
-					scheduler.getCurrentIOProcess() == null) {
+				scheduler.getReadyQueue().isEmpty() &&
+				scheduler.getIoWaitQueue().isEmpty() &&
+				scheduler.getCurrentCPUProcess() == null &&
+				scheduler.getCurrentIOProcess() == null) {
 				flag = true;
 			}
 			
-			Thread.sleep(400);
+			Thread.sleep(200);
 		}
 		
 		System.out.println("\n** ALL JOBS FINISHED. **");
@@ -78,6 +78,7 @@ public class SimulatorClient {
 		}
 		System.out.println(result);
 	}
+
 	
 	/**
 	 * Outputs print statements in the console to show which processes are in the 
