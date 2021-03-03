@@ -1,14 +1,21 @@
 
 /**
+ * Child class of Scheduler, implements a scheduling 
+ * scenario based on the First Come, First Served model. Process
+ * That arrive first are put in the CPU until the complete, and then
+ * the next arrival is put in the CPU. If a process arrives while another
+ * process is running, it is put in the readyQueue. When a process has an 
+ * IO burst, it is put in the ioWaitQue, and the next process in the
+ * readyQueue becomes the current CPU process. When IO opens up, the 
+ * head of the ioWaitQue becomes the current IO process until it finishes, at
+ * which point it goes back in the readyQueue for the CPU.
+ * 
  * 
  * @author Brian Steele
  * @author Cole Walsh
  * @author Allie Wolf
  *
  */
-
-
-
 public class FCFS extends Scheduler {
 
 	// Constructors
@@ -23,6 +30,13 @@ public class FCFS extends Scheduler {
 	// Scheduler Class Methods
 	
 	@Override
+	/**
+	 * Execute the CPU according to the First Come, First Served scenario.
+	 * - decrement the number of bursts left in the CPU burst length.
+	 * - print the number of CPU bursts left in this cycle for this process.
+	 * - apply the executeIO method.
+	 * - If the current burst is 0, send the process to the IO waiting queue.
+	 */
 	public void executeCPU() {
 		this.currentCPUProcess.decrementRemainingBursts();
 		
@@ -48,6 +62,15 @@ public class FCFS extends Scheduler {
 	}
 	
 	@Override
+	/**
+	 * If there is a current IO Process, decrement the remaining time in it's current burst.
+	 * - print the number of IO bursts remaining.
+	 * - If that was the last of the io bursts in this io burst cycle...
+	 * - increment the index of ioburstcycles
+	 * - update the values of cpuburstcycles and ioburstcycles
+	 * - add this process to the ready queue
+	 * - remove this process from the IO queue
+	 */
 	public void executeIO() {
 		if (this.currentIOProcess != null) {
 			this.currentIOProcess.decrementRemainingBursts();			// Decrement current burst in the cycle.
@@ -66,6 +89,9 @@ public class FCFS extends Scheduler {
 		}
 	}
 	
+	/**
+	 * No need to sort these, as the FCFS model is sorted by arrival time.
+	 */
 	@Override
 	public void sort() {
 		
