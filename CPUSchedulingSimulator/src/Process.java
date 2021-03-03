@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+
+
 /**
  * 
  * The Process class simulates a process control block for a CPU
@@ -10,9 +13,6 @@
  * @author Allie Wolf
  *
  */
-
-import java.util.ArrayList;
-
 public class Process {
 	
 	// Data Members
@@ -214,10 +214,20 @@ public class Process {
 		return burstCycle;
 	}
 	
+	/**
+	 * Get the number of CPU bursts remaining in the process.
+	 * 
+	 * @return remainingBursts - int the number of CPU bursts remaining in the process.
+	 */
 	public int getRemainingBursts() {
 		return remainingBursts;
 	}
 	
+	/**
+	 * Set the number of CPU bursts remaining in the process.
+	 * 
+	 * @param remainingBursts int the number of CPU bursts remaining in the process.
+	 */
 	public void setRemainingBursts(int remainingBursts) {
 		this.remainingBursts = remainingBursts;
 	}

@@ -1,13 +1,17 @@
 
+import java.io.File;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import javax.swing.JFileChooser;
+
 /**
  * 
- * The SimulatorClient program is currently being used to test all of the classes in the 
- * CPUSchedulingSimulator Project. It is currently a console-based program, with plans that 
- * it will be converted to a GUI-based program once all classes and methods have been tested. 
+ * The SimulatorClient contains the main() for the CPUSchedulingSimulator project.
+ * Start the program here. 
+ * 
+ * The program reads in a 
  * 
  * @author Brian Steele
  * @author Cole Walsh
@@ -19,10 +23,24 @@ public class SimulatorClient {
 	public static Scanner console = new Scanner(System.in);
 	public static Scheduler scheduler;
 	
+	
+	
 	public static void main(String[] args) throws InterruptedException {
 		
+		
+		System.out.println("Select a scenario file to run");
+		
+		//open a scenario file to run.
+		// https://www.codejava.net/java-se/swing/show-simple-open-file-dialog-using-jfilechooser
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setCurrentDirectory(new File("."));
+		int result = fileChooser.showOpenDialog(null);
+		File selectedFile = fileChooser.getSelectedFile();
+		
+		
+		
 		// variables
-		ScenarioReader sr = new ScenarioReader("scenarioData2.txt");
+		ScenarioReader sr = new ScenarioReader(selectedFile);
 		
 		// Print simulator menu.
 		mainMenu(scheduler);
@@ -41,18 +59,34 @@ public class SimulatorClient {
 	
 	// Client Program Methods
 	
+	/**
+	 * Assigns a new Scheduler object to the scheduler variable.
+	 * This will be based on the choices in the mainMenu - the various
+	 * schedule types extend the original Scheduler abstract class.
+	 * @param newScheduler Schedule object
+	 */
+	
 	public static void createScheduler(Scheduler newScheduler) {
 		scheduler = newScheduler;
 	}
 	
+	/**
+	 * Creates a menu to select which scheduler pattern will be used
+	 * during the current run of the program.
+	 * @param scheduler Scheduler object 
+	 */
 	public static void mainMenu(Scheduler scheduler) {
 		int userInput = -1;
+		
+		// print the menu
 		System.out.println("\n-- CPU Scheduling Simulator --\n");
 		System.out.println("Choose a scheduling algorithm:\n\n" 
 							+ " 1 -- First Come, First Serve\n" 
 							+ " 2 -- Shortest Job First\n" 
 							+ " 3 -- Priority\n" 
 							+ " 4 -- Round Robin\n");
+		
+		// handle input issues
 		while (userInput < 1 || userInput > 4) {
 			System.out.print("Selection: ");
 			try {
@@ -66,6 +100,8 @@ public class SimulatorClient {
 				console.nextLine();
 			}
 			
+			// sort the choices and create a scheduler type based
+			// on the original Scheduler abstract class...
 			switch (userInput) {
 				case 1: createScheduler(new FCFS());
 					break;
@@ -74,6 +110,8 @@ public class SimulatorClient {
 				case 3: createScheduler(new Priority());
 					break;
 				case 4:
+					// handle the creation of a quantum time slice for 
+					// round robin.
 					int quantum = -1;
 					while (quantum <= 0) {
 						System.out.print("Enter quantum time slice: ");
@@ -114,6 +152,8 @@ public class SimulatorClient {
 	 */
 	private static void runScheduler(Scheduler scheduler) throws InterruptedException {
 		
+		
+		// print a title indicating the scheduler type...
 		String sName = scheduler.getClass().getName();
 		switch (scheduler.getClass().getName()) {
 			case "FCFS": sName = "First Come, First Serve";
@@ -126,6 +166,9 @@ public class SimulatorClient {
 		}
 		
 		System.out.println("\n-- " + sName + " Simulator --");
+		
+		
+		// The while loop is where all the magic happens...
 		
 		boolean flag = false;
 		while (flag == false) {
