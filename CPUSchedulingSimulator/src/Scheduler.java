@@ -23,6 +23,7 @@ public abstract class Scheduler {
 	protected float avgWaitTime;
 	protected float avgResponseTime;
 	protected int simulationMode;
+	protected float simulationTime;
 	protected int quantumTimeSlice;
 	protected Process currentCPUProcess;
 	protected Process currentIOProcess;
@@ -44,6 +45,7 @@ public abstract class Scheduler {
 		this.avgWaitTime = 0;
 		this.avgResponseTime = 0;
 		this.simulationMode = 0;
+		this.simulationTime = 0;
 		this.quantumTimeSlice = 0;
 		this.currentCPUProcess = null;
 		this.currentIOProcess = null;
@@ -53,11 +55,10 @@ public abstract class Scheduler {
 		this.terminatedProcesses = new ArrayList<Process>();
 	}
 	
+	
 	// Getters and Setters
-	
-	
 	/**
-	 * get the system time
+	 * Get the system time.
 	 * @return int the current system time.
 	 */
 	public int getSystemTimer() {
@@ -73,30 +74,31 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * Get the cpu utilization, cpu utilization is the total
-	 * number of system time slices when the cpu is active divided
+	 * Get the CPU utilization, CPU utilization is the total
+	 * number of system time slices when the CPU is active divided
 	 * by the total number of time slices in the scenario. 
 	 * 
-	 * @return float with cpu utilization
+	 * @return float with CPU utilization
 	 */
 	public float getCpuUtilization() {
 		return this.cpuUtilization;
 	}
 	
 	/**
-	 * Set the cpu utilization. The cpu utilization is the total
-	 * number of system time slices when the cpu is active divided
+	 * Set the CPU utilization. The CPU utilization is the total
+	 * number of system time slices when the CPU is active divided
 	 * by the total number of time slices in the scenario.
 	 * 
-	 * @param cpuUtilization float holding cpu utilization
+	 * @param cpuUtilization float holding CPU utilization
 	 */
 	public void setCpuUtilization(float cpuUtilization) {
 		this.cpuUtilization = cpuUtilization;
 	}
 	
 	/**
-	 * get the throughput of the cpu, which is the total
+	 * Get the throughput of the cpu, which is the total
 	 * number of process that have been completed in the scenario.
+	 * 
 	 * @return throughput float the number of processes that complete in the scenario
 	 */
 	public float getThroughput() {
@@ -104,7 +106,7 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * set the throughput of the cpu, which the total number of processes
+	 * Set the throughput of the cpu, which the total number of processes
 	 * that have been completed during the scenario.
 	 * @param throughput float containing the number of processes that
 	 * complete during the scenario.
@@ -137,7 +139,6 @@ public abstract class Scheduler {
 		this.avgWaitTime = avgWaitTime;
 	}
 	
-	
 	/**
 	 * Get the average response time for the scenario. Compute the
 	 * response time for a process by measuring the time from when the process
@@ -165,7 +166,7 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * get the current simulation mode. Should be either 0 for "manual" or 1 for "automatic".
+	 * Get the current simulation mode. Should be either 0 for "manual" or 1 for "automatic".
 	 * 
 	 * @return simulationMode - int the current simulation mode of the scheduler.
 	 */
@@ -182,12 +183,19 @@ public abstract class Scheduler {
 		this.simulationMode = simulationMode;
 	}
 	
+	public float getSimulationTime() {
+		return this.simulationTime;
+	}
+	
+	public void setSimulationTime(float simulationTime) {
+		this.simulationTime = simulationTime;
+	}
 	
 	/**
-	 * Get the current length of the quantum time slice - used for the Round-
+	 * Set the current length of the quantum time slice - used for the Round-
 	 * Robin model.
 	 * 
-	 * @return int the length of the current quantum time slice.
+	 * @param quatumTimeSlice - int the length of the quantum time slice.
 	 */
 	public int getQuantumTimeSlice() {
 		return this.quantumTimeSlice;
@@ -197,14 +205,14 @@ public abstract class Scheduler {
 	 * Set the current length of the quantum time slice - used for the Round-
 	 * Robin model.
 	 * 
-	 * @param quatumTimeSlice int the length of the current quantum time slice.
+	 * @param quatumTimeSlice - int the length of the quantum time slice.
 	 */
 	public void setQuantumTimeSlice(int quantumTimeSlice) {
 		this.quantumTimeSlice = quantumTimeSlice;
 	}
 	
 	/**
-	 * get the current process in the cpu
+	 * Get the current process in the CPU.
 	 * @return Process the current process in the CPU
 	 */
 	public Process getCurrentCPUProcess() {
@@ -212,24 +220,24 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * set the current process in the cpu
-	 * @param currentCPUProcess the Process to set to the current cpu process.
+	 * set the current process in the CPU.
+	 * @param currentCPUProcess the Process to set to the current CPU process.
 	 */
 	public void setCurrentCPUProcess(Process currentCPUProcess) {
 		this.currentCPUProcess = currentCPUProcess;
 	}
 	
 	/**
-	 * Get the current process using I/O
+	 * Get the current process using I/O.
 	 * 
-	 * @return Proccess - the current process using I/O.
+	 * @return Process - the current process using I/O.
 	 */
 	public Process getCurrentIOProcess() {
 		return this.currentIOProcess;
 	}
 	
 	/**
-	 * Set the current process using I/O
+	 * Set the current process using I/O.
 	 * @param currentIOProcess Process the current process using I/O.
 	 */
 	public void setCurrentIOProcess(Process currentIOProcess) {
@@ -256,7 +264,7 @@ public abstract class Scheduler {
 	
 	/**
 	 * Get the readyQueue for this scenario, the queue of processes ready 
-	 * to use the cpu.
+	 * to use the CPU.
 	 * 
 	 * @return Queue<Process> the queue of processes in the ready que
 	 */
@@ -336,8 +344,8 @@ public abstract class Scheduler {
 		this.terminatedProcesses = terminatedProcesses;
 	}
 	
-	// Methods
 	
+	// Methods
 	/**
 	 * Increment through the jobQueue of processes that have been read by the
 	 * scenario reader. if the the arrival time is the same as the system time, set the 
@@ -356,7 +364,7 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * Set the process state to READ and add the process to the readyQueue
+	 * Set the process state to READu and add the process to the readyQueue
 	 * 
 	 * @param p Process to add to the readyQueue.
 	 */
@@ -381,11 +389,12 @@ public abstract class Scheduler {
 	/**
 	 * Set the process state to "WAITING", update the IO burst cycle,
 	 * add the process to the ioWaitQueue, then check for processes waiting
-	 * for IO in the ioWaitQuee and set the next process to the currentIOProcess
+	 * for IO in the ioWaitQuee and set the next process to the currentIOProcess.
+	 * 
 	 * @param p Process to go into ioWaitQueue
 	 */
 	public void addToIoWaitQueue(Process p) {
-		p.isWaiting();													// Set process state to WAITING.
+		p.isWaiting();														// Set process state to WAITING.
 		p.setRemainingBursts(p.getIoBurstList().get(p.getBurstCycle()));	// Set num. of I/O bursts to next I/O burst cycle.
 		this.ioWaitQueue.add(p);
 		this.addToIO();
@@ -400,20 +409,88 @@ public abstract class Scheduler {
 	public void addToIO() {
 		if (this.currentIOProcess == null && !this.ioWaitQueue.isEmpty()) {
 			this.currentIOProcess = ioWaitQueue.poll();
-			this.currentIOProcess.isRunning();		// Set process state to RUNNING.
 		}
 	}
 	
 	/**
 	 * Checks to see if there is a process in the CPU. If so,
 	 * it executes the simulators executeCPU(), if there is no
-	 * process in the the CPU, it executes the scenarios executeIO().
+	 * process in the the CPU, it apply executeIO().
 	 */
 	public void executeBursts() {
 		if (this.currentCPUProcess != null) {
 			this.executeCPU();
 		} else {
 			this.executeIO();
+		}
+	}
+	
+	/**
+	 * Executes CPU bursts specific to the scenario.
+	 * - Decrement the number of bursts left in the CPU burst length.
+	 * - Print the number of CPU bursts left in this cycle for this process.
+	 * - Apply the executeIO method.
+	 * - If the current burst is 0, either send the process to the IO waiting queue
+	 *   or terminate the process.
+	 */
+	public void executeCPU() {
+		this.currentCPUProcess.decrementRemainingBursts();
+		
+		// Output current burst of cycle.
+		System.out.println("CPU burst: " + (this.currentCPUProcess.getCpuBurstList().get(this.currentCPUProcess.getBurstCycle()) - this.currentCPUProcess.getRemainingBursts())
+							+ " of " + this.currentCPUProcess.getCpuBurstList().get(this.currentCPUProcess.getBurstCycle()));
+		
+		this.executeIO();
+		
+		// If current burst reaches 0 and there are more burst cycles to go, move Process to I/O wait queue.
+		// Else, if current burst reaches 0 and there are NO MORE burst cycles to go, Process is finished.
+		if (this.currentCPUProcess.getRemainingBursts() == 0 && (this.currentCPUProcess.getBurstCycle() < currentCPUProcess.getCpuBurstList().size() - 1)) {
+			this.addToIoWaitQueue(this.currentCPUProcess);				// Add process to I/O wait queue.
+			this.currentCPUProcess = null;
+		} else if (this.currentCPUProcess.getRemainingBursts() == 0 && (this.currentCPUProcess.getBurstCycle() == currentCPUProcess.getCpuBurstList().size() - 1)) {
+			this.currentCPUProcess.isDone();							// Set process state to NULL.
+			this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set finish time to system timer.
+			this.terminatedProcesses.add(this.currentCPUProcess);		// Add to terminated processes. 
+			
+			System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
+			this.currentCPUProcess = null;
+		}
+	}
+	
+	/**
+	 * Executes I/O bursts specific to the scenario.
+	 * If there is a current IO Process, decrement the remaining time in it's current burst.
+	 * - Print the number of IO bursts remaining.
+	 * - Increment all wait times for all applicable processes by applying the 
+	 *   incrementWaitTimes() and incrementIoWaitTimes() methods.
+	 * - If that was the last of the I/O bursts in this I/O burst cycle...
+	 *   - Increment the burst cycle to get next index of both cpuBurstList and ioBurstList.
+	 *   - Update the remaining bursts to value in next index of cpuBurstList.
+	 *   - Add this process to the ready queue.
+	 *   - Remove this process from the IO queue.
+	 * Otherwise, apply incrementWaitTimes() and incrementIoWaitTimes() methods.
+	 */
+	public void executeIO() {
+		if (this.currentIOProcess != null) {
+			this.currentIOProcess.decrementRemainingBursts();			// Decrement current burst in the cycle.
+			
+			// Output current burst of cycle.
+			System.out.println("I/O burst: " + (this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()) - this.currentIOProcess.getRemainingBursts())
+								+ " of " + this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()));
+			
+			this.incrementWaitTimes();
+			this.incrementIoWaitTimes();
+			
+			if (this.currentIOProcess.getRemainingBursts() == 0) {		// If this was the last burst of the cycle...
+				this.currentIOProcess.incrementBurstCycle();			// Set next burst cycle and reset current burst.
+				this.currentIOProcess.setRemainingBursts(this.currentIOProcess.getCpuBurstList().get(
+						this.currentIOProcess.getBurstCycle()));
+				this.addToReadyQueue(this.currentIOProcess);			// Move process to ready queue.
+				this.currentIOProcess = null;
+			}
+		} else {
+			this.incrementWaitTimes();
+			this.incrementIoWaitTimes();
 		}
 	}
 	
@@ -429,10 +506,16 @@ public abstract class Scheduler {
 	 * the value of the process waitTime.
 	 */
 	public void incrementWaitTimes() {
-		for (Process p: readyQueue ) {
-			if (this.getSystemTimer() > p.getArrivalTime() + 1) {
+		for (Process p: this.readyQueue) {
+			if (this.getSystemTimer() > p.getArrivalTime()) {
 				p.incrementProcessWaitTime();
 			}
+		}
+		for (Process p: this.ioWaitQueue) {
+			p.incrementProcessWaitTime();
+		}
+		if (this.currentIOProcess != null) {
+			this.currentIOProcess.incrementProcessWaitTime();
 		}
 		
 	}
@@ -444,24 +527,14 @@ public abstract class Scheduler {
 	public void incrementIoWaitTimes() {
 		for (Process p: ioWaitQueue ) {
 			p.incrementProcessIoWaitTime();
-			p.incrementProcessWaitTime();
+		}
+		if (this.currentIOProcess != null) {
+			this.currentIOProcess.incrementProcessIoWaitTime();
 		}
 	}
 	
-	/**
-	 * Runs the cpu use pattern specific to the scenario. Not
-	 * implemented here because Scheduler is an abstract class,
-	 * and each scenario will utilize the CPU differently.
-	 */
-	public abstract void executeCPU();
 	
-	/**
-	 * runs the IO use pattern specific to the scenario. Not
-	 * implemented here because Scheduler is an abstract class,
-	 * and each scenario will utilize the CPU differently.
-	 */
-	public abstract void executeIO();
-	
+	// Abstract Methods
 	/**
 	 * Sorts the readyQueue for the specific scenario. Not implemented
 	 * here because Scheduler is an abstract class, and each scenario

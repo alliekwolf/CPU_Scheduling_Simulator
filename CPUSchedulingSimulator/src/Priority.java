@@ -5,6 +5,16 @@ import java.util.LinkedList;
 
 /**
  * 
+ * Child class of Scheduler, implements a scheduling 
+ * scenario based on the First Come, First Served model. Process
+ * That arrive first are put in the CPU until the complete, and then
+ * the next arrival is put in the CPU. If a process arrives while another
+ * process is running, it is put in the readyQueue. When a process has an 
+ * IO burst, it is put in the ioWaitQue, and the next process in the
+ * readyQueue becomes the current CPU process. When IO opens up, the 
+ * head of the ioWaitQue becomes the current IO process until it finishes, at
+ * which point it goes back in the readyQueue for the CPU.
+ * 
  * @author Brian Steele
  * @author Cole Walsh
  * @author Allie Wolf
@@ -13,12 +23,16 @@ import java.util.LinkedList;
 public class Priority extends Scheduler implements Comparator<Process> {
 	
 	// Constructor
+	/**
+	 * Default constructor. 
+	 * Inherits all data members from the Scheduler abstract class.
+	 */
 	public Priority() {
 		super();
 	}
 	
-	// Scheduler Class Methods
 	
+	// Scheduler Class Methods
 	@Override
 	public void executeCPU() {
 		this.currentCPUProcess.decrementRemainingBursts();
@@ -41,25 +55,6 @@ public class Priority extends Scheduler implements Comparator<Process> {
 			
 			System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
 			this.currentCPUProcess = null;
-		}
-	}
-	
-	@Override
-	public void executeIO() {
-		if (this.currentIOProcess != null) {
-			this.currentIOProcess.decrementRemainingBursts();			// Decrement current burst in the cycle.
-			
-			// Output current burst of cycle.
-			System.out.println("I/O burst: " + (this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()) - this.currentIOProcess.getRemainingBursts())
-								+ " of " + this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()));
-			
-			if (this.currentIOProcess.getRemainingBursts() == 0) {		// If this was the last burst of the cycle...
-				this.currentIOProcess.incrementBurstCycle();		// Set next burst cycle and reset current burst.
-				this.currentIOProcess.setRemainingBursts(this.currentIOProcess.getCpuBurstList().get(
-						this.currentIOProcess.getBurstCycle()));
-				this.addToReadyQueue(this.currentIOProcess);		// Move process to ready queue.
-				this.currentIOProcess = null;
-			}
 		}
 	}
 	

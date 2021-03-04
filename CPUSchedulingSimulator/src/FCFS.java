@@ -1,15 +1,13 @@
 
 /**
- * Child class of Scheduler, implements a scheduling 
- * scenario based on the First Come, First Served model. Process
- * That arrive first are put in the CPU until the complete, and then
- * the next arrival is put in the CPU. If a process arrives while another
- * process is running, it is put in the readyQueue. When a process has an 
- * IO burst, it is put in the ioWaitQue, and the next process in the
- * readyQueue becomes the current CPU process. When IO opens up, the 
- * head of the ioWaitQue becomes the current IO process until it finishes, at
- * which point it goes back in the readyQueue for the CPU.
  * 
+ * Child class of Scheduler, implements the First Come, First Served scheduling algorithm. 
+ * The process that arrives first is put in the CPU and executes until the burst cycle 
+ * completion, and the the next arrival is put in the CPU. If a process arrives while another
+ * process is running, it is put in the readyQueue. When a process has an I/O burst, it is put 
+ * in the ioWaitQue, and the next process in the readyQueue becomes the current CPU process. 
+ * If there is no process running I/O, the head of the ioWaitQue becomes the current IO process 
+ * until I/O completion, at which point it goes back in the readyQueue and waits for the CPU.
  * 
  * @author Brian Steele
  * @author Cole Walsh
@@ -20,15 +18,15 @@ public class FCFS extends Scheduler {
 
 	// Constructors
 	/**
-	 * 
-	 * Default constructor
+	 * Default constructor, 
+	 * Inherits all data members from the Scheduler abstract class.
 	 */
 	public FCFS() {
 		super();
 	}
 	
-	// Scheduler Class Methods
 	
+	// Scheduler Class Methods
 	@Override
 	/**
 	 * Execute the CPU according to the First Come, First Served scenario.
@@ -52,7 +50,7 @@ public class FCFS extends Scheduler {
 			this.addToIoWaitQueue(this.currentCPUProcess);				// Add process to I/O wait queue.
 			this.currentCPUProcess = null;
 		} else if (this.currentCPUProcess.getRemainingBursts() == 0 && (this.currentCPUProcess.getBurstCycle() == currentCPUProcess.getCpuBurstList().size() - 1)) {
-			this.currentCPUProcess.isDone();								// Set process state to NULL.
+			this.currentCPUProcess.isDone();							// Set process state to NULL.
 			this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set finish time to system timer.
 			this.terminatedProcesses.add(this.currentCPUProcess);		// Add to terminated processes. 
 			
@@ -61,40 +59,12 @@ public class FCFS extends Scheduler {
 		}
 	}
 	
-	@Override
-	/**
-	 * If there is a current IO Process, decrement the remaining time in it's current burst.
-	 * - print the number of IO bursts remaining.
-	 * - If that was the last of the io bursts in this io burst cycle...
-	 * - increment the index of ioburstcycles
-	 * - update the values of cpuburstcycles and ioburstcycles
-	 * - add this process to the ready queue
-	 * - remove this process from the IO queue
-	 */
-	public void executeIO() {
-		if (this.currentIOProcess != null) {
-			this.currentIOProcess.decrementRemainingBursts();			// Decrement current burst in the cycle.
-			
-			// Output current burst of cycle.
-			System.out.println("I/O burst: " + (this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()) - this.currentIOProcess.getRemainingBursts())
-								+ " of " + this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()));
-			
-			if (this.currentIOProcess.getRemainingBursts() == 0) {		// If this was the last burst of the cycle...
-				this.currentIOProcess.incrementBurstCycle();		// Set next burst cycle and reset current burst.
-				this.currentIOProcess.setRemainingBursts(this.currentIOProcess.getCpuBurstList().get(
-						this.currentIOProcess.getBurstCycle()));
-				this.addToReadyQueue(this.currentIOProcess);		// Move process to ready queue.
-				this.currentIOProcess = null;
-			}
-		}
-	}
-	
 	/**
 	 * No need to sort these, as the FCFS model is sorted by arrival time.
 	 */
 	@Override
 	public void sort() {
-		
+		// Nothing to do.
 	}
 	
 

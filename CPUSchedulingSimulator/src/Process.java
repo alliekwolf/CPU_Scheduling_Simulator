@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-
-
 /**
  * 
  * The Process class simulates a process control block for a CPU
@@ -13,6 +10,9 @@ import java.util.ArrayList;
  * @author Allie Wolf
  *
  */
+
+import java.util.ArrayList;
+
 public class Process {
 	
 	// Data Members
@@ -55,8 +55,6 @@ public class Process {
 		this.burstCycle = 0;
 		this.remainingBursts = 0;
 		this.isWaiting();
-		this.waitTime = 0;
-		this.ioWaitTime = 0;
 	}
 	
 	
@@ -216,20 +214,10 @@ public class Process {
 		return burstCycle;
 	}
 	
-	/**
-	 * Get the number of CPU bursts remaining in the process.
-	 * 
-	 * @return remainingBursts - int the number of CPU bursts remaining in the process.
-	 */
 	public int getRemainingBursts() {
 		return remainingBursts;
 	}
 	
-	/**
-	 * Set the number of CPU bursts remaining in the process.
-	 * 
-	 * @param remainingBursts int the number of CPU bursts remaining in the process.
-	 */
 	public void setRemainingBursts(int remainingBursts) {
 		this.remainingBursts = remainingBursts;
 	}
@@ -252,7 +240,7 @@ public class Process {
 	
 	// ioBurstArray
 	/**
-	 * gets an arrayList of Integers that contain the IO bursts of a Process.
+	 * Gets an arrayList of Integers that contain the IO bursts of a Process.
 	 * @return ioBurstList ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getIoBurstList() {
@@ -266,26 +254,6 @@ public class Process {
 	public void setIoBurstList(ArrayList<Integer> ioBurstList) {
 		this.ioBurstList = ioBurstList;
 	}
-	
-	/**
-	 * Increment the wait time of the process, for use 
-	 * in determining average wait time in the scheduler
-	 */
-	public void incrementProcessWaitTime() {
-		this.waitTime++;
-		System.out.println(this.getId() + " wait time: " + this.getWaitTime() );
-	}
-	
-	/**
-	 * Increment the IO wait time of the process, for use in 
-	 * determining the average IO wait time in the scheduler.
-	 */
-	public void incrementProcessIoWaitTime() {
-		this.ioWaitTime++;
-		System.out.println(this.getId() + " io wait time: " + this.getIoWaitTime() );
-	}
-	
-	
 	
 	// toString
 	/**
@@ -329,6 +297,24 @@ public class Process {
 	 */
 	public void isDone() {
 		this.state = null;
+	}
+	
+	/**
+	 * Increment the wait time of the process, for use 
+	 * in determining average wait time in the scheduler
+	 */
+	public void incrementProcessWaitTime() {
+		this.waitTime++;
+		System.out.println(this.getId() + " wait time: " + this.getWaitTime() );
+	}
+	
+	/**
+	 * Increment the IO wait time of the process, for use in 
+	 * determining the average IO wait time in the scheduler.
+	 */
+	public void incrementProcessIoWaitTime() {
+		this.ioWaitTime++;
+		System.out.println(this.getId() + " io wait time: " + this.getIoWaitTime() );
 	}
 	
 	/**

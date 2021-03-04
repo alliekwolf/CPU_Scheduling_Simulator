@@ -13,6 +13,10 @@ import java.util.LinkedList;
 public class SJF extends Scheduler implements Comparator<Process> {
 	
 	// Constructor
+	/**
+	 * Default constructor. 
+	 * Inherits all data members from the Scheduler abstract class.
+	 */
 	public SJF() {
 		super();
 	}
@@ -41,25 +45,6 @@ public class SJF extends Scheduler implements Comparator<Process> {
 			
 			System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
 			this.currentCPUProcess = null;
-		}
-	}
-
-	@Override
-	public void executeIO() {
-		if (this.currentIOProcess != null) {
-			this.currentIOProcess.decrementRemainingBursts();			// Decrement current burst in the cycle.
-			
-			// Output current burst of cycle.
-			System.out.println("I/O burst: " + (this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()) - this.currentIOProcess.getRemainingBursts())
-								+ " of " + this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()));
-			
-			if (this.currentIOProcess.getRemainingBursts() == 0) {		// If this was the last burst of the cycle...
-				this.currentIOProcess.incrementBurstCycle();		// Set next burst cycle and reset current burst.
-				this.currentIOProcess.setRemainingBursts(this.currentIOProcess.getCpuBurstList().get(
-						this.currentIOProcess.getBurstCycle()));
-				this.addToReadyQueue(this.currentIOProcess);		// Move process to ready queue.
-				this.currentIOProcess = null;
-			}
 		}
 	}
 	

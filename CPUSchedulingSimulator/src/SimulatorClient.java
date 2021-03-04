@@ -8,10 +8,9 @@ import javax.swing.JFileChooser;
 
 /**
  * 
- * The SimulatorClient contains the main() for the CPUSchedulingSimulator project.
- * Start the program here. 
- * 
- * The program reads in a 
+ * The SimulatorClient program is currently being used to test all of the classes in the 
+ * CPUSchedulingSimulator Project. It is currently a console-based program, with plans that 
+ * it will be converted to a GUI-based program once all classes and methods have been tested. 
  * 
  * @author Brian Steele
  * @author Cole Walsh
@@ -23,20 +22,16 @@ public class SimulatorClient {
 	public static Scanner console = new Scanner(System.in);
 	public static Scheduler scheduler;
 	
-	
-	
 	public static void main(String[] args) throws InterruptedException {
 		
+		System.out.println("Select a scenario file to run.");
 		
-		System.out.println("Select a scenario file to run");
-		
-		//open a scenario file to run.
+		// open a scenario file to run.
 		// https://www.codejava.net/java-se/swing/show-simple-open-file-dialog-using-jfilechooser
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setCurrentDirectory(new File("."));
 		int result = fileChooser.showOpenDialog(null);
 		File selectedFile = fileChooser.getSelectedFile();
-		
 		
 		
 		// variables
@@ -52,6 +47,7 @@ public class SimulatorClient {
 			e.printStackTrace();
 		}
 		
+		
 		// Run scheduling simulator.
 		runScheduler(scheduler);
 		
@@ -65,7 +61,6 @@ public class SimulatorClient {
 	 * schedule types extend the original Scheduler abstract class.
 	 * @param newScheduler Schedule object
 	 */
-	
 	public static void createScheduler(Scheduler newScheduler) {
 		scheduler = newScheduler;
 	}
@@ -77,16 +72,13 @@ public class SimulatorClient {
 	 */
 	public static void mainMenu(Scheduler scheduler) {
 		int userInput = -1;
-		
-		// print the menu
 		System.out.println("\n-- CPU Scheduling Simulator --\n");
 		System.out.println("Choose a scheduling algorithm:\n\n" 
 							+ " 1 -- First Come, First Serve\n" 
 							+ " 2 -- Shortest Job First\n" 
 							+ " 3 -- Priority\n" 
 							+ " 4 -- Round Robin\n");
-		
-		// handle input issues
+		// Handle input exceptions.
 		while (userInput < 1 || userInput > 4) {
 			System.out.print("Selection: ");
 			try {
@@ -100,8 +92,8 @@ public class SimulatorClient {
 				console.nextLine();
 			}
 			
-			// sort the choices and create a scheduler type based
-			// on the original Scheduler abstract class...
+			// Create a set the Scheduler object to a specific Scheduler abstract class
+			// based on the user's selected algorithm.
 			switch (userInput) {
 				case 1: createScheduler(new FCFS());
 					break;
@@ -110,9 +102,8 @@ public class SimulatorClient {
 				case 3: createScheduler(new Priority());
 					break;
 				case 4:
-					// handle the creation of a quantum time slice for 
-					// round robin.
 					int quantum = -1;
+					// Handle input exceptions for setting the quantum time slice.
 					while (quantum <= 0) {
 						System.out.print("Enter quantum time slice: ");
 						try {
@@ -152,8 +143,7 @@ public class SimulatorClient {
 	 */
 	private static void runScheduler(Scheduler scheduler) throws InterruptedException {
 		
-		
-		// print a title indicating the scheduler type...
+		// Print out the name of selected Scheduler.
 		String sName = scheduler.getClass().getName();
 		switch (scheduler.getClass().getName()) {
 			case "FCFS": sName = "First Come, First Serve";
@@ -164,51 +154,49 @@ public class SimulatorClient {
 				break;
 			case "RoundRobin": sName = "Round Robin";
 		}
-		
 		System.out.println("\n-- " + sName + " Simulator --");
 		
-		
-		// The while loop is where all the magic happens...
-		
-		boolean flag = false;
+		// The while loop that runs the simulator, incrementing the system timer and 
+		// executing bursts as it runs.
+		boolean flag = false;		// A flag for continuing and exiting the while loop.
+		System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
 		while (flag == false) {
-			System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
 			scheduler.addNewProcess();
 			scheduler.addToCPU();
 			scheduler.addToIO();
 			
-			
 			// Output which processes are in which queues, the CPU, and I/O.
 			printSchedulerOutput(scheduler);
 			
-			// Execute next cycle of bursts (both CPU and I/O, if applicable).
-			// Then, increment the system timer.
-			scheduler.executeBursts();
-			scheduler.incrementSystemTimer();
-			
-			scheduler.incrementWaitTimes();
-			scheduler.incrementIoWaitTimes();
+			scheduler.executeBursts();				// Execute next cycle of bursts (both CPU and I/O, if applicable).
+//			scheduler.incrementWaitTimes();			// Increment CPU wait times.
+//			scheduler.incrementIoWaitTimes();		// Increment I/O wait times.
 			
 			// If all queues are empty, and no processes are running, terminate execution.
+			// Otherwise, continue loop.
 			if (scheduler.getJobQueue().isEmpty() &&
 				scheduler.getReadyQueue().isEmpty() &&
 				scheduler.getIoWaitQueue().isEmpty() &&
 				scheduler.getCurrentCPUProcess() == null &&
 				scheduler.getCurrentIOProcess() == null) {
 				flag = true;
+			} else {
+				scheduler.incrementSystemTimer();		// Increment the system timer.
+				Thread.sleep(100);
+				System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
+				
 			}
-			
-			Thread.sleep(400);
-			
 			
 		}
 		
+		// Output results of simulation.
 		System.out.println("\n** ALL JOBS FINISHED. **");
 		String result = "";
 		for (Process p: scheduler.getTerminatedProcesses()) {
-			result += " - " + p.getId() + " Finish Time: " + p.getFinishTime() 
-										+ "\tWait Time: " + p.getWaitTime() 
-										+ "\tIO Wait Time: " + p.getIoWaitTime() + "\n";
+			result += " - " + p.getId() + "\n"
+						+ "   Finish Time: " + p.getFinishTime() + "\n"
+						+ "   Wait Time: " + p.getWaitTime() + "\n"
+						+ "   I/O Wait Time: " + p.getIoWaitTime() + "\n";
 		}
 		System.out.println(result);
 	}

@@ -12,15 +12,26 @@ public class RoundRobin extends Scheduler {
 	private int endOfSlice;
 	
 	// Constructor
+	/**
+	 * Inherits all data members from the Scheduler abstract class, and initializes 
+	 * its own data member, endOfSlice, to 0 for handling the quantum time slice 
+	 * necessary for the Round Robin scheduling algorithm.
+	 * 
+	 * @param quantumTimeSlice - int the length of the quantum time slice.
+	 */
 	public RoundRobin(int quantumTimeSlice) {
 		super();
 		this.quantumTimeSlice = quantumTimeSlice;
 		this.endOfSlice = 0;
 	}
 	
-	// Scheduler Class Methods
 	
+	// Scheduler Class Methods
 	@Override
+	/**
+	 * Overrides the Scheduler class addToCPU() method to handle the quantum time slice
+	 * for the Round Robin algorithm.
+	 */
 	public void addToCPU() {
 		if (this.currentCPUProcess == null && !this.readyQueue.isEmpty()) {
 			this.currentCPUProcess = this.readyQueue.poll();
@@ -31,6 +42,10 @@ public class RoundRobin extends Scheduler {
 	}
 	
 	@Override
+	/**
+	 * Overrides the Scheduler class executeCPU() method to handle the quantum time slice
+	 * for the Round Robin algorithm.
+	 */
 	public void executeCPU() {
 		this.currentCPUProcess.decrementRemainingBursts();
 		
@@ -59,31 +74,19 @@ public class RoundRobin extends Scheduler {
 	}
 	
 	@Override
-	public void executeIO() {
-		if (this.currentIOProcess != null) {
-			this.currentIOProcess.decrementRemainingBursts();			// Decrement current burst in the cycle.
-			
-			// Output current burst of cycle.
-			System.out.println("I/O burst: " + (this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()) - this.currentIOProcess.getRemainingBursts())
-								+ " of " + this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()));
-			
-			if (this.currentIOProcess.getRemainingBursts() == 0) {		// If this was the last burst of the cycle...
-				this.currentIOProcess.incrementBurstCycle();		// Set next burst cycle and reset current burst.
-				this.currentIOProcess.setRemainingBursts(this.currentIOProcess.getCpuBurstList().get(
-						this.currentIOProcess.getBurstCycle()));
-				this.addToReadyQueue(this.currentIOProcess);		// Move process to ready queue.
-				this.currentIOProcess = null;
-			}
-		}
+	/**
+	 * No need to sort these, as this Round Robin model is non-preemptive, so process are
+	 * sorted by arrival time.
+	 */
+	public void sort() {
+		// Nothing to do.
 	}
 	
-	@Override
-	public void sort() {
-		
-	}
 	
 	// Additional Methods
-	
+	/**
+	 * Sets the endOfSlice data member necessary for handling the quantum time slice.
+	 */
 	private void setEndOfSlice() {
 		if (this.currentCPUProcess.getRemainingBursts() > this.quantumTimeSlice) {
 			this.endOfSlice = this.currentCPUProcess.getRemainingBursts() - this.quantumTimeSlice;
