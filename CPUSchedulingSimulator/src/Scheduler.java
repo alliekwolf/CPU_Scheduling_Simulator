@@ -444,7 +444,6 @@ public abstract class Scheduler {
 	public void incrementIoWaitTimes() {
 		for (Process p: ioWaitQueue ) {
 			p.incrementProcessIoWaitTime();
-			System.out.println("--------------");
 			p.incrementProcessWaitTime();
 		}
 	}

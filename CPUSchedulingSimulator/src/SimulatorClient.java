@@ -206,7 +206,9 @@ public class SimulatorClient {
 		System.out.println("\n** ALL JOBS FINISHED. **");
 		String result = "";
 		for (Process p: scheduler.getTerminatedProcesses()) {
-			result += " - " + p.getId() + " Finish Time: " + p.getFinishTime() + "\n";
+			result += " - " + p.getId() + " Finish Time: " + p.getFinishTime() 
+										+ "\tWait Time: " + p.getWaitTime() 
+										+ "\tIO Wait Time: " + p.getIoWaitTime() + "\n";
 		}
 		System.out.println(result);
 	}
