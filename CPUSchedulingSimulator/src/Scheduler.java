@@ -356,7 +356,7 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * Set the process state to READu and add the process to the readyQueue
+	 * Set the process state to READ and add the process to the readyQueue
 	 * 
 	 * @param p Process to add to the readyQueue.
 	 */
@@ -422,6 +422,31 @@ public abstract class Scheduler {
 	 */
 	public void incrementSystemTimer() {
 		this.systemTimer += 1;
+	}
+	
+	/**
+	 * Iterate through processes in readyQueue and add one to
+	 * the value of the process waitTime.
+	 */
+	public void incrementWaitTimes() {
+		for (Process p: readyQueue ) {
+			if (this.getSystemTimer() > p.getArrivalTime() + 1) {
+				p.incrementProcessWaitTime();
+			}
+		}
+		
+	}
+	
+	/**
+	 * Iterate through the processes in the ioReadyQueue and add one
+	 * to the value of the process ioWaitTime
+	 */
+	public void incrementIoWaitTimes() {
+		for (Process p: ioWaitQueue ) {
+			p.incrementProcessIoWaitTime();
+			System.out.println("--------------");
+			p.incrementProcessWaitTime();
+		}
 	}
 	
 	/**

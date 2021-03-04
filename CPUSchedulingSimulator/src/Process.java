@@ -55,6 +55,8 @@ public class Process {
 		this.burstCycle = 0;
 		this.remainingBursts = 0;
 		this.isWaiting();
+		this.waitTime = 0;
+		this.ioWaitTime = 0;
 	}
 	
 	
@@ -264,6 +266,26 @@ public class Process {
 	public void setIoBurstList(ArrayList<Integer> ioBurstList) {
 		this.ioBurstList = ioBurstList;
 	}
+	
+	/**
+	 * Increment the wait time of the process, for use 
+	 * in determining average wait time in the scheduler
+	 */
+	public void incrementProcessWaitTime() {
+		this.waitTime++;
+		System.out.println(this.getId() + " wait time: " + this.getWaitTime() );
+	}
+	
+	/**
+	 * Increment the IO wait time of the process, for use in 
+	 * determining the average IO wait time in the scheduler.
+	 */
+	public void incrementProcessIoWaitTime() {
+		this.ioWaitTime++;
+		System.out.println(this.getId() + " io wait time: " + this.getIoWaitTime() );
+	}
+	
+	
 	
 	// toString
 	/**

@@ -177,6 +177,7 @@ public class SimulatorClient {
 			scheduler.addToCPU();
 			scheduler.addToIO();
 			
+			
 			// Output which processes are in which queues, the CPU, and I/O.
 			printSchedulerOutput(scheduler);
 			
@@ -184,6 +185,9 @@ public class SimulatorClient {
 			// Then, increment the system timer.
 			scheduler.executeBursts();
 			scheduler.incrementSystemTimer();
+			
+			scheduler.incrementWaitTimes();
+			scheduler.incrementIoWaitTimes();
 			
 			// If all queues are empty, and no processes are running, terminate execution.
 			if (scheduler.getJobQueue().isEmpty() &&
@@ -195,6 +199,8 @@ public class SimulatorClient {
 			}
 			
 			Thread.sleep(400);
+			
+			
 		}
 		
 		System.out.println("\n** ALL JOBS FINISHED. **");
