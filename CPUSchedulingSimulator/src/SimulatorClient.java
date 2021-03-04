@@ -198,6 +198,7 @@ public class SimulatorClient {
 						+ "   Wait Time: " + p.getWaitTime() + "\n"
 						+ "   I/O Wait Time: " + p.getIoWaitTime() + "\n";
 		}
+		result += "Average Wait Time: " + scheduler.computeAverageWaitTime();
 		System.out.println(result);
 	}
 

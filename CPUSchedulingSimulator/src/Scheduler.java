@@ -533,6 +533,18 @@ public abstract class Scheduler {
 		}
 	}
 	
+	public float computeAverageWaitTime() {
+		float sum = 0;
+		float averageWaitTime = 0;
+		float numProcesses = this.terminatedProcesses.size();
+		
+		for (Process p: this.terminatedProcesses) {
+			sum += p.getWaitTime();
+		}
+		averageWaitTime = sum/numProcesses;
+		
+		return averageWaitTime;
+	}
 	
 	// Abstract Methods
 	/**
