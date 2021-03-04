@@ -179,6 +179,7 @@ public class SimulatorClient {
 				scheduler.getIoWaitQueue().isEmpty() &&
 				scheduler.getCurrentCPUProcess() == null &&
 				scheduler.getCurrentIOProcess() == null) {
+				scheduler.setSimulationEndTime(scheduler.getSystemTimer());
 				flag = true;
 			} else {
 				scheduler.incrementSystemTimer();		// Increment the system timer.
@@ -198,7 +199,8 @@ public class SimulatorClient {
 						+ "   Wait Time: " + p.getWaitTime() + "\n"
 						+ "   I/O Wait Time: " + p.getIoWaitTime() + "\n";
 		}
-		result += "Average Wait Time: " + scheduler.computeAverageWaitTime();
+		result += "Average Wait Time: " + scheduler.computeAverageWaitTime() + "\n";
+		result += "CPU utilization: " + scheduler.computeCpuUtilization() + "%\n";
 		System.out.println(result);
 	}
 

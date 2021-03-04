@@ -24,6 +24,7 @@ public abstract class Scheduler {
 	protected float avgResponseTime;
 	protected int simulationMode;
 	protected float simulationTime;
+	protected int simulationEndTime;
 	protected int quantumTimeSlice;
 	protected Process currentCPUProcess;
 	protected Process currentIOProcess;
@@ -183,12 +184,29 @@ public abstract class Scheduler {
 		this.simulationMode = simulationMode;
 	}
 	
-	public float getSimulationTime() {
-		return this.simulationTime;
-	}
+//	public float getSimulationTime() {
+//		return this.simulationTime;
+//	}
+//	
+//	public void setSimulationTime(float simulationTime) {
+//		this.simulationTime = simulationTime;
+//	}
 	
-	public void setSimulationTime(float simulationTime) {
-		this.simulationTime = simulationTime;
+	/**
+	 * Get the value of the last time slice of the simulation
+	 * run.
+	 * @return simulationEndTime, int, the last time slice of the simulation.
+	 */
+	public int getSimulationEndTime() {
+		return this.simulationEndTime;
+	}
+
+	/**
+	 * set the last time of the simulation run
+	 * @param simulationEndTime int the value of the last time slice of the simulation.
+	 */
+	public void setSimulationEndTime(int simulationEndTime) {
+		this.simulationEndTime = simulationEndTime;
 	}
 	
 	/**
@@ -419,6 +437,7 @@ public abstract class Scheduler {
 	 */
 	public void executeBursts() {
 		if (this.currentCPUProcess != null) {
+			this.incrementCpuUtilization();		//if the cpu is busy, increment cpu utilization...
 			this.executeCPU();
 		} else {
 			this.executeIO();
@@ -533,6 +552,12 @@ public abstract class Scheduler {
 		}
 	}
 	
+	/**
+	 * sum all of the wait times for Processes in the terminatedProcess
+	 * Queue, and divide them by the size of the list to get the average
+	 * wait time for processes in the simulation.
+	 * @return
+	 */
 	public float computeAverageWaitTime() {
 		float sum = 0;
 		float averageWaitTime = 0;
@@ -544,6 +569,17 @@ public abstract class Scheduler {
 		averageWaitTime = sum/numProcesses;
 		
 		return averageWaitTime;
+	}
+	
+	/**
+	 * increase the cpuUtilization by 1.
+	 */
+	public void incrementCpuUtilization() {
+		this.cpuUtilization++;
+	}
+	
+	public float computeCpuUtilization() {
+		return (this.getCpuUtilization()/(float)this.getSimulationEndTime())* 100;
 	}
 	
 	// Abstract Methods
