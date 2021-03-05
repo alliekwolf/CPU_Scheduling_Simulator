@@ -193,11 +193,12 @@ public class SimulatorClient {
 						+ "   Finish Time: " + p.getFinishTime() + "\n"
 						+ "   Turnaround Time: " + p.getTurnaroundTime() + "\n"
 						+ "   Wait Time: " + p.getWaitTime() + "\n"
-						+ "   I/O Wait Time: " + p.getIoWaitTime() + "\n\n";
+						+ "   I/O Wait Time: " + p.getIoWaitTime() + "\n";
 		}
-		result += "Average Wait Time: " + scheduler.getAvgWaitTime() + "\n";
-		result += "CPU Utilization: " + scheduler.getCpuUtilization();
 		System.out.println(result);
+		System.out.printf("Average Wait Time: %.2f%n"
+							+ "CPU Utilization: %.2f%%%n",
+							scheduler.getAvgWaitTime(), (100 * scheduler.getCpuUtilization()));
 	}
 	
 	
