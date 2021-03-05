@@ -334,4 +334,8 @@ public class Process {
 			--this.remainingBursts;
 		}
 	}
+	
+	public void calculateTurnaroundTime() {
+		this.turnaroundTime = this.finishTime - this.arrivalTime;
+	}
 }

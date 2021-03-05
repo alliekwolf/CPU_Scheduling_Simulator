@@ -24,11 +24,10 @@ public abstract class Scheduler {
 	protected float avgResponseTime;
 	protected int simulationMode;
 	protected float simulationTime;
-	protected int simulationEndTime;
+	protected int idleTime;
 	protected int quantumTimeSlice;
 	protected Process currentCPUProcess;
 	protected Process currentIOProcess;
-	protected ScenarioReader sReader;
 	protected Queue<Process> readyQueue;
 	protected Queue<Process> ioWaitQueue;
 	protected ArrayList<Process> jobQueue;
@@ -67,14 +66,6 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * Set the system time.
-	 * @param systemTimer int the new system time.
-	 */
-	public void setSystemTimer(int systemTimer) {
-		this.systemTimer = systemTimer;
-	}
-	
-	/**
 	 * Get the CPU utilization, CPU utilization is the total
 	 * number of system time slices when the CPU is active divided
 	 * by the total number of time slices in the scenario. 
@@ -83,17 +74,6 @@ public abstract class Scheduler {
 	 */
 	public float getCpuUtilization() {
 		return this.cpuUtilization;
-	}
-	
-	/**
-	 * Set the CPU utilization. The CPU utilization is the total
-	 * number of system time slices when the CPU is active divided
-	 * by the total number of time slices in the scenario.
-	 * 
-	 * @param cpuUtilization float holding CPU utilization
-	 */
-	public void setCpuUtilization(float cpuUtilization) {
-		this.cpuUtilization = cpuUtilization;
 	}
 	
 	/**
@@ -126,18 +106,6 @@ public abstract class Scheduler {
 	 */
 	public float getAvgWaitTime() {
 		return this.avgWaitTime;
-	}
-	
-	/**
-	 * Set the average wait time for the processes in the scenario.
-	 * To compute the average wait time, find the time slice when each process in the 
-	 * scenario begins, sum those numbers, and divide the result by the
-	 * total number of processes.
-	 * 
-	 * @param avgWaitTime float the average wait time.
-	 */
-	public void setAvgWaitTime(float avgWaitTime) {
-		this.avgWaitTime = avgWaitTime;
 	}
 	
 	/**
@@ -184,29 +152,12 @@ public abstract class Scheduler {
 		this.simulationMode = simulationMode;
 	}
 	
-//	public float getSimulationTime() {
-//		return this.simulationTime;
-//	}
-//	
-//	public void setSimulationTime(float simulationTime) {
-//		this.simulationTime = simulationTime;
-//	}
-	
-	/**
-	 * Get the value of the last time slice of the simulation
-	 * run.
-	 * @return simulationEndTime, int, the last time slice of the simulation.
-	 */
-	public int getSimulationEndTime() {
-		return this.simulationEndTime;
+	public float getSimulationTime() {
+		return this.simulationTime;
 	}
-
-	/**
-	 * set the last time of the simulation run
-	 * @param simulationEndTime int the value of the last time slice of the simulation.
-	 */
-	public void setSimulationEndTime(int simulationEndTime) {
-		this.simulationEndTime = simulationEndTime;
+	
+	public void setSimulationTime(float simulationTime) {
+		this.simulationTime = simulationTime;
 	}
 	
 	/**
@@ -263,24 +214,6 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * Get the scenario reader object for this scenario.
-	 * 
-	 * @return ScenarioReader the current scenario reader object for this scenario.
-	 */
-	public ScenarioReader getsReader() {
-		return this.sReader;
-	}
-	
-	/**
-	 * Set the scenario reader object for this scenario.
-	 * 
-	 * @param sReader ScenarioReader the scenario reader object for this scenario.
-	 */
-	public void setsReader(ScenarioReader sReader) {
-		this.sReader = sReader;
-	}
-	
-	/**
 	 * Get the readyQueue for this scenario, the queue of processes ready 
 	 * to use the CPU.
 	 * 
@@ -308,16 +241,6 @@ public abstract class Scheduler {
 	 */
 	public Queue<Process> getIoWaitQueue() {
 		return this.ioWaitQueue;
-	}
-	
-	/**
-	 * Set the IO Wait Queue, the queue of processes waiting for IO in this 
-	 * scenario.
-	 * 
-	 * @param ioWaitQueue
-	 */
-	public void setIoWaitQueue(Queue<Process> ioWaitQueue) {
-		this.ioWaitQueue = ioWaitQueue;
 	}
 	
 	/**
@@ -436,12 +359,15 @@ public abstract class Scheduler {
 	 * process in the the CPU, it apply executeIO().
 	 */
 	public void executeBursts() {
+		this.incrementWaitTimes();
+		this.incrementIoWaitTimes();
 		if (this.currentCPUProcess != null) {
-			this.incrementCpuUtilization();		//if the cpu is busy, increment cpu utilization...
 			this.executeCPU();
 		} else {
+			this.idleTime++;
 			this.executeIO();
 		}
+		this.computeCpuUtilization();
 	}
 	
 	/**
@@ -469,7 +395,9 @@ public abstract class Scheduler {
 		} else if (this.currentCPUProcess.getRemainingBursts() == 0 && (this.currentCPUProcess.getBurstCycle() == currentCPUProcess.getCpuBurstList().size() - 1)) {
 			this.currentCPUProcess.isDone();							// Set process state to NULL.
 			this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set finish time to system timer.
-			this.terminatedProcesses.add(this.currentCPUProcess);		// Add to terminated processes. 
+			this.currentCPUProcess.calculateTurnaroundTime();			// Calculate process's turnaround time.
+			this.terminatedProcesses.add(this.currentCPUProcess);		// Add to terminated processes.
+			this.computeAverageWaitTime();								// Compute the avg. wait time of terminated processes.
 			
 			System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
 			this.currentCPUProcess = null;
@@ -480,14 +408,11 @@ public abstract class Scheduler {
 	 * Executes I/O bursts specific to the scenario.
 	 * If there is a current IO Process, decrement the remaining time in it's current burst.
 	 * - Print the number of IO bursts remaining.
-	 * - Increment all wait times for all applicable processes by applying the 
-	 *   incrementWaitTimes() and incrementIoWaitTimes() methods.
 	 * - If that was the last of the I/O bursts in this I/O burst cycle...
 	 *   - Increment the burst cycle to get next index of both cpuBurstList and ioBurstList.
 	 *   - Update the remaining bursts to value in next index of cpuBurstList.
 	 *   - Add this process to the ready queue.
 	 *   - Remove this process from the IO queue.
-	 * Otherwise, apply incrementWaitTimes() and incrementIoWaitTimes() methods.
 	 */
 	public void executeIO() {
 		if (this.currentIOProcess != null) {
@@ -497,9 +422,6 @@ public abstract class Scheduler {
 			System.out.println("I/O burst: " + (this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()) - this.currentIOProcess.getRemainingBursts())
 								+ " of " + this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()));
 			
-			this.incrementWaitTimes();
-			this.incrementIoWaitTimes();
-			
 			if (this.currentIOProcess.getRemainingBursts() == 0) {		// If this was the last burst of the cycle...
 				this.currentIOProcess.incrementBurstCycle();			// Set next burst cycle and reset current burst.
 				this.currentIOProcess.setRemainingBursts(this.currentIOProcess.getCpuBurstList().get(
@@ -507,9 +429,6 @@ public abstract class Scheduler {
 				this.addToReadyQueue(this.currentIOProcess);			// Move process to ready queue.
 				this.currentIOProcess = null;
 			}
-		} else {
-			this.incrementWaitTimes();
-			this.incrementIoWaitTimes();
 		}
 	}
 	
@@ -517,7 +436,7 @@ public abstract class Scheduler {
 	 * Increments the system timer by 1.
 	 */
 	public void incrementSystemTimer() {
-		this.systemTimer += 1;
+		this.systemTimer++;
 	}
 	
 	/**
@@ -530,13 +449,6 @@ public abstract class Scheduler {
 				p.incrementProcessWaitTime();
 			}
 		}
-		for (Process p: this.ioWaitQueue) {
-			p.incrementProcessWaitTime();
-		}
-		if (this.currentIOProcess != null) {
-			this.currentIOProcess.incrementProcessWaitTime();
-		}
-		
 	}
 	
 	/**
@@ -547,40 +459,32 @@ public abstract class Scheduler {
 		for (Process p: ioWaitQueue ) {
 			p.incrementProcessIoWaitTime();
 		}
-		if (this.currentIOProcess != null) {
-			this.currentIOProcess.incrementProcessIoWaitTime();
-		}
 	}
 	
 	/**
-	 * sum all of the wait times for Processes in the terminatedProcess
-	 * Queue, and divide them by the size of the list to get the average
-	 * wait time for processes in the simulation.
-	 * @return
+	 * Sum all of the wait times for Processes in the terminatedProcess Queue, 
+	 * and divide them by the size of the list to get the average wait time for 
+	 * processes in the simulation.
 	 */
-	public float computeAverageWaitTime() {
+	public void computeAverageWaitTime() {
 		float sum = 0;
-		float averageWaitTime = 0;
 		float numProcesses = this.terminatedProcesses.size();
 		
 		for (Process p: this.terminatedProcesses) {
 			sum += p.getWaitTime();
 		}
-		averageWaitTime = sum/numProcesses;
 		
-		return averageWaitTime;
+		this.avgWaitTime = sum / numProcesses;
 	}
 	
 	/**
-	 * increase the cpuUtilization by 1.
+	 * Compute the CPU utilization by taking the total simulation time (system time - idle time) 
+	 * and dividing the result by the total system time.
 	 */
-	public void incrementCpuUtilization() {
-		this.cpuUtilization++;
+	public void computeCpuUtilization() {
+		this.cpuUtilization = (this.systemTimer - this.idleTime) / (float)this.systemTimer;
 	}
 	
-	public float computeCpuUtilization() {
-		return (this.getCpuUtilization()/(float)this.getSimulationEndTime())* 100;
-	}
 	
 	// Abstract Methods
 	/**

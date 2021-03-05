@@ -33,11 +33,11 @@ public class SimulatorClient {
 		int result = fileChooser.showOpenDialog(null);
 		File selectedFile = fileChooser.getSelectedFile();
 		
-		
-		// variables
+		// Create processes from selected file.
 		ScenarioReader sr = new ScenarioReader(selectedFile);
 		
-		// Print simulator menu.
+		// Print simulator menu, where the user will choose a scheduling algorithm, from
+		// which the Scheduler object will be initiated.
 		mainMenu(scheduler);
 		
 		// Load initial job queue with processes created from a text file.
@@ -169,17 +169,11 @@ public class SimulatorClient {
 			printSchedulerOutput(scheduler);
 			
 			scheduler.executeBursts();				// Execute next cycle of bursts (both CPU and I/O, if applicable).
-//			scheduler.incrementWaitTimes();			// Increment CPU wait times.
-//			scheduler.incrementIoWaitTimes();		// Increment I/O wait times.
 			
 			// If all queues are empty, and no processes are running, terminate execution.
 			// Otherwise, continue loop.
-			if (scheduler.getJobQueue().isEmpty() &&
-				scheduler.getReadyQueue().isEmpty() &&
-				scheduler.getIoWaitQueue().isEmpty() &&
-				scheduler.getCurrentCPUProcess() == null &&
-				scheduler.getCurrentIOProcess() == null) {
-				scheduler.setSimulationEndTime(scheduler.getSystemTimer());
+			if (scheduler.getJobQueue().isEmpty() && scheduler.getReadyQueue().isEmpty() && scheduler.getIoWaitQueue().isEmpty() 
+					&& scheduler.getCurrentCPUProcess() == null && scheduler.getCurrentIOProcess() == null) {
 				flag = true;
 			} else {
 				scheduler.incrementSystemTimer();		// Increment the system timer.
@@ -192,18 +186,20 @@ public class SimulatorClient {
 		
 		// Output results of simulation.
 		System.out.println("\n** ALL JOBS FINISHED. **");
+		System.out.println("\n Simulator End Time: " + scheduler.getSystemTimer() + "\n");
 		String result = "";
 		for (Process p: scheduler.getTerminatedProcesses()) {
 			result += " - " + p.getId() + "\n"
 						+ "   Finish Time: " + p.getFinishTime() + "\n"
+						+ "   Turnaround Time: " + p.getTurnaroundTime() + "\n"
 						+ "   Wait Time: " + p.getWaitTime() + "\n"
 						+ "   I/O Wait Time: " + p.getIoWaitTime() + "\n";
 		}
-		result += "Average Wait Time: " + scheduler.computeAverageWaitTime() + "\n";
-		result += "CPU utilization: " + scheduler.computeCpuUtilization() + "%\n";
+		result += "Average Wait Time: " + scheduler.getAvgWaitTime() + "\n";
+		result += "CPU Utilization: " + scheduler.getCpuUtilization();
 		System.out.println(result);
 	}
-
+	
 	
 	/**
 	 * Outputs print statements in the console to show which processes are in the 
