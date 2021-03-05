@@ -55,20 +55,33 @@ public class RoundRobin extends Scheduler {
 		
 		this.executeIO();
 		
+		// If we have reached the end of this time slice...
 		if (this.currentCPUProcess.getRemainingBursts() == endOfSlice) {
-			if (this.currentCPUProcess.getRemainingBursts() == 0 && (this.currentCPUProcess.getBurstCycle() < currentCPUProcess.getCpuBurstList().size() - 1)) {
-				this.addToIoWaitQueue(this.currentCPUProcess);				// Add process to I/O wait queue.
+			
+			// If current process has bursts remaining in this cycle...
+			if (this.currentCPUProcess.getRemainingBursts() > 0) {			// If current process has bursts remaining...
+				this.addToReadyQueue(this.currentCPUProcess);				// move process to ready queue.
 				this.currentCPUProcess = null;
-			} else if (this.currentCPUProcess.getRemainingBursts() == 0 && (this.currentCPUProcess.getBurstCycle() == currentCPUProcess.getCpuBurstList().size() - 1)) {
-				this.currentCPUProcess.isDone();							// Set process state to NULL.
-				this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set finish time to system timer.
-				this.terminatedProcesses.add(this.currentCPUProcess);		// Add to terminated processes. 
 				
-				System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
-				this.currentCPUProcess = null;
-			} else {
-				this.addToReadyQueue(this.currentCPUProcess);
-				this.currentCPUProcess = null;
+				// Else, if current process has NO MORE bursts remaining in this cycle...
+			} else if (this.currentCPUProcess.getRemainingBursts() == 0) {
+				
+				// If current process still has burst cycles left...
+				if (this.currentCPUProcess.getBurstCycle() < (currentCPUProcess.getCpuBurstList().size() - 1)) {
+					this.addToIoWaitQueue(this.currentCPUProcess);				// Add process to I/O wait queue.
+					this.currentCPUProcess = null;
+					
+					// Else, if process has no more burst cycles remaining...
+				} else if (this.currentCPUProcess.getBurstCycle() == (currentCPUProcess.getCpuBurstList().size() - 1)) {
+					this.currentCPUProcess.isDone();							// Set process state to NULL.
+					this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set process finish time to system timer.
+					this.currentCPUProcess.calculateTurnaroundTime();			// Calculate process's turnaround time.
+					this.terminatedProcesses.add(this.currentCPUProcess);		// Move to terminated processes.
+					this.computeAverageWaitTime();								// Compute the avg. wait time of terminated processes.
+					
+					System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
+					this.currentCPUProcess = null;
+				}
 			}
 		}
 	}
