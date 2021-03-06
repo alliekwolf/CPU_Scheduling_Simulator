@@ -197,8 +197,10 @@ public class SimulatorClient {
 		}
 		System.out.println(result);
 		System.out.printf("Average Wait Time: %.2f%n"
-							+ "CPU Utilization: %.2f%%%n",
-							scheduler.getAvgWaitTime(), (100 * scheduler.getCpuUtilization()));
+							+ "CPU Utilization: %.2f%%%n"
+							+ "Throughput: %.2f%n"
+							+ "Average Turnaround Time: %.2f%n",
+							scheduler.getAvgWaitTime(), (100 * scheduler.getCpuUtilization()), scheduler.getThroughput(), scheduler.getAvgTurnaroundTime());
 	}
 	
 	

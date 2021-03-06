@@ -78,6 +78,8 @@ public class RoundRobin extends Scheduler {
 					this.currentCPUProcess.calculateTurnaroundTime();			// Calculate process's turnaround time.
 					this.terminatedProcesses.add(this.currentCPUProcess);		// Move to terminated processes.
 					this.computeAverageWaitTime();								// Compute the avg. wait time of terminated processes.
+					this.computeThroughput();
+					this.computeAverageTurnaroundTime();
 					
 					System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
 					this.currentCPUProcess = null;

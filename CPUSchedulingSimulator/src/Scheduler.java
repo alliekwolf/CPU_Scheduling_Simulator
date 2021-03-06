@@ -21,7 +21,7 @@ public abstract class Scheduler {
 	protected float cpuUtilization;
 	protected float throughput;
 	protected float avgWaitTime;
-	protected float avgResponseTime;
+	protected float avgTurnaroundTime;
 	protected int simulationMode;
 	protected float simulationTime;
 	protected int idleTime;
@@ -43,7 +43,7 @@ public abstract class Scheduler {
 		this.cpuUtilization = 0;
 		this.throughput = 0;
 		this.avgWaitTime = 0;
-		this.avgResponseTime = 0;
+		this.avgTurnaroundTime = 0;
 		this.simulationMode = 0;
 		this.simulationTime = 0;
 		this.quantumTimeSlice = 0;
@@ -109,29 +109,20 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * Get the average response time for the scenario. Compute the
-	 * response time for a process by measuring the time from when the process
-	 * arrives to when the process begins running in th cpu for the first time.
-	 * The average response time would sum the response time for each process in the scenario, 
-	 * and then divide that sum by the number of processes.
 	 * 
-	 * @return avResponseTime - float, the average response time for the processes in the scenario.
+	 * @return avgTurnaroundTime - float, the average turnaround time for the processes in the scenario.
 	 */
-	public float getAvgResponseTime() {
-		return this.avgResponseTime;
+	public float getAvgTurnaroundTime() {
+		return this.avgTurnaroundTime;
 	}
 	
 	/**
-	 * Set the average response time for the scenario. Compute the
-	 * response time for a process by measuring the time from when the process
-	 * arrives to when the process begins running in th cpu for the first time.
-	 * The average response time would sum the response time for each process in the scenario, 
-	 * and then divide that sum by the number of processes.
 	 * 
-	 * @param avgResponseTime float, the average response time for the scenario.
+	 * 
+	 * @param avgTurnaroundTime float, the average turnaround time for the scenario.
 	 */
-	public void setAvgResponseTime(float avgResponseTime) {
-		this.avgResponseTime = avgResponseTime;
+	public void setAvgTurnaroundTime(float avgTurnaroundTime) {
+		this.avgTurnaroundTime = avgTurnaroundTime;
 	}
 	
 	/**
@@ -402,6 +393,8 @@ public abstract class Scheduler {
 				this.currentCPUProcess.calculateTurnaroundTime();			// Calculate process's turnaround time.
 				this.terminatedProcesses.add(this.currentCPUProcess);		// Move to terminated processes.
 				this.computeAverageWaitTime();								// Compute the avg. wait time of terminated processes.
+				this.computeThroughput();
+				this.computeAverageTurnaroundTime();
 				
 				System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
 				this.currentCPUProcess = null;
@@ -480,6 +473,34 @@ public abstract class Scheduler {
 		}
 		
 		this.avgWaitTime = sum / numProcesses;
+	}
+	
+	/**
+	 * 
+	 */
+	public void computeThroughput() {
+		float sum = 0;
+		float numProcesses = this.terminatedProcesses.size();
+		
+		for (Process p: this.terminatedProcesses) {
+			sum += p.getFinishTime();
+		}
+		
+		this.throughput = sum / numProcesses;
+	}
+	
+	/**
+	 * 
+	 */
+	public void computeAverageTurnaroundTime() {
+		float sum = 0;
+		float numProcesses = this.terminatedProcesses.size();
+		
+		for (Process p: this.terminatedProcesses) {
+			sum += p.getTurnaroundTime();
+		}
+		
+		this.avgTurnaroundTime = sum / numProcesses;
 	}
 	
 	/**
