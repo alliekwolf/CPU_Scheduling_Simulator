@@ -2,6 +2,8 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.logging.Level;
+
 
 /**
  * 
@@ -33,6 +35,7 @@ public abstract class Scheduler {
 	protected ArrayList<Process> jobQueue;
 	protected ArrayList<Process> terminatedProcesses;
 	
+	
 	// Constructors
 	/**
 	 * 
@@ -53,6 +56,8 @@ public abstract class Scheduler {
 		this.ioWaitQueue = new LinkedList<Process>();
 		this.jobQueue = new ArrayList<Process>();
 		this.terminatedProcesses = new ArrayList<Process>();
+		
+		
 	}
 	
 	
