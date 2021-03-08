@@ -1,14 +1,7 @@
 
-public class State {
-	
-	// Data Members
-	
-	
-	// Constructor
-	
-	
-	
-	// Getters and Setters
-	
-	
+public enum State {
+	READY,
+	RUNNING,
+	WAITING,
+	DONE
 }

@@ -17,7 +17,7 @@ public class Process {
 	
 	// Data Members
 	private String id;
-	private String state;
+	private State state;
 	private int arrivalTime;
 	private int priorityLevel;
 	private int startTime;
@@ -54,6 +54,7 @@ public class Process {
 		this.ioBurstList = ioBurstList;
 		this.burstCycle = 0;
 		this.remainingBursts = 0;
+		this.isWaiting();
 	}
 	
 	
@@ -79,8 +80,12 @@ public class Process {
 	 * 			the following: ["READY", "RUNNING", "WAITING"]
 	 * @return String containing the state of the process.
 	 */
-	public String getState() {
+	public State getState() {
 		return state;
+	}
+	
+	public void setState(State state) {
+		this.state = state;
 	}
 	
 	/**
@@ -273,29 +278,41 @@ public class Process {
 	/**
 	 * Changes the state of the Process to "READY".
 	 */
-	public void isReady() {
-		this.state = "READY";
+	public boolean isReady() {
+		if (this.state == State.READY) {
+			return true;
+		}
+		return false;
 	}
 	
 	/**
 	 * Changes the state of the Process to "Running".
 	 */
-	public void isRunning() {
-		this.state = "RUNNING";
+	public boolean isRunning() {
+		if (this.state == State.RUNNING) {
+			return true;
+		}
+		return false;
 	}
 	
 	/**
 	 * Changes the state of the Process to "Waiting".
 	 */
-	public void isWaiting() {
-		this.state = "WAITING";
+	public boolean isWaiting() {
+		if (this.state == State.WAITING) {
+			return true;
+		}
+		return false;
 	}
 	
 	/**
 	 * Changes the state of the Process to NULL.
 	 */
-	public void isDone() {
-		this.state = "DONE";
+	public boolean isDone() {
+		if (this.state == State.DONE) {
+			return true;
+		}
+		return false;
 	}
 	
 	/**

@@ -2,8 +2,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.logging.Level;
-
 
 /**
  * 
@@ -35,8 +33,6 @@ public abstract class Scheduler {
 	protected ArrayList<Process> jobQueue;
 	protected ArrayList<Process> terminatedProcesses;
 	
-	
-	
 	// Constructors
 	/**
 	 * 
@@ -57,7 +53,6 @@ public abstract class Scheduler {
 		this.ioWaitQueue = new LinkedList<Process>();
 		this.jobQueue = new ArrayList<Process>();
 		this.terminatedProcesses = new ArrayList<Process>();
-		
 	}
 	
 	
@@ -261,8 +256,6 @@ public abstract class Scheduler {
 		this.jobQueue = jobQueue;
 	}
 	
-	
-	
 	/**
 	 * Get the array list of process that have completed running in the scenario.
 	 * 
@@ -302,17 +295,16 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * Set the process state to READu and add the process to the readyQueue
+	 * Set the process state to READY and add the process to the readyQueue
 	 * 
 	 * @param p Process to add to the readyQueue.
 	 */
 	public void addToReadyQueue(Process process) {
-		process.isReady();								// Set process state to READY.
+		process.setState(State.READY);					// Set process state to READY.
 		this.readyQueue.add(process);
 		this.sort();
 		
 		this.updateJobQueue(process);
-		
 	}
 	
 	/**
@@ -323,9 +315,7 @@ public abstract class Scheduler {
 	public void addToCPU() {
 		if (this.currentCPUProcess == null && !this.readyQueue.isEmpty()) {
 			this.currentCPUProcess = this.readyQueue.poll();
-			this.currentCPUProcess.isRunning();		// Set process state to RUNNING.
-			
-			this.updateJobQueue(this.currentCPUProcess);
+			this.currentCPUProcess.setState(State.RUNNING);;		// Set process state to RUNNING.
 		}
 	}
 	
@@ -337,13 +327,12 @@ public abstract class Scheduler {
 	 * @param p Process to go into ioWaitQueue
 	 */
 	public void addToIoWaitQueue(Process process) {
-		process.isWaiting();																// Set process state to WAITING.
+		process.setState(State.WAITING);													// Set process state to WAITING.
 		process.setRemainingBursts(process.getIoBurstList().get(process.getBurstCycle()));	// Set num. of I/O bursts to next I/O burst cycle.
 		this.ioWaitQueue.add(process);
+		this.addToIO();
 		
 		this.updateJobQueue(process);
-		
-		this.addToIO();
 	}
 	
 	/**
@@ -388,8 +377,6 @@ public abstract class Scheduler {
 	public void executeCPU() {
 		this.currentCPUProcess.decrementRemainingBursts();
 		
-		this.updateJobQueue(this.currentCPUProcess);
-		
 		// Output current burst of cycle.
 		System.out.println("CPU burst: " + (this.currentCPUProcess.getCpuBurstList().get(this.currentCPUProcess.getBurstCycle()) - this.currentCPUProcess.getRemainingBursts())
 							+ " of " + this.currentCPUProcess.getCpuBurstList().get(this.currentCPUProcess.getBurstCycle()));
@@ -406,11 +393,11 @@ public abstract class Scheduler {
 				
 				// Else, if process has no more burst cycles remaining...
 			} else if (this.currentCPUProcess.getBurstCycle() == (currentCPUProcess.getCpuBurstList().size() - 1)) {
-				this.currentCPUProcess.isDone();							// Set process state to NULL.
+				this.currentCPUProcess.setState(State.DONE);				// Set process state to NULL.
 				this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set process finish time to system timer.
 				this.currentCPUProcess.calculateTurnaroundTime();			// Calculate process's turnaround time.
 				
-				this.updateJobQueue(currentCPUProcess);
+				this.updateJobQueue(this.currentCPUProcess);
 				
 				this.terminatedProcesses.add(this.currentCPUProcess);		// Move to terminated processes.
 				this.computeAverageWaitTime();								// Compute the avg. wait time of terminated processes.
@@ -436,6 +423,8 @@ public abstract class Scheduler {
 	public void executeIO() {
 		if (this.currentIOProcess != null) {
 			this.currentIOProcess.decrementRemainingBursts();			// Decrement current burst in the cycle.
+			
+			this.updateJobQueue(this.currentIOProcess);
 			
 			// Output current burst of cycle.
 			System.out.println("I/O burst: " + (this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()) - this.currentIOProcess.getRemainingBursts())
@@ -538,15 +527,6 @@ public abstract class Scheduler {
 	 */
 	public void computeCpuUtilization() {
 		this.cpuUtilization = (this.systemTimer - this.idleTime) / (float)this.systemTimer;
-	}
-	
-	public boolean isFinished() {
-		for (Process p: this.jobQueue) {
-			if (p.getState() != "DONE") {
-				return true;
-			}
-		}
-		return false;
 	}
 	
 	
