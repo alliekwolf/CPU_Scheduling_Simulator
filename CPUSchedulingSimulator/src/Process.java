@@ -54,7 +54,6 @@ public class Process {
 		this.ioBurstList = ioBurstList;
 		this.burstCycle = 0;
 		this.remainingBursts = 0;
-		//this.isWaiting();
 	}
 	
 	
@@ -296,7 +295,7 @@ public class Process {
 	 * Changes the state of the Process to NULL.
 	 */
 	public void isDone() {
-		this.state = null;
+		this.state = "DONE";
 	}
 	
 	/**
