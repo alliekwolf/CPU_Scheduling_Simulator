@@ -36,6 +36,7 @@ public abstract class Scheduler {
 	protected ArrayList<Process> terminatedProcesses;
 	
 	
+	
 	// Constructors
 	/**
 	 * 
@@ -261,6 +262,8 @@ public abstract class Scheduler {
 		this.jobQueue = jobQueue;
 	}
 	
+	
+	
 	/**
 	 * Get the array list of process that have completed running in the scenario.
 	 * 
@@ -289,6 +292,7 @@ public abstract class Scheduler {
 	 * current burst cycle and add the process to the readyQueue.
 	 */
 	public void addNewProcess() {
+		
 		for (int i = 0; i < this.jobQueue.size(); i++) {
 			if (this.systemTimer == this.jobQueue.get(i).getArrivalTime()) {
 				this.jobQueue.get(i).setRemainingBursts(this.jobQueue.get(i).getCpuBurstList().get(

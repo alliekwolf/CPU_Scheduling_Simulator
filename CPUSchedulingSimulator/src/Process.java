@@ -54,7 +54,7 @@ public class Process {
 		this.ioBurstList = ioBurstList;
 		this.burstCycle = 0;
 		this.remainingBursts = 0;
-		this.isWaiting();
+		//this.isWaiting();
 	}
 	
 	

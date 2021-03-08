@@ -1,6 +1,7 @@
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -194,10 +195,11 @@ public class SimulatorClient {
 					&& scheduler.getCurrentIOProcess() == null) {
 				flag = true;
 			} else {
+				logTimeSlice();
 				scheduler.incrementSystemTimer(); // Increment the system timer.
 				Thread.sleep(100);
 				System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
-				logTimeSlice();
+				
 			}
 
 		}
@@ -287,7 +289,8 @@ public class SimulatorClient {
 
 		loggerInfo += "\nIO QUEUE: \n";
 		if (scheduler.getIoWaitQueue().size() > 0) {
-			loggerInfo += "Name: \t State: \t Arrival: \tCPU Bursts: \t Io Bursts:\n";
+			loggerInfo += String.format("%-17s %-10s %-15s %-15s %s\n",
+					"Name:", "State:", "Arrival:", "CPU Bursts:", "Io Bursts:");
 		} else {
 			loggerInfo += "EMPTY\n\n";
 		}
@@ -298,18 +301,21 @@ public class SimulatorClient {
 		
 		loggerInfo += "\nJOB QUEUE: \n";
 		if (scheduler.getJobQueue().size() > 0) {
-			loggerInfo += "Name: \t State: \t Arrival: \tCPU Bursts: \t Io Bursts:\n";
+			
+			loggerInfo += String.format("%-17s %-10s %-15s %-15s %s\n",
+					"Name:", "State:", "Arrival:", "CPU Bursts:", "Io Bursts:");
 		} else {
 			loggerInfo += "EMPTY\n\n";
 		}
-		for (Process p : scheduler.getJobQueue()) {
+		for (Process p : scheduler.getJobQueue()) {	
 			loggerInfo += String.format("%-15s  %-15s %-11s %-15s %s\n",
 					p.getId(), p.getState(), p.getArrivalTime(), p.getCpuBurstList(), p.getIoBurstList());
 		}
 		
 		loggerInfo += "\nTERMINATED PROCESSES: \n";
 		if (scheduler.getTerminatedProcesses().size() > 0) {
-			loggerInfo += "Name: \t State: \t Arrival: \tCPU Bursts: \t Io Bursts:\n";
+			loggerInfo += String.format("%-17s %-10s %-15s %-15s %s\n",
+					"Name:", "State:", "Arrival:", "CPU Bursts:", "Io Bursts:");
 		} else {
 			loggerInfo += "EMPTY\n\n";
 		}
@@ -317,6 +323,8 @@ public class SimulatorClient {
 			loggerInfo += String.format("%-15s  %-15s %-11s %-15s %s\n",
 					p.getId(), p.getState(), p.getArrivalTime(), p.getCpuBurstList(), p.getIoBurstList());
 		}
+		
+		
 		
 		loggerInfo += "\n\n";
 		log.logger.info(loggerInfo);
