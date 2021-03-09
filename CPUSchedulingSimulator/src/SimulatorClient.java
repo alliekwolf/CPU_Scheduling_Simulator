@@ -169,6 +169,8 @@ public class SimulatorClient {
 			scheduler.addToCPU();
 			scheduler.addToIO();
 			
+			logTimeSlice();
+			
 			// Output which processes are in which queues, the CPU, and I/O.
 			printSchedulerOutput(scheduler);
 			
@@ -189,12 +191,12 @@ public class SimulatorClient {
 				}
 			}
 			
-			logTimeSlice();
+			
 			
 			// If flag has not been set to true, increment system timer and continue while loop.
 			if (!flag) {
 				scheduler.incrementSystemTimer();		// Increment the system timer.
-				Thread.sleep(200);
+				Thread.sleep(50);
 				System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
 			}
 			
@@ -203,21 +205,24 @@ public class SimulatorClient {
 		// Output results of simulation.
 		System.out.println("\n** ALL JOBS FINISHED. **");
 		System.out.println("\n Simulator End Time: " + scheduler.getSystemTimer() + "\n");
-		String result = "";
+		String result = "SIMULATION METRICS: \n";
 		for (Process p: scheduler.getTerminatedProcesses()) {
 			result += " - " + p.getId() + "\n"
 						+ "   State: " + p.getState() + "\n"
 						+ "   Finish Time: " + p.getFinishTime() + "\n"
 						+ "   Turnaround Time: " + p.getTurnaroundTime() + "\n"
 						+ "   Wait Time: " + p.getWaitTime() + "\n"
-						+ "   I/O Wait Time: " + p.getIoWaitTime() + "\n";
+						+ "   I/O Wait Time: " + p.getIoWaitTime() + "\n\n";
 		}
+		
+		result += "Average Wait Time: " + scheduler.getAvgWaitTime() + "\n"
+					+ "CPU Utilization: " + (100 * scheduler.getCpuUtilization()) + " %\n"
+					+ "Throughput: " + scheduler.getThroughput() + "\n"
+					+ "Average Turnaround Time: " + scheduler.getAvgTurnaroundTime();
+		
 		System.out.println(result);
-		System.out.printf("Average Wait Time: %.2f%n"
-							+ "CPU Utilization: %.2f%%%n"
-							+ "Throughput: %.2f%n"
-							+ "Average Turnaround Time: %.2f%n",
-							scheduler.getAvgWaitTime(), (100 * scheduler.getCpuUtilization()), scheduler.getThroughput(), scheduler.getAvgTurnaroundTime());
+		log.logger.info(result);
+		System.out.println("\n** CHECK PROJECT FOLDER FOR 'schedulerLog.txt' **");
 	}
 	
 	
@@ -250,7 +255,7 @@ public class SimulatorClient {
 		// Output data to show which processes are in the CPU and I/O.
 		System.out.println(wqStr);
 		if (scheduler.getCurrentCPUProcess() != null) {
-			System.out.print("CPU: [" + scheduler.getCurrentCPUProcess().getId() + "]");
+			System.out.print("\n\nCPU: [" + scheduler.getCurrentCPUProcess().getId() + "]");
 		} else {
 			System.out.print("CPU: [     ]");
 		}
@@ -263,14 +268,19 @@ public class SimulatorClient {
 	
 	public static void logTimeSlice() {
 		String loggerInfo = "";
-		loggerInfo += "System Time: " + scheduler.getSystemTimer() + " -------------\n";
+		loggerInfo += "System Time: " + scheduler.getSystemTimer() + " -------------\n\n\n";
+		
 		if (scheduler.currentCPUProcess != null) {
-			loggerInfo += "Current CPU Process: [ " + scheduler.getCurrentCPUProcess().getId() + " ]\n\n";
+			loggerInfo += "Current CPU Process: [ " + scheduler.getCurrentCPUProcess().getId() + " ]\n";
+			loggerInfo += "CPU burst: " + ((scheduler.getCurrentCPUProcess().getCpuBurstList().get(scheduler.getCurrentCPUProcess().getBurstCycle()) + 1) - scheduler.getCurrentCPUProcess().getRemainingBursts())
+					+ " of " + scheduler.getCurrentCPUProcess().getCpuBurstList().get(scheduler.getCurrentCPUProcess().getBurstCycle()) + "\n\n";
 		} else {
 			loggerInfo += "Current CPU Process: [ EMPTY ]\n\n";
 		}
 		if (scheduler.currentIOProcess != null) {
-			loggerInfo += "Current IO Process: [ " + scheduler.getCurrentIOProcess().getId() + " ]\n\n";
+			loggerInfo += "Current IO Process: [ " + scheduler.getCurrentIOProcess().getId() + " ]\n";
+			loggerInfo += "I/O burst: " + ((scheduler.getCurrentIOProcess().getIoBurstList().get(scheduler.getCurrentIOProcess().getBurstCycle()) + 1) - scheduler.getCurrentIOProcess().getRemainingBursts())
+					+ " of " + scheduler.getCurrentIOProcess().getIoBurstList().get(scheduler.getCurrentIOProcess().getBurstCycle()) + "\n\n";
 		} else {
 			loggerInfo += "Current IO Process: [ EMPTY ]\n";
 		}
@@ -299,7 +309,7 @@ public class SimulatorClient {
 					p.getId(), p.getState(), p.getArrivalTime(), p.getCpuBurstList(), p.getIoBurstList());
 		}
 		
-		loggerInfo += "\nJOB QUEUE: \n";
+		loggerInfo += "\nPROCESSES: \n";
 		if (scheduler.getJobQueue().size() > 0) {
 			
 			loggerInfo += String.format("%-17s %-10s %-15s %-15s %s\n",
@@ -311,20 +321,6 @@ public class SimulatorClient {
 			loggerInfo += String.format("%-15s  %-15s %-11s %-15s %s\n",
 					p.getId(), p.getState(), p.getArrivalTime(), p.getCpuBurstList(), p.getIoBurstList());
 		}
-		
-		loggerInfo += "\nTERMINATED PROCESSES: \n";
-		if (scheduler.getTerminatedProcesses().size() > 0) {
-			loggerInfo += String.format("%-17s %-10s %-15s %-15s %s\n",
-					"Name:", "State:", "Arrival:", "CPU Bursts:", "Io Bursts:");
-		} else {
-			loggerInfo += "EMPTY\n\n";
-		}
-		for (Process p : scheduler.getTerminatedProcesses()) {
-			loggerInfo += String.format("%-15s  %-15s %-11s %-15s %s\n",
-					p.getId(), p.getState(), p.getArrivalTime(), p.getCpuBurstList(), p.getIoBurstList());
-		}
-		
-		
 		
 		loggerInfo += "\n\n";
 		log.logger.info(loggerInfo);
