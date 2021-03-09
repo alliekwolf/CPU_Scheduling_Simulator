@@ -276,7 +276,9 @@ public class Process {
 	
 	// Methods
 	/**
-	 * Changes the state of the Process to "READY".
+	 * Check if Process state is READY.
+	 * 
+	 * @return true if state == READY.
 	 */
 	public boolean isReady() {
 		if (this.state == State.READY) {
@@ -286,7 +288,9 @@ public class Process {
 	}
 	
 	/**
-	 * Changes the state of the Process to "Running".
+	 * Check if Process state is RUNNING.
+	 * 
+	 * @return true if state == RUNNING.
 	 */
 	public boolean isRunning() {
 		if (this.state == State.RUNNING) {
@@ -296,7 +300,9 @@ public class Process {
 	}
 	
 	/**
-	 * Changes the state of the Process to "Waiting".
+	 * * Check if Process state is WAITING.
+	 * 
+	 * @return true if state == WAITING.
 	 */
 	public boolean isWaiting() {
 		if (this.state == State.WAITING) {
@@ -306,7 +312,9 @@ public class Process {
 	}
 	
 	/**
-	 * Changes the state of the Process to NULL.
+	 * * Check if Process state is DONE.
+	 * 
+	 * @return true if state == DONE.
 	 */
 	public boolean isDone() {
 		if (this.state == State.DONE) {

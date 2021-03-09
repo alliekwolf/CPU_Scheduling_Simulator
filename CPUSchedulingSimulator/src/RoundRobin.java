@@ -35,8 +35,9 @@ public class RoundRobin extends Scheduler {
 	public void addToCPU() {
 		if (this.currentCPUProcess == null && !this.readyQueue.isEmpty()) {
 			this.currentCPUProcess = this.readyQueue.poll();
-			this.currentCPUProcess.isRunning();		// Set process state to RUNNING.
+			this.currentCPUProcess.setState(State.RUNNING);		// Set process state to RUNNING.
 			
+			this.updateJobQueue(this.currentCPUProcess);
 			this.setEndOfSlice();
 		}
 	}
@@ -73,10 +74,12 @@ public class RoundRobin extends Scheduler {
 					
 					// Else, if process has no more burst cycles remaining...
 				} else if (this.currentCPUProcess.getBurstCycle() == (currentCPUProcess.getCpuBurstList().size() - 1)) {
-					this.currentCPUProcess.isDone();							// Set process state to NULL.
+					this.currentCPUProcess.setState(State.DONE);				// Set process state to DONE.
 					this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set process finish time to system timer.
 					this.currentCPUProcess.calculateTurnaroundTime();			// Calculate process's turnaround time.
-					this.terminatedProcesses.add(this.currentCPUProcess);		// Move to terminated processes.
+					
+					this.updateJobQueue(this.currentCPUProcess);
+					
 					this.computeAverageWaitTime();								// Compute the avg. wait time of terminated processes.
 					this.computeThroughput();
 					this.computeAverageTurnaroundTime();

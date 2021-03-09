@@ -42,7 +42,7 @@ public class SimulatorClient {
 		
 		// Print simulator menu, where the user will choose a scheduling algorithm, from
 		// which the Scheduler object will be initiated.
-		mainMenu(scheduler);
+		mainMenu();
 		
 		// Load initial job queue with processes created from a text file.
 		try {
@@ -74,17 +74,17 @@ public class SimulatorClient {
 	 * during the current run of the program.
 	 * @param scheduler Scheduler object 
 	 */
-	public static void mainMenu(Scheduler scheduler) {
+	public static void mainMenu() {
 		int userInput = -1;
 		System.out.println("\n-- CPU Scheduling Simulator --\n");
-		System.out.println("Choose a scheduling algorithm:\n\n" 
-							+ " 1 -- First Come, First Serve\n" 
-							+ " 2 -- Shortest Job First\n" 
-							+ " 3 -- Priority\n" 
-							+ " 4 -- Round Robin\n");
+		System.out.println(" Choose a scheduling algorithm: \n\n" 
+							+ "   1 -- First Come, First Serve\n" 
+							+ "   2 -- Shortest Job First\n" 
+							+ "   3 -- Priority\n" 
+							+ "   4 -- Round Robin\n");
 		// Handle input exceptions.
 		while (userInput < 1 || userInput > 4) {
-			System.out.print("Selection: ");
+			System.out.print("   Selection: ");
 			try {
 				userInput = console.nextInt();
 				if (userInput < 1 || userInput > 4) {
@@ -109,25 +109,24 @@ public class SimulatorClient {
 					int quantum = -1;
 					// Handle input exceptions for setting the quantum time slice.
 					while (quantum <= 0) {
-						System.out.print("Enter quantum time slice: ");
+						System.out.print("   Enter quantum time slice: ");
 						try {
 							quantum = console.nextInt();
-							if (quantum < 1 || quantum > 4) {
+							if (quantum < 1) {
 								throw new Exception();
 							}
 						} catch (InputMismatchException e) {
+							System.out.println("   * Quantum time slice must be an integer greater than 0. *");
 							console.nextLine();
 						} catch (Exception e) {
+							System.out.println("   * Quantum time slice must be an integer greater than 0. *");
 							console.nextLine();
-						}
-						if (quantum <= 0) {
-							System.out.println("  * Quantum time slice must be an integer greater than 0. *");
 						}
 					}
 					createScheduler(new RoundRobin(quantum));
 					break;
 				default:
-					System.out.println("  * Choose a number 1-4. *");
+					System.out.println("   * Choose a number 1-4. *");
 			}
 		}
 		
@@ -147,6 +146,50 @@ public class SimulatorClient {
 	 */
 	private static void runScheduler(Scheduler scheduler) throws InterruptedException {
 		
+		int sleepTime = 0;
+		
+		System.out.println("\n Simulation Mode: \n");
+		System.out.println("   M - Manual" + "\n"
+							+ "   A - Automatic" + "\n");
+		String userInput = "";
+		boolean flag1 = false;
+		while (!flag1) {
+			System.out.print("   Selection: ");
+			userInput = console.next();
+			
+			switch (userInput) {
+				case "M":
+				case "m":
+					scheduler.setSimulationMode(1);
+					flag1 = true;
+					break;
+				case "A":
+				case "a":
+					scheduler.setSimulationMode(2);
+					boolean flag2 = false;
+					while(!flag2) {
+						System.out.print("   Enter sleep time (in ms): ");
+						try {
+							sleepTime = console.nextInt();
+							if (sleepTime < 0) {
+								throw new Exception();
+							}
+							flag2 = true;
+						} catch (InputMismatchException e) {
+							System.out.println("   * Sleep time must be an integer 0 or greater. *");
+							console.nextLine();
+						} catch (Exception e) {
+							System.out.println("   * Sleep time must be an integer 0 or greater. *");
+							console.nextLine();
+						}
+					}
+					break;
+				default:
+					System.out.println("   * Choose either 'M' for 'Manual' or 'A' for 'Automatic'. *");
+			}
+		}
+		
+		
 		// Print out the name of selected Scheduler.
 		String sName = scheduler.getClass().getName();
 		switch (scheduler.getClass().getName()) {
@@ -162,9 +205,9 @@ public class SimulatorClient {
 		
 		// The while loop that runs the simulator, incrementing the system timer and 
 		// executing bursts as it runs.
-		boolean flag = false;		// A flag for continuing and exiting the while loop.
 		System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
-		while (flag == false) {
+		boolean doneFlag = false;		// A flag for continuing and exiting the while loop.
+		while (!doneFlag) {
 			scheduler.addNewProcess();
 			scheduler.addToCPU();
 			scheduler.addToIO();
@@ -186,7 +229,7 @@ public class SimulatorClient {
 					
 					// If number of DONE processes is equal to total number of processes...
 					if (numDone == scheduler.jobQueue.size()) {
-						flag = true;		// Set flag to true to exit while loop.
+						doneFlag = true;		// Set flag to true to exit while loop.
 					}
 				}
 			}
@@ -194,19 +237,62 @@ public class SimulatorClient {
 			
 			
 			// If flag has not been set to true, increment system timer and continue while loop.
-			if (!flag) {
+			if (!doneFlag) {
+				
+				// If Scheduler is in Manual Mode, ask user to press 'N' for 'Next system time'.
+				if (scheduler.getSimulationMode() == 1) {
+					boolean innerFlag = false;
+					System.out.println("\n  N - Get next time slice\n"
+										+ "  A - Switch to Automatic Mode\n");
+					while (!innerFlag) {
+						System.out.print("  Selection: ");
+						userInput = console.next();
+						
+						switch (userInput) {
+							case "N":
+							case "n":
+								innerFlag = true;
+								break;
+							case "A":
+							case "a":
+								scheduler.setSimulationMode(2);
+								boolean innerFlag2 = false;
+								while(!innerFlag2) {
+									System.out.print("  Enter sleep time (in ms): ");
+									try {
+										sleepTime = console.nextInt();
+										if (sleepTime < 0) {
+											throw new Exception();
+										}
+										innerFlag2 = true;
+									} catch (InputMismatchException e) {
+										System.out.println("   * Sleep time must be an integer 0 or greater. *");
+										console.nextLine();
+									} catch (Exception e) {
+										System.out.println("   * Sleep time must be an integer 0 or greater. *");
+										console.nextLine();
+									}
+								}
+								innerFlag = true;
+								break;
+							default:
+								System.out.println("  * Press 'N' for next time slice, or 'A' for Automatic Mode. *");
+						}
+					}
+					System.out.println();
+				}
+				
+				Thread.sleep(sleepTime);				// Pause thread for alloted time.
 				scheduler.incrementSystemTimer();		// Increment the system timer.
-				Thread.sleep(50);
 				System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
 			}
-			
 		}
 		
 		// Output results of simulation.
 		System.out.println("\n** ALL JOBS FINISHED. **");
 		System.out.println("\n Simulator End Time: " + scheduler.getSystemTimer() + "\n");
 		String result = "SIMULATION METRICS: \n";
-		for (Process p: scheduler.getTerminatedProcesses()) {
+		for (Process p: scheduler.getJobQueue()) {
 			result += " - " + p.getId() + "\n"
 						+ "   State: " + p.getState() + "\n"
 						+ "   Finish Time: " + p.getFinishTime() + "\n"
@@ -255,7 +341,7 @@ public class SimulatorClient {
 		// Output data to show which processes are in the CPU and I/O.
 		System.out.println(wqStr);
 		if (scheduler.getCurrentCPUProcess() != null) {
-			System.out.print("\n\nCPU: [" + scheduler.getCurrentCPUProcess().getId() + "]");
+			System.out.print("CPU: [" + scheduler.getCurrentCPUProcess().getId() + "]");
 		} else {
 			System.out.print("CPU: [     ]");
 		}
@@ -266,6 +352,9 @@ public class SimulatorClient {
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	public static void logTimeSlice() {
 		String loggerInfo = "";
 		loggerInfo += "System Time: " + scheduler.getSystemTimer() + " -------------\n\n\n";

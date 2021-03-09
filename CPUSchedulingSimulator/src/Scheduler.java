@@ -31,7 +31,6 @@ public abstract class Scheduler {
 	protected Queue<Process> readyQueue;
 	protected Queue<Process> ioWaitQueue;
 	protected ArrayList<Process> jobQueue;
-	protected ArrayList<Process> terminatedProcesses;
 	
 	// Constructors
 	/**
@@ -52,7 +51,6 @@ public abstract class Scheduler {
 		this.readyQueue = new LinkedList<Process>();
 		this.ioWaitQueue = new LinkedList<Process>();
 		this.jobQueue = new ArrayList<Process>();
-		this.terminatedProcesses = new ArrayList<Process>();
 	}
 	
 	
@@ -256,26 +254,6 @@ public abstract class Scheduler {
 		this.jobQueue = jobQueue;
 	}
 	
-	/**
-	 * Get the array list of process that have completed running in the scenario.
-	 * 
-	 * @return terminatedProcess ArrayList<Process> of processes that have completed their
-	 * run in the scenario.
-	 */
-	public ArrayList<Process> getTerminatedProcesses() {
-		return this.terminatedProcesses;
-	}
-	
-	/**
-	 * Set the array list of processes that have completed running in the scenario.
-	 * 
-	 * @param terminatedProcesses ArrayList<Process> of process that have completed their run 
-	 * in the scenario.
-	 */
-	public void setTerminatedProcesses(ArrayList<Process> terminatedProcesses) {
-		this.terminatedProcesses = terminatedProcesses;
-	}
-	
 	
 	// Methods
 	/**
@@ -315,7 +293,7 @@ public abstract class Scheduler {
 	public void addToCPU() {
 		if (this.currentCPUProcess == null && !this.readyQueue.isEmpty()) {
 			this.currentCPUProcess = this.readyQueue.poll();
-			this.currentCPUProcess.setState(State.RUNNING);;		// Set process state to RUNNING.
+			this.currentCPUProcess.setState(State.RUNNING);		// Set process state to RUNNING.
 		}
 	}
 	
@@ -393,13 +371,12 @@ public abstract class Scheduler {
 				
 				// Else, if process has no more burst cycles remaining...
 			} else if (this.currentCPUProcess.getBurstCycle() == (currentCPUProcess.getCpuBurstList().size() - 1)) {
-				this.currentCPUProcess.setState(State.DONE);				// Set process state to NULL.
+				this.currentCPUProcess.setState(State.DONE);				// Set process state to DONE.
 				this.currentCPUProcess.setFinishTime(this.systemTimer);		// Set process finish time to system timer.
 				this.currentCPUProcess.calculateTurnaroundTime();			// Calculate process's turnaround time.
 				
 				this.updateJobQueue(this.currentCPUProcess);
 				
-				this.terminatedProcesses.add(this.currentCPUProcess);		// Move to terminated processes.
 				this.computeAverageWaitTime();								// Compute the avg. wait time of terminated processes.
 				this.computeThroughput();
 				this.computeAverageTurnaroundTime();
@@ -484,10 +461,13 @@ public abstract class Scheduler {
 	 */
 	public void computeAverageWaitTime() {
 		float sum = 0;
-		float numProcesses = this.terminatedProcesses.size();
+		float numProcesses = 0;
 		
-		for (Process p: this.terminatedProcesses) {
-			sum += p.getWaitTime();
+		for (Process p: this.jobQueue) {
+			if (p.isDone()) {
+				numProcesses++;
+				sum += p.getWaitTime();
+			}
 		}
 		
 		this.avgWaitTime = sum / numProcesses;
@@ -498,10 +478,13 @@ public abstract class Scheduler {
 	 */
 	public void computeThroughput() {
 		float sum = 0;
-		float numProcesses = this.terminatedProcesses.size();
+		float numProcesses = 0;
 		
-		for (Process p: this.terminatedProcesses) {
-			sum += p.getFinishTime();
+		for (Process p: this.jobQueue) {
+			if (p.isDone()) {
+				numProcesses++;
+				sum += p.getFinishTime();
+			}
 		}
 		
 		this.throughput = sum / numProcesses;
@@ -512,10 +495,13 @@ public abstract class Scheduler {
 	 */
 	public void computeAverageTurnaroundTime() {
 		float sum = 0;
-		float numProcesses = this.terminatedProcesses.size();
+		float numProcesses = 0;
 		
-		for (Process p: this.terminatedProcesses) {
-			sum += p.getTurnaroundTime();
+		for (Process p: this.jobQueue) {
+			if (p.isDone()) {
+				numProcesses++;
+				sum += p.getTurnaroundTime();
+			}
 		}
 		
 		this.avgTurnaroundTime = sum / numProcesses;
