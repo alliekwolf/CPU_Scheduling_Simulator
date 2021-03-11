@@ -1,0 +1,1884 @@
+Mar 11, 2021 11:04:41 AM SimulatorClient logTimeSlice
+INFO: System Time: 0 -------------
+
+
+Current CPU Process: [ EMPTY ]
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            null            2           [6, 8, 4]       [3, 2]
+proc2            null            4           [5, 9]          [2]
+proc3            null            7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:41 AM SimulatorClient logTimeSlice
+INFO: System Time: 1 -------------
+
+
+Current CPU Process: [ EMPTY ]
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            null            2           [6, 8, 4]       [3, 2]
+proc2            null            4           [5, 9]          [2]
+proc3            null            7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:41 AM SimulatorClient logTimeSlice
+INFO: System Time: 2 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 1 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            null            4           [5, 9]          [2]
+proc3            null            7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:41 AM SimulatorClient logTimeSlice
+INFO: System Time: 3 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 2 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            null            4           [5, 9]          [2]
+proc3            null            7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:41 AM SimulatorClient logTimeSlice
+INFO: System Time: 4 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 3 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            null            7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:42 AM SimulatorClient logTimeSlice
+INFO: System Time: 5 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 4 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            null            7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:42 AM SimulatorClient logTimeSlice
+INFO: System Time: 6 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 5 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            null            7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:42 AM SimulatorClient logTimeSlice
+INFO: System Time: 7 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 6 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:42 AM SimulatorClient logTimeSlice
+INFO: System Time: 8 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 1 of 5
+
+Current IO Process: [ proc1 ]
+I/O burst: 1 of 3
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            WAITING         2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:42 AM SimulatorClient logTimeSlice
+INFO: System Time: 9 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 2 of 5
+
+Current IO Process: [ proc1 ]
+I/O burst: 2 of 3
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            WAITING         2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:42 AM SimulatorClient logTimeSlice
+INFO: System Time: 10 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 3 of 5
+
+Current IO Process: [ proc1 ]
+I/O burst: 3 of 3
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            WAITING         2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:42 AM SimulatorClient logTimeSlice
+INFO: System Time: 11 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 4 of 5
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc1            READY           2           [6, 8, 4]       [3, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:42 AM SimulatorClient logTimeSlice
+INFO: System Time: 12 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 5 of 5
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc1            READY           2           [6, 8, 4]       [3, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:42 AM SimulatorClient logTimeSlice
+INFO: System Time: 13 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 1 of 6
+
+Current IO Process: [ proc2 ]
+I/O burst: 1 of 2
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            WAITING         4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 14 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 2 of 6
+
+Current IO Process: [ proc2 ]
+I/O burst: 2 of 2
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            WAITING         4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 15 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 3 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            null            16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 16 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 4 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 17 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 5 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 18 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 6 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 19 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 1 of 8
+
+Current IO Process: [ proc3 ]
+I/O burst: 1 of 4
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 20 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 2 of 8
+
+Current IO Process: [ proc3 ]
+I/O burst: 2 of 4
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 21 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 3 of 8
+
+Current IO Process: [ proc3 ]
+I/O burst: 3 of 4
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 22 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 4 of 8
+
+Current IO Process: [ proc3 ]
+I/O burst: 4 of 4
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:43 AM SimulatorClient logTimeSlice
+INFO: System Time: 23 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 5 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 24 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 6 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 25 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 7 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 26 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 8 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 27 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 1 of 4
+
+Current IO Process: [ proc1 ]
+I/O burst: 1 of 2
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            WAITING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 28 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 2 of 4
+
+Current IO Process: [ proc1 ]
+I/O burst: 2 of 2
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            WAITING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 29 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 3 of 4
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 30 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 4 of 4
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            READY           2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 31 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 1 of 4
+
+Current IO Process: [ proc3 ]
+I/O burst: 1 of 6
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 32 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 2 of 4
+
+Current IO Process: [ proc3 ]
+I/O burst: 2 of 6
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:44 AM SimulatorClient logTimeSlice
+INFO: System Time: 33 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 3 of 4
+
+Current IO Process: [ proc3 ]
+I/O burst: 3 of 6
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:45 AM SimulatorClient logTimeSlice
+INFO: System Time: 34 -------------
+
+
+Current CPU Process: [ proc1 ]
+CPU burst: 4 of 4
+
+Current IO Process: [ proc3 ]
+I/O burst: 4 of 6
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            RUNNING         2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:45 AM SimulatorClient logTimeSlice
+INFO: System Time: 35 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 1 of 8
+
+Current IO Process: [ proc3 ]
+I/O burst: 5 of 6
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:45 AM SimulatorClient logTimeSlice
+INFO: System Time: 36 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 2 of 8
+
+Current IO Process: [ proc3 ]
+I/O burst: 6 of 6
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            WAITING         7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:45 AM SimulatorClient logTimeSlice
+INFO: System Time: 37 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 3 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:45 AM SimulatorClient logTimeSlice
+INFO: System Time: 38 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 4 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:45 AM SimulatorClient logTimeSlice
+INFO: System Time: 39 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 5 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:45 AM SimulatorClient logTimeSlice
+INFO: System Time: 40 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 6 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:45 AM SimulatorClient logTimeSlice
+INFO: System Time: 41 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 7 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:45 AM SimulatorClient logTimeSlice
+INFO: System Time: 42 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 8 of 8
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            READY           7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 43 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 1 of 3
+
+Current IO Process: [ proc4 ]
+I/O burst: 1 of 5
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            WAITING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 44 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 2 of 3
+
+Current IO Process: [ proc4 ]
+I/O burst: 2 of 5
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            WAITING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 45 -------------
+
+
+Current CPU Process: [ proc3 ]
+CPU burst: 3 of 3
+
+Current IO Process: [ proc4 ]
+I/O burst: 3 of 5
+
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc2            READY           4           [5, 9]          [2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            READY           4           [5, 9]          [2]
+proc3            RUNNING         7           [6, 4, 3]       [4, 6]
+proc4            WAITING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 46 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 1 of 9
+
+Current IO Process: [ proc4 ]
+I/O burst: 4 of 5
+
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            WAITING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 47 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 2 of 9
+
+Current IO Process: [ proc4 ]
+I/O burst: 5 of 5
+
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            WAITING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 48 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 3 of 9
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 49 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 4 of 9
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 50 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 5 of 9
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 51 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 6 of 9
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:46 AM SimulatorClient logTimeSlice
+INFO: System Time: 52 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 7 of 9
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:47 AM SimulatorClient logTimeSlice
+INFO: System Time: 53 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 8 of 9
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:47 AM SimulatorClient logTimeSlice
+INFO: System Time: 54 -------------
+
+
+Current CPU Process: [ proc2 ]
+CPU burst: 9 of 9
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            RUNNING         4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            READY           16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:47 AM SimulatorClient logTimeSlice
+INFO: System Time: 55 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 1 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:47 AM SimulatorClient logTimeSlice
+INFO: System Time: 56 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 2 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:47 AM SimulatorClient logTimeSlice
+INFO: System Time: 57 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 3 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:47 AM SimulatorClient logTimeSlice
+INFO: System Time: 58 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 4 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:47 AM SimulatorClient logTimeSlice
+INFO: System Time: 59 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 5 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:47 AM SimulatorClient logTimeSlice
+INFO: System Time: 60 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 6 of 6
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:47 AM SimulatorClient logTimeSlice
+INFO: System Time: 61 -------------
+
+
+Current CPU Process: [ EMPTY ]
+
+Current IO Process: [ proc4 ]
+I/O burst: 1 of 2
+
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            WAITING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:48 AM SimulatorClient logTimeSlice
+INFO: System Time: 62 -------------
+
+
+Current CPU Process: [ EMPTY ]
+
+Current IO Process: [ proc4 ]
+I/O burst: 2 of 2
+
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            WAITING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:48 AM SimulatorClient logTimeSlice
+INFO: System Time: 63 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 1 of 5
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:48 AM SimulatorClient logTimeSlice
+INFO: System Time: 64 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 2 of 5
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:48 AM SimulatorClient logTimeSlice
+INFO: System Time: 65 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 3 of 5
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:48 AM SimulatorClient logTimeSlice
+INFO: System Time: 66 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 4 of 5
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:48 AM SimulatorClient logTimeSlice
+INFO: System Time: 67 -------------
+
+
+Current CPU Process: [ proc4 ]
+CPU burst: 5 of 5
+
+Current IO Process: [ EMPTY ]
+
+READY QUEUE: 
+EMPTY
+
+
+IO QUEUE: 
+EMPTY
+
+
+PROCESSES: 
+Name:             State:     Arrival:        CPU Bursts:     Io Bursts:
+proc1            DONE            2           [6, 8, 4]       [3, 2]
+proc2            DONE            4           [5, 9]          [2]
+proc3            DONE            7           [6, 4, 3]       [4, 6]
+proc4            RUNNING         16          [8, 6, 5]       [5, 2]
+
+
+
+Mar 11, 2021 11:04:48 AM SimulatorClient runScheduler
+INFO: SIMULATION METRICS: 
+ - proc1
+   State: DONE
+   Finish Time: 34
+   Turnaround Time: 32
+   Wait Time: 10
+   I/O Wait Time: 0
+
+ - proc2
+   State: DONE
+   Finish Time: 54
+   Turnaround Time: 50
+   Wait Time: 34
+   I/O Wait Time: 0
+
+ - proc3
+   State: DONE
+   Finish Time: 45
+   Turnaround Time: 38
+   Wait Time: 15
+   I/O Wait Time: 0
+
+ - proc4
+   State: DONE
+   Finish Time: 67
+   Turnaround Time: 51
+   Wait Time: 25
+   I/O Wait Time: 0
+
+Average Wait Time: 21.0
+CPU Utilization: 94.02985 %
+Throughput: 50.0
+Average Turnaround Time: 42.75

@@ -1,0 +1,202 @@
+Select a scenario file to run.
+
+-- CPU Scheduling Simulator --
+
+ Choose a scheduling algorithm: 
+
+   1 -- First Come, First Serve
+   2 -- Shortest Job First
+   3 -- Priority
+   4 -- Round Robin
+
+   Selection: 3
+
+ Simulation Mode: 
+
+   M - Manual
+   A - Automatic
+
+   Selection: a
+   Enter sleep time (in ms): 100
+
+-- Priority Simulator --
+
+System Time: 0
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [     ]   I/O: [     ]
+
+System Time: 1
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [     ]   I/O: [     ]
+
+System Time: 2
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 1 of 6
+
+System Time: 3
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 2 of 6
+
+System Time: 4
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 3 of 6
+
+System Time: 5
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 4 of 6
+
+System Time: 6
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 5 of 6
+
+System Time: 7
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 6 of 6
+
+System Time: 8
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [     ]   I/O: [proc1]
+I/O burst: 1 of 5
+
+System Time: 9
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [     ]   I/O: [proc1]
+I/O burst: 2 of 5
+
+System Time: 10
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [     ]   I/O: [proc1]
+I/O burst: 3 of 5
+
+System Time: 11
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [     ]   I/O: [proc1]
+I/O burst: 4 of 5
+
+System Time: 12
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [     ]   I/O: [proc1]
+I/O burst: 5 of 5
+
+System Time: 13
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 1 of 8
+
+System Time: 14
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 2 of 8
+
+System Time: 15
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 3 of 8
+
+System Time: 16
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 4 of 8
+
+System Time: 17
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 5 of 8
+
+System Time: 18
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 6 of 8
+
+System Time: 19
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 7 of 8
+
+System Time: 20
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 8 of 8
+
+System Time: 21
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [     ]   I/O: [proc1]
+I/O burst: 1 of 2
+
+System Time: 22
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [     ]   I/O: [proc1]
+I/O burst: 2 of 2
+
+System Time: 23
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 1 of 4
+
+System Time: 24
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 2 of 4
+
+System Time: 25
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 3 of 4
+
+System Time: 26
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+CPU burst: 4 of 4
+** proc1 is finished. **
+
+** ALL JOBS FINISHED. **
+
+ Simulator End Time: 26
+
+SIMULATION METRICS: 
+ - proc1
+   State: DONE
+   Finish Time: 26
+   Turnaround Time: 24
+   Wait Time: 0
+   I/O Wait Time: 0
+
+Average Wait Time: 0.0
+CPU Utilization: 65.38461 %
+Throughput: 26.0
+Average Turnaround Time: 24.0
+
+** CHECK PROJECT FOLDER FOR 'schedulerLog.txt' **

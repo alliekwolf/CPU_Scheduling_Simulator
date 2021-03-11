@@ -183,6 +183,7 @@ public class SimulatorClient {
 							console.nextLine();
 						}
 					}
+					flag1 = true;
 					break;
 				default:
 					System.out.println("   * Choose either 'M' for 'Manual' or 'A' for 'Automatic'. *");
