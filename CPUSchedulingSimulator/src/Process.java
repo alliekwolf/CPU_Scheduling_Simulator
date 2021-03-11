@@ -203,14 +203,6 @@ public class Process {
 	}
 	
 	/**
-	 * Set the total time from the time the Process arrives to the time the Process finishes.
-	 * @param turnaroundTime int
-	 */
-	public void setTurnaroundTime(int turnaroundTime) {
-		this.turnaroundTime = turnaroundTime;
-	}
-	
-	/**
 	 * Gets which cycle of bursts the Process is ready to execute.
 	 * @return burstCycle int
 	 */
@@ -218,10 +210,18 @@ public class Process {
 		return burstCycle;
 	}
 	
+	/**
+	 * Return the number of bursts left in the burst cycle
+	 * @return integer
+	 */
 	public int getRemainingBursts() {
 		return remainingBursts;
 	}
 	
+	/**
+	 * Set the number of remaining bursts
+	 * @param remainingBursts int containing remaining number of bursts.
+	 */
 	public void setRemainingBursts(int remainingBursts) {
 		this.remainingBursts = remainingBursts;
 	}
@@ -359,6 +359,9 @@ public class Process {
 		}
 	}
 	
+	/**
+	 * Calculate the turn around time for the process.
+	 */
 	public void calculateTurnaroundTime() {
 		this.turnaroundTime = this.finishTime - this.arrivalTime;
 	}

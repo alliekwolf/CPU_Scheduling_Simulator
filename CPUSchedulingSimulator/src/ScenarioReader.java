@@ -81,12 +81,5 @@ public class ScenarioReader {
 		return processList;
 	}
 	
-	/**
-	 * Closes the text file with the process information.
-	 */
-	public void closeFile() {
-		//TODO implement closeFile()
-		
-	}
 	
 }

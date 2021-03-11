@@ -117,7 +117,7 @@ public abstract class Scheduler {
 	/**
 	 * 
 	 * 
-	 * @param avgTurnaroundTime float, the average turnaround time for the scenario.
+	 * @param avgTurnaroundTime float, the average turn around time for the scenario.
 	 */
 	public void setAvgTurnaroundTime(float avgTurnaroundTime) {
 		this.avgTurnaroundTime = avgTurnaroundTime;
@@ -141,10 +141,18 @@ public abstract class Scheduler {
 		this.simulationMode = simulationMode;
 	}
 	
+	/**
+	 * This has probably never been implemented.
+	 * @return float getSimulationTime
+	 */
 	public float getSimulationTime() {
 		return this.simulationTime;
 	}
 	
+	/**
+	 * This has probably never been implemented.
+	 * @param simulationTime float
+	 */
 	public void setSimulationTime(float simulationTime) {
 		this.simulationTime = simulationTime;
 	}
@@ -206,7 +214,7 @@ public abstract class Scheduler {
 	 * Get the readyQueue for this scenario, the queue of processes ready 
 	 * to use the CPU.
 	 * 
-	 * @return Queue<Process> the queue of processes in the ready que
+	 * @return Queue<Process> the queue of processes in the ready queue.
 	 */
 	public Queue<Process> getReadyQueue() {
 		return this.readyQueue;
