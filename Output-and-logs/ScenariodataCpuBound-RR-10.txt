@@ -1,0 +1,3980 @@
+proc1 wait time: 227
+CPU burst: 72 of 85
+
+System Time: 324
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 240
+proc3 wait time: 237
+proc1 wait time: 228
+CPU burst: 73 of 85
+
+System Time: 325
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 241
+proc3 wait time: 238
+proc1 wait time: 229
+CPU burst: 74 of 85
+
+System Time: 326
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 242
+proc3 wait time: 239
+proc1 wait time: 230
+CPU burst: 75 of 85
+
+System Time: 327
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 243
+proc3 wait time: 240
+proc1 wait time: 231
+CPU burst: 76 of 85
+
+System Time: 328
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 244
+proc3 wait time: 241
+proc1 wait time: 232
+CPU burst: 77 of 85
+
+System Time: 329
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 245
+proc3 wait time: 242
+proc1 wait time: 233
+CPU burst: 78 of 85
+
+System Time: 330
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 246
+proc3 wait time: 243
+proc1 wait time: 234
+CPU burst: 79 of 85
+
+System Time: 331
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 247
+proc3 wait time: 244
+proc1 wait time: 235
+CPU burst: 80 of 85
+
+System Time: 332
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 245
+proc1 wait time: 236
+proc4 wait time: 236
+CPU burst: 81 of 85
+
+System Time: 333
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 246
+proc1 wait time: 237
+proc4 wait time: 237
+CPU burst: 82 of 85
+
+System Time: 334
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 247
+proc1 wait time: 238
+proc4 wait time: 238
+CPU burst: 83 of 85
+
+System Time: 335
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 248
+proc1 wait time: 239
+proc4 wait time: 239
+CPU burst: 84 of 85
+
+System Time: 336
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 249
+proc1 wait time: 240
+proc4 wait time: 240
+CPU burst: 85 of 85
+
+System Time: 337
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc2]
+proc1 wait time: 241
+proc4 wait time: 241
+CPU burst: 81 of 94
+I/O burst: 1 of 7
+
+System Time: 338
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc2]
+proc1 wait time: 242
+proc4 wait time: 242
+CPU burst: 82 of 94
+I/O burst: 2 of 7
+
+System Time: 339
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc2]
+proc1 wait time: 243
+proc4 wait time: 243
+CPU burst: 83 of 94
+I/O burst: 3 of 7
+
+System Time: 340
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc2]
+proc1 wait time: 244
+proc4 wait time: 244
+CPU burst: 84 of 94
+I/O burst: 4 of 7
+
+System Time: 341
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc2]
+proc1 wait time: 245
+proc4 wait time: 245
+CPU burst: 85 of 94
+I/O burst: 5 of 7
+
+System Time: 342
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc2]
+proc1 wait time: 246
+proc4 wait time: 246
+CPU burst: 86 of 94
+I/O burst: 6 of 7
+
+System Time: 343
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc2]
+proc1 wait time: 247
+proc4 wait time: 247
+CPU burst: 87 of 94
+I/O burst: 7 of 7
+
+System Time: 344
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 248
+proc4 wait time: 248
+proc2 wait time: 248
+CPU burst: 88 of 94
+
+System Time: 345
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 249
+proc4 wait time: 249
+proc2 wait time: 249
+CPU burst: 89 of 94
+
+System Time: 346
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 250
+proc4 wait time: 250
+proc2 wait time: 250
+CPU burst: 90 of 94
+
+System Time: 347
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 251
+proc2 wait time: 251
+proc3 wait time: 250
+CPU burst: 41 of 79
+
+System Time: 348
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 252
+proc2 wait time: 252
+proc3 wait time: 251
+CPU burst: 42 of 79
+
+System Time: 349
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 253
+proc2 wait time: 253
+proc3 wait time: 252
+CPU burst: 43 of 79
+
+System Time: 350
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 254
+proc2 wait time: 254
+proc3 wait time: 253
+CPU burst: 44 of 79
+
+System Time: 351
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 255
+proc2 wait time: 255
+proc3 wait time: 254
+CPU burst: 45 of 79
+
+System Time: 352
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 256
+proc2 wait time: 256
+proc3 wait time: 255
+CPU burst: 46 of 79
+
+System Time: 353
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 257
+proc2 wait time: 257
+proc3 wait time: 256
+CPU burst: 47 of 79
+
+System Time: 354
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 258
+proc2 wait time: 258
+proc3 wait time: 257
+CPU burst: 48 of 79
+
+System Time: 355
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 259
+proc2 wait time: 259
+proc3 wait time: 258
+CPU burst: 49 of 79
+
+System Time: 356
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 260
+proc2 wait time: 260
+proc3 wait time: 259
+CPU burst: 50 of 79
+
+System Time: 357
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 261
+proc3 wait time: 260
+proc1 wait time: 251
+CPU burst: 81 of 85
+
+System Time: 358
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 262
+proc3 wait time: 261
+proc1 wait time: 252
+CPU burst: 82 of 85
+
+System Time: 359
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 263
+proc3 wait time: 262
+proc1 wait time: 253
+CPU burst: 83 of 85
+
+System Time: 360
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 264
+proc3 wait time: 263
+proc1 wait time: 254
+CPU burst: 84 of 85
+
+System Time: 361
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 265
+proc3 wait time: 264
+proc1 wait time: 255
+CPU burst: 85 of 85
+
+System Time: 362
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [proc4]
+proc3 wait time: 265
+proc1 wait time: 256
+CPU burst: 1 of 51
+I/O burst: 1 of 5
+
+System Time: 363
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [proc4]
+proc3 wait time: 266
+proc1 wait time: 257
+CPU burst: 2 of 51
+I/O burst: 2 of 5
+
+System Time: 364
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [proc4]
+proc3 wait time: 267
+proc1 wait time: 258
+CPU burst: 3 of 51
+I/O burst: 3 of 5
+
+System Time: 365
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [proc4]
+proc3 wait time: 268
+proc1 wait time: 259
+CPU burst: 4 of 51
+I/O burst: 4 of 5
+
+System Time: 366
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [proc4]
+proc3 wait time: 269
+proc1 wait time: 260
+CPU burst: 5 of 51
+I/O burst: 5 of 5
+
+System Time: 367
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 270
+proc1 wait time: 261
+proc4 wait time: 261
+CPU burst: 6 of 51
+
+System Time: 368
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 271
+proc1 wait time: 262
+proc4 wait time: 262
+CPU burst: 7 of 51
+
+System Time: 369
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 272
+proc1 wait time: 263
+proc4 wait time: 263
+CPU burst: 8 of 51
+
+System Time: 370
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 273
+proc1 wait time: 264
+proc4 wait time: 264
+CPU burst: 9 of 51
+
+System Time: 371
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 274
+proc1 wait time: 265
+proc4 wait time: 265
+CPU burst: 10 of 51
+
+System Time: 372
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 266
+proc4 wait time: 266
+proc2 wait time: 266
+CPU burst: 91 of 94
+
+System Time: 373
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 267
+proc4 wait time: 267
+proc2 wait time: 267
+CPU burst: 92 of 94
+
+System Time: 374
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 268
+proc4 wait time: 268
+proc2 wait time: 268
+CPU burst: 93 of 94
+
+System Time: 375
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 269
+proc4 wait time: 269
+proc2 wait time: 269
+CPU burst: 94 of 94
+
+System Time: 376
+Ready Queue:  [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 270
+proc2 wait time: 270
+CPU burst: 51 of 79
+I/O burst: 1 of 8
+
+System Time: 377
+Ready Queue:  [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 271
+proc2 wait time: 271
+CPU burst: 52 of 79
+I/O burst: 2 of 8
+
+System Time: 378
+Ready Queue:  [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 272
+proc2 wait time: 272
+CPU burst: 53 of 79
+I/O burst: 3 of 8
+
+System Time: 379
+Ready Queue:  [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 273
+proc2 wait time: 273
+CPU burst: 54 of 79
+I/O burst: 4 of 8
+
+System Time: 380
+Ready Queue:  [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 274
+proc2 wait time: 274
+CPU burst: 55 of 79
+I/O burst: 5 of 8
+
+System Time: 381
+Ready Queue:  [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 275
+proc2 wait time: 275
+CPU burst: 56 of 79
+I/O burst: 6 of 8
+
+System Time: 382
+Ready Queue:  [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 276
+proc2 wait time: 276
+CPU burst: 57 of 79
+I/O burst: 7 of 8
+
+System Time: 383
+Ready Queue:  [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 277
+proc2 wait time: 277
+CPU burst: 58 of 79
+I/O burst: 8 of 8
+
+System Time: 384
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 278
+proc2 wait time: 278
+proc3 wait time: 275
+CPU burst: 59 of 79
+
+System Time: 385
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 279
+proc2 wait time: 279
+proc3 wait time: 276
+CPU burst: 60 of 79
+
+System Time: 386
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 280
+proc3 wait time: 277
+proc1 wait time: 270
+CPU burst: 1 of 54
+
+System Time: 387
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 281
+proc3 wait time: 278
+proc1 wait time: 271
+CPU burst: 2 of 54
+
+System Time: 388
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 282
+proc3 wait time: 279
+proc1 wait time: 272
+CPU burst: 3 of 54
+
+System Time: 389
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 283
+proc3 wait time: 280
+proc1 wait time: 273
+CPU burst: 4 of 54
+
+System Time: 390
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 284
+proc3 wait time: 281
+proc1 wait time: 274
+CPU burst: 5 of 54
+
+System Time: 391
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 285
+proc3 wait time: 282
+proc1 wait time: 275
+CPU burst: 6 of 54
+
+System Time: 392
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 286
+proc3 wait time: 283
+proc1 wait time: 276
+CPU burst: 7 of 54
+
+System Time: 393
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 287
+proc3 wait time: 284
+proc1 wait time: 277
+CPU burst: 8 of 54
+
+System Time: 394
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 288
+proc3 wait time: 285
+proc1 wait time: 278
+CPU burst: 9 of 54
+
+System Time: 395
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 289
+proc3 wait time: 286
+proc1 wait time: 279
+CPU burst: 10 of 54
+
+System Time: 396
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 287
+proc1 wait time: 280
+proc4 wait time: 280
+CPU burst: 11 of 51
+
+System Time: 397
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 288
+proc1 wait time: 281
+proc4 wait time: 281
+CPU burst: 12 of 51
+
+System Time: 398
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 289
+proc1 wait time: 282
+proc4 wait time: 282
+CPU burst: 13 of 51
+
+System Time: 399
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 290
+proc1 wait time: 283
+proc4 wait time: 283
+CPU burst: 14 of 51
+
+System Time: 400
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 291
+proc1 wait time: 284
+proc4 wait time: 284
+CPU burst: 15 of 51
+
+System Time: 401
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 292
+proc1 wait time: 285
+proc4 wait time: 285
+CPU burst: 16 of 51
+
+System Time: 402
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 293
+proc1 wait time: 286
+proc4 wait time: 286
+CPU burst: 17 of 51
+
+System Time: 403
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 294
+proc1 wait time: 287
+proc4 wait time: 287
+CPU burst: 18 of 51
+
+System Time: 404
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 295
+proc1 wait time: 288
+proc4 wait time: 288
+CPU burst: 19 of 51
+
+System Time: 405
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 296
+proc1 wait time: 289
+proc4 wait time: 289
+CPU burst: 20 of 51
+
+System Time: 406
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 290
+proc4 wait time: 290
+proc2 wait time: 290
+CPU burst: 1 of 75
+
+System Time: 407
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 291
+proc4 wait time: 291
+proc2 wait time: 291
+CPU burst: 2 of 75
+
+System Time: 408
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 292
+proc4 wait time: 292
+proc2 wait time: 292
+CPU burst: 3 of 75
+
+System Time: 409
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 293
+proc4 wait time: 293
+proc2 wait time: 293
+CPU burst: 4 of 75
+
+System Time: 410
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 294
+proc4 wait time: 294
+proc2 wait time: 294
+CPU burst: 5 of 75
+
+System Time: 411
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 295
+proc4 wait time: 295
+proc2 wait time: 295
+CPU burst: 6 of 75
+
+System Time: 412
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 296
+proc4 wait time: 296
+proc2 wait time: 296
+CPU burst: 7 of 75
+
+System Time: 413
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 297
+proc4 wait time: 297
+proc2 wait time: 297
+CPU burst: 8 of 75
+
+System Time: 414
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 298
+proc4 wait time: 298
+proc2 wait time: 298
+CPU burst: 9 of 75
+
+System Time: 415
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 299
+proc4 wait time: 299
+proc2 wait time: 299
+CPU burst: 10 of 75
+
+System Time: 416
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 300
+proc2 wait time: 300
+proc3 wait time: 297
+CPU burst: 61 of 79
+
+System Time: 417
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 301
+proc2 wait time: 301
+proc3 wait time: 298
+CPU burst: 62 of 79
+
+System Time: 418
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 302
+proc2 wait time: 302
+proc3 wait time: 299
+CPU burst: 63 of 79
+
+System Time: 419
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 303
+proc2 wait time: 303
+proc3 wait time: 300
+CPU burst: 64 of 79
+
+System Time: 420
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 304
+proc2 wait time: 304
+proc3 wait time: 301
+CPU burst: 65 of 79
+
+System Time: 421
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 305
+proc2 wait time: 305
+proc3 wait time: 302
+CPU burst: 66 of 79
+
+System Time: 422
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 306
+proc2 wait time: 306
+proc3 wait time: 303
+CPU burst: 67 of 79
+
+System Time: 423
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 307
+proc2 wait time: 307
+proc3 wait time: 304
+CPU burst: 68 of 79
+
+System Time: 424
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 308
+proc2 wait time: 308
+proc3 wait time: 305
+CPU burst: 69 of 79
+
+System Time: 425
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 309
+proc2 wait time: 309
+proc3 wait time: 306
+CPU burst: 70 of 79
+
+System Time: 426
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 310
+proc3 wait time: 307
+proc1 wait time: 300
+CPU burst: 11 of 54
+
+System Time: 427
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 311
+proc3 wait time: 308
+proc1 wait time: 301
+CPU burst: 12 of 54
+
+System Time: 428
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 312
+proc3 wait time: 309
+proc1 wait time: 302
+CPU burst: 13 of 54
+
+System Time: 429
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 313
+proc3 wait time: 310
+proc1 wait time: 303
+CPU burst: 14 of 54
+
+System Time: 430
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 314
+proc3 wait time: 311
+proc1 wait time: 304
+CPU burst: 15 of 54
+
+System Time: 431
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 315
+proc3 wait time: 312
+proc1 wait time: 305
+CPU burst: 16 of 54
+
+System Time: 432
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 316
+proc3 wait time: 313
+proc1 wait time: 306
+CPU burst: 17 of 54
+
+System Time: 433
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 317
+proc3 wait time: 314
+proc1 wait time: 307
+CPU burst: 18 of 54
+
+System Time: 434
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 318
+proc3 wait time: 315
+proc1 wait time: 308
+CPU burst: 19 of 54
+
+System Time: 435
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 319
+proc3 wait time: 316
+proc1 wait time: 309
+CPU burst: 20 of 54
+
+System Time: 436
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 317
+proc1 wait time: 310
+proc4 wait time: 310
+CPU burst: 21 of 51
+
+System Time: 437
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 318
+proc1 wait time: 311
+proc4 wait time: 311
+CPU burst: 22 of 51
+
+System Time: 438
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 319
+proc1 wait time: 312
+proc4 wait time: 312
+CPU burst: 23 of 51
+
+System Time: 439
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 320
+proc1 wait time: 313
+proc4 wait time: 313
+CPU burst: 24 of 51
+
+System Time: 440
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 321
+proc1 wait time: 314
+proc4 wait time: 314
+CPU burst: 25 of 51
+
+System Time: 441
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 322
+proc1 wait time: 315
+proc4 wait time: 315
+CPU burst: 26 of 51
+
+System Time: 442
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 323
+proc1 wait time: 316
+proc4 wait time: 316
+CPU burst: 27 of 51
+
+System Time: 443
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 324
+proc1 wait time: 317
+proc4 wait time: 317
+CPU burst: 28 of 51
+
+System Time: 444
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 325
+proc1 wait time: 318
+proc4 wait time: 318
+CPU burst: 29 of 51
+
+System Time: 445
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 326
+proc1 wait time: 319
+proc4 wait time: 319
+CPU burst: 30 of 51
+
+System Time: 446
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 320
+proc4 wait time: 320
+proc2 wait time: 320
+CPU burst: 11 of 75
+
+System Time: 447
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 321
+proc4 wait time: 321
+proc2 wait time: 321
+CPU burst: 12 of 75
+
+System Time: 448
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 322
+proc4 wait time: 322
+proc2 wait time: 322
+CPU burst: 13 of 75
+
+System Time: 449
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 323
+proc4 wait time: 323
+proc2 wait time: 323
+CPU burst: 14 of 75
+
+System Time: 450
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 324
+proc4 wait time: 324
+proc2 wait time: 324
+CPU burst: 15 of 75
+
+System Time: 451
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 325
+proc4 wait time: 325
+proc2 wait time: 325
+CPU burst: 16 of 75
+
+System Time: 452
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 326
+proc4 wait time: 326
+proc2 wait time: 326
+CPU burst: 17 of 75
+
+System Time: 453
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 327
+proc4 wait time: 327
+proc2 wait time: 327
+CPU burst: 18 of 75
+
+System Time: 454
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 328
+proc4 wait time: 328
+proc2 wait time: 328
+CPU burst: 19 of 75
+
+System Time: 455
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 329
+proc4 wait time: 329
+proc2 wait time: 329
+CPU burst: 20 of 75
+
+System Time: 456
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 330
+proc2 wait time: 330
+proc3 wait time: 327
+CPU burst: 71 of 79
+
+System Time: 457
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 331
+proc2 wait time: 331
+proc3 wait time: 328
+CPU burst: 72 of 79
+
+System Time: 458
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 332
+proc2 wait time: 332
+proc3 wait time: 329
+CPU burst: 73 of 79
+
+System Time: 459
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 333
+proc2 wait time: 333
+proc3 wait time: 330
+CPU burst: 74 of 79
+
+System Time: 460
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 334
+proc2 wait time: 334
+proc3 wait time: 331
+CPU burst: 75 of 79
+
+System Time: 461
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 335
+proc2 wait time: 335
+proc3 wait time: 332
+CPU burst: 76 of 79
+
+System Time: 462
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 336
+proc2 wait time: 336
+proc3 wait time: 333
+CPU burst: 77 of 79
+
+System Time: 463
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 337
+proc2 wait time: 337
+proc3 wait time: 334
+CPU burst: 78 of 79
+
+System Time: 464
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 338
+proc2 wait time: 338
+proc3 wait time: 335
+CPU burst: 79 of 79
+
+System Time: 465
+Ready Queue:  [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [proc1]
+proc2 wait time: 339
+proc3 wait time: 336
+CPU burst: 21 of 54
+I/O burst: 1 of 8
+
+System Time: 466
+Ready Queue:  [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [proc1]
+proc2 wait time: 340
+proc3 wait time: 337
+CPU burst: 22 of 54
+I/O burst: 2 of 8
+
+System Time: 467
+Ready Queue:  [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [proc1]
+proc2 wait time: 341
+proc3 wait time: 338
+CPU burst: 23 of 54
+I/O burst: 3 of 8
+
+System Time: 468
+Ready Queue:  [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [proc1]
+proc2 wait time: 342
+proc3 wait time: 339
+CPU burst: 24 of 54
+I/O burst: 4 of 8
+
+System Time: 469
+Ready Queue:  [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [proc1]
+proc2 wait time: 343
+proc3 wait time: 340
+CPU burst: 25 of 54
+I/O burst: 5 of 8
+
+System Time: 470
+Ready Queue:  [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [proc1]
+proc2 wait time: 344
+proc3 wait time: 341
+CPU burst: 26 of 54
+I/O burst: 6 of 8
+
+System Time: 471
+Ready Queue:  [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [proc1]
+proc2 wait time: 345
+proc3 wait time: 342
+CPU burst: 27 of 54
+I/O burst: 7 of 8
+
+System Time: 472
+Ready Queue:  [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [proc1]
+proc2 wait time: 346
+proc3 wait time: 343
+CPU burst: 28 of 54
+I/O burst: 8 of 8
+
+System Time: 473
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 347
+proc3 wait time: 344
+proc1 wait time: 330
+CPU burst: 29 of 54
+
+System Time: 474
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 348
+proc3 wait time: 345
+proc1 wait time: 331
+CPU burst: 30 of 54
+
+System Time: 475
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 346
+proc1 wait time: 332
+proc4 wait time: 339
+CPU burst: 31 of 51
+
+System Time: 476
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 347
+proc1 wait time: 333
+proc4 wait time: 340
+CPU burst: 32 of 51
+
+System Time: 477
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 348
+proc1 wait time: 334
+proc4 wait time: 341
+CPU burst: 33 of 51
+
+System Time: 478
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 349
+proc1 wait time: 335
+proc4 wait time: 342
+CPU burst: 34 of 51
+
+System Time: 479
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 350
+proc1 wait time: 336
+proc4 wait time: 343
+CPU burst: 35 of 51
+
+System Time: 480
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 351
+proc1 wait time: 337
+proc4 wait time: 344
+CPU burst: 36 of 51
+
+System Time: 481
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 352
+proc1 wait time: 338
+proc4 wait time: 345
+CPU burst: 37 of 51
+
+System Time: 482
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 353
+proc1 wait time: 339
+proc4 wait time: 346
+CPU burst: 38 of 51
+
+System Time: 483
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 354
+proc1 wait time: 340
+proc4 wait time: 347
+CPU burst: 39 of 51
+
+System Time: 484
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 355
+proc1 wait time: 341
+proc4 wait time: 348
+CPU burst: 40 of 51
+
+System Time: 485
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 342
+proc4 wait time: 349
+proc2 wait time: 349
+CPU burst: 21 of 75
+
+System Time: 486
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 343
+proc4 wait time: 350
+proc2 wait time: 350
+CPU burst: 22 of 75
+
+System Time: 487
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 344
+proc4 wait time: 351
+proc2 wait time: 351
+CPU burst: 23 of 75
+
+System Time: 488
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 345
+proc4 wait time: 352
+proc2 wait time: 352
+CPU burst: 24 of 75
+
+System Time: 489
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 346
+proc4 wait time: 353
+proc2 wait time: 353
+CPU burst: 25 of 75
+
+System Time: 490
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 347
+proc4 wait time: 354
+proc2 wait time: 354
+CPU burst: 26 of 75
+
+System Time: 491
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 348
+proc4 wait time: 355
+proc2 wait time: 355
+CPU burst: 27 of 75
+
+System Time: 492
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 349
+proc4 wait time: 356
+proc2 wait time: 356
+CPU burst: 28 of 75
+
+System Time: 493
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 350
+proc4 wait time: 357
+proc2 wait time: 357
+CPU burst: 29 of 75
+
+System Time: 494
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 351
+proc4 wait time: 358
+proc2 wait time: 358
+CPU burst: 30 of 75
+
+System Time: 495
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 359
+proc2 wait time: 359
+proc3 wait time: 356
+CPU burst: 1 of 90
+
+System Time: 496
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 360
+proc2 wait time: 360
+proc3 wait time: 357
+CPU burst: 2 of 90
+
+System Time: 497
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 361
+proc2 wait time: 361
+proc3 wait time: 358
+CPU burst: 3 of 90
+
+System Time: 498
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 362
+proc2 wait time: 362
+proc3 wait time: 359
+CPU burst: 4 of 90
+
+System Time: 499
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 363
+proc2 wait time: 363
+proc3 wait time: 360
+CPU burst: 5 of 90
+
+System Time: 500
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 364
+proc2 wait time: 364
+proc3 wait time: 361
+CPU burst: 6 of 90
+
+System Time: 501
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 365
+proc2 wait time: 365
+proc3 wait time: 362
+CPU burst: 7 of 90
+
+System Time: 502
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 366
+proc2 wait time: 366
+proc3 wait time: 363
+CPU burst: 8 of 90
+
+System Time: 503
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 367
+proc2 wait time: 367
+proc3 wait time: 364
+CPU burst: 9 of 90
+
+System Time: 504
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 368
+proc2 wait time: 368
+proc3 wait time: 365
+CPU burst: 10 of 90
+
+System Time: 505
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 369
+proc3 wait time: 366
+proc1 wait time: 352
+CPU burst: 31 of 54
+
+System Time: 506
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 370
+proc3 wait time: 367
+proc1 wait time: 353
+CPU burst: 32 of 54
+
+System Time: 507
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 371
+proc3 wait time: 368
+proc1 wait time: 354
+CPU burst: 33 of 54
+
+System Time: 508
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 372
+proc3 wait time: 369
+proc1 wait time: 355
+CPU burst: 34 of 54
+
+System Time: 509
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 373
+proc3 wait time: 370
+proc1 wait time: 356
+CPU burst: 35 of 54
+
+System Time: 510
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 374
+proc3 wait time: 371
+proc1 wait time: 357
+CPU burst: 36 of 54
+
+System Time: 511
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 375
+proc3 wait time: 372
+proc1 wait time: 358
+CPU burst: 37 of 54
+
+System Time: 512
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 376
+proc3 wait time: 373
+proc1 wait time: 359
+CPU burst: 38 of 54
+
+System Time: 513
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 377
+proc3 wait time: 374
+proc1 wait time: 360
+CPU burst: 39 of 54
+
+System Time: 514
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 378
+proc3 wait time: 375
+proc1 wait time: 361
+CPU burst: 40 of 54
+
+System Time: 515
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 376
+proc1 wait time: 362
+proc4 wait time: 369
+CPU burst: 41 of 51
+
+System Time: 516
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 377
+proc1 wait time: 363
+proc4 wait time: 370
+CPU burst: 42 of 51
+
+System Time: 517
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 378
+proc1 wait time: 364
+proc4 wait time: 371
+CPU burst: 43 of 51
+
+System Time: 518
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 379
+proc1 wait time: 365
+proc4 wait time: 372
+CPU burst: 44 of 51
+
+System Time: 519
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 380
+proc1 wait time: 366
+proc4 wait time: 373
+CPU burst: 45 of 51
+
+System Time: 520
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 381
+proc1 wait time: 367
+proc4 wait time: 374
+CPU burst: 46 of 51
+
+System Time: 521
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 382
+proc1 wait time: 368
+proc4 wait time: 375
+CPU burst: 47 of 51
+
+System Time: 522
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 383
+proc1 wait time: 369
+proc4 wait time: 376
+CPU burst: 48 of 51
+
+System Time: 523
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 384
+proc1 wait time: 370
+proc4 wait time: 377
+CPU burst: 49 of 51
+
+System Time: 524
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 385
+proc1 wait time: 371
+proc4 wait time: 378
+CPU burst: 50 of 51
+
+System Time: 525
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 372
+proc4 wait time: 379
+proc2 wait time: 379
+CPU burst: 31 of 75
+
+System Time: 526
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 373
+proc4 wait time: 380
+proc2 wait time: 380
+CPU burst: 32 of 75
+
+System Time: 527
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 374
+proc4 wait time: 381
+proc2 wait time: 381
+CPU burst: 33 of 75
+
+System Time: 528
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 375
+proc4 wait time: 382
+proc2 wait time: 382
+CPU burst: 34 of 75
+
+System Time: 529
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 376
+proc4 wait time: 383
+proc2 wait time: 383
+CPU burst: 35 of 75
+
+System Time: 530
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 377
+proc4 wait time: 384
+proc2 wait time: 384
+CPU burst: 36 of 75
+
+System Time: 531
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 378
+proc4 wait time: 385
+proc2 wait time: 385
+CPU burst: 37 of 75
+
+System Time: 532
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 379
+proc4 wait time: 386
+proc2 wait time: 386
+CPU burst: 38 of 75
+
+System Time: 533
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 380
+proc4 wait time: 387
+proc2 wait time: 387
+CPU burst: 39 of 75
+
+System Time: 534
+Ready Queue:  [proc1] [proc4] [proc2]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 381
+proc4 wait time: 388
+proc2 wait time: 388
+CPU burst: 40 of 75
+
+System Time: 535
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 389
+proc2 wait time: 389
+proc3 wait time: 386
+CPU burst: 11 of 90
+
+System Time: 536
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 390
+proc2 wait time: 390
+proc3 wait time: 387
+CPU burst: 12 of 90
+
+System Time: 537
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 391
+proc2 wait time: 391
+proc3 wait time: 388
+CPU burst: 13 of 90
+
+System Time: 538
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 392
+proc2 wait time: 392
+proc3 wait time: 389
+CPU burst: 14 of 90
+
+System Time: 539
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 393
+proc2 wait time: 393
+proc3 wait time: 390
+CPU burst: 15 of 90
+
+System Time: 540
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 394
+proc2 wait time: 394
+proc3 wait time: 391
+CPU burst: 16 of 90
+
+System Time: 541
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 395
+proc2 wait time: 395
+proc3 wait time: 392
+CPU burst: 17 of 90
+
+System Time: 542
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 396
+proc2 wait time: 396
+proc3 wait time: 393
+CPU burst: 18 of 90
+
+System Time: 543
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 397
+proc2 wait time: 397
+proc3 wait time: 394
+CPU burst: 19 of 90
+
+System Time: 544
+Ready Queue:  [proc4] [proc2] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 398
+proc2 wait time: 398
+proc3 wait time: 395
+CPU burst: 20 of 90
+
+System Time: 545
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 399
+proc3 wait time: 396
+proc1 wait time: 382
+CPU burst: 41 of 54
+
+System Time: 546
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 400
+proc3 wait time: 397
+proc1 wait time: 383
+CPU burst: 42 of 54
+
+System Time: 547
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 401
+proc3 wait time: 398
+proc1 wait time: 384
+CPU burst: 43 of 54
+
+System Time: 548
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 402
+proc3 wait time: 399
+proc1 wait time: 385
+CPU burst: 44 of 54
+
+System Time: 549
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 403
+proc3 wait time: 400
+proc1 wait time: 386
+CPU burst: 45 of 54
+
+System Time: 550
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 404
+proc3 wait time: 401
+proc1 wait time: 387
+CPU burst: 46 of 54
+
+System Time: 551
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 405
+proc3 wait time: 402
+proc1 wait time: 388
+CPU burst: 47 of 54
+
+System Time: 552
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 406
+proc3 wait time: 403
+proc1 wait time: 389
+CPU burst: 48 of 54
+
+System Time: 553
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 407
+proc3 wait time: 404
+proc1 wait time: 390
+CPU burst: 49 of 54
+
+System Time: 554
+Ready Queue:  [proc2] [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc2 wait time: 408
+proc3 wait time: 405
+proc1 wait time: 391
+CPU burst: 50 of 54
+
+System Time: 555
+Ready Queue:  [proc3] [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc2]   I/O: [     ]
+proc3 wait time: 406
+proc1 wait time: 392
+proc4 wait time: 399
+CPU burst: 51 of 51
+** proc2 is finished. **
+
+System Time: 556
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 393
+proc4 wait time: 400
+CPU burst: 41 of 75
+
+System Time: 557
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 394
+proc4 wait time: 401
+CPU burst: 42 of 75
+
+System Time: 558
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 395
+proc4 wait time: 402
+CPU burst: 43 of 75
+
+System Time: 559
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 396
+proc4 wait time: 403
+CPU burst: 44 of 75
+
+System Time: 560
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 397
+proc4 wait time: 404
+CPU burst: 45 of 75
+
+System Time: 561
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 398
+proc4 wait time: 405
+CPU burst: 46 of 75
+
+System Time: 562
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 399
+proc4 wait time: 406
+CPU burst: 47 of 75
+
+System Time: 563
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 400
+proc4 wait time: 407
+CPU burst: 48 of 75
+
+System Time: 564
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 401
+proc4 wait time: 408
+CPU burst: 49 of 75
+
+System Time: 565
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 402
+proc4 wait time: 409
+CPU burst: 50 of 75
+
+System Time: 566
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 410
+proc3 wait time: 407
+CPU burst: 21 of 90
+
+System Time: 567
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 411
+proc3 wait time: 408
+CPU burst: 22 of 90
+
+System Time: 568
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 412
+proc3 wait time: 409
+CPU burst: 23 of 90
+
+System Time: 569
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 413
+proc3 wait time: 410
+CPU burst: 24 of 90
+
+System Time: 570
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 414
+proc3 wait time: 411
+CPU burst: 25 of 90
+
+System Time: 571
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 415
+proc3 wait time: 412
+CPU burst: 26 of 90
+
+System Time: 572
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 416
+proc3 wait time: 413
+CPU burst: 27 of 90
+
+System Time: 573
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 417
+proc3 wait time: 414
+CPU burst: 28 of 90
+
+System Time: 574
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 418
+proc3 wait time: 415
+CPU burst: 29 of 90
+
+System Time: 575
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 419
+proc3 wait time: 416
+CPU burst: 30 of 90
+
+System Time: 576
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 417
+proc1 wait time: 403
+CPU burst: 51 of 54
+
+System Time: 577
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 418
+proc1 wait time: 404
+CPU burst: 52 of 54
+
+System Time: 578
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 419
+proc1 wait time: 405
+CPU burst: 53 of 54
+
+System Time: 579
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 420
+proc1 wait time: 406
+CPU burst: 54 of 54
+
+System Time: 580
+Ready Queue:  [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc4]
+proc1 wait time: 407
+CPU burst: 51 of 75
+I/O burst: 1 of 6
+
+System Time: 581
+Ready Queue:  [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc4]
+proc1 wait time: 408
+CPU burst: 52 of 75
+I/O burst: 2 of 6
+
+System Time: 582
+Ready Queue:  [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc4]
+proc1 wait time: 409
+CPU burst: 53 of 75
+I/O burst: 3 of 6
+
+System Time: 583
+Ready Queue:  [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc4]
+proc1 wait time: 410
+CPU burst: 54 of 75
+I/O burst: 4 of 6
+
+System Time: 584
+Ready Queue:  [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc4]
+proc1 wait time: 411
+CPU burst: 55 of 75
+I/O burst: 5 of 6
+
+System Time: 585
+Ready Queue:  [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [proc4]
+proc1 wait time: 412
+CPU burst: 56 of 75
+I/O burst: 6 of 6
+
+System Time: 586
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 413
+proc4 wait time: 420
+CPU burst: 57 of 75
+
+System Time: 587
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 414
+proc4 wait time: 421
+CPU burst: 58 of 75
+
+System Time: 588
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 415
+proc4 wait time: 422
+CPU burst: 59 of 75
+
+System Time: 589
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 416
+proc4 wait time: 423
+CPU burst: 60 of 75
+
+System Time: 590
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 424
+proc3 wait time: 421
+CPU burst: 31 of 90
+
+System Time: 591
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 425
+proc3 wait time: 422
+CPU burst: 32 of 90
+
+System Time: 592
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 426
+proc3 wait time: 423
+CPU burst: 33 of 90
+
+System Time: 593
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 427
+proc3 wait time: 424
+CPU burst: 34 of 90
+
+System Time: 594
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 428
+proc3 wait time: 425
+CPU burst: 35 of 90
+
+System Time: 595
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 429
+proc3 wait time: 426
+CPU burst: 36 of 90
+
+System Time: 596
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 430
+proc3 wait time: 427
+CPU burst: 37 of 90
+
+System Time: 597
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 431
+proc3 wait time: 428
+CPU burst: 38 of 90
+
+System Time: 598
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 432
+proc3 wait time: 429
+CPU burst: 39 of 90
+
+System Time: 599
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 433
+proc3 wait time: 430
+CPU burst: 40 of 90
+
+System Time: 600
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 431
+proc1 wait time: 417
+CPU burst: 1 of 68
+
+System Time: 601
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 432
+proc1 wait time: 418
+CPU burst: 2 of 68
+
+System Time: 602
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 433
+proc1 wait time: 419
+CPU burst: 3 of 68
+
+System Time: 603
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 434
+proc1 wait time: 420
+CPU burst: 4 of 68
+
+System Time: 604
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 435
+proc1 wait time: 421
+CPU burst: 5 of 68
+
+System Time: 605
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 436
+proc1 wait time: 422
+CPU burst: 6 of 68
+
+System Time: 606
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 437
+proc1 wait time: 423
+CPU burst: 7 of 68
+
+System Time: 607
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 438
+proc1 wait time: 424
+CPU burst: 8 of 68
+
+System Time: 608
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 439
+proc1 wait time: 425
+CPU burst: 9 of 68
+
+System Time: 609
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 440
+proc1 wait time: 426
+CPU burst: 10 of 68
+
+System Time: 610
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 427
+proc4 wait time: 434
+CPU burst: 61 of 75
+
+System Time: 611
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 428
+proc4 wait time: 435
+CPU burst: 62 of 75
+
+System Time: 612
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 429
+proc4 wait time: 436
+CPU burst: 63 of 75
+
+System Time: 613
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 430
+proc4 wait time: 437
+CPU burst: 64 of 75
+
+System Time: 614
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 431
+proc4 wait time: 438
+CPU burst: 65 of 75
+
+System Time: 615
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 432
+proc4 wait time: 439
+CPU burst: 66 of 75
+
+System Time: 616
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 433
+proc4 wait time: 440
+CPU burst: 67 of 75
+
+System Time: 617
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 434
+proc4 wait time: 441
+CPU burst: 68 of 75
+
+System Time: 618
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 435
+proc4 wait time: 442
+CPU burst: 69 of 75
+
+System Time: 619
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 436
+proc4 wait time: 443
+CPU burst: 70 of 75
+
+System Time: 620
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 444
+proc3 wait time: 441
+CPU burst: 41 of 90
+
+System Time: 621
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 445
+proc3 wait time: 442
+CPU burst: 42 of 90
+
+System Time: 622
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 446
+proc3 wait time: 443
+CPU burst: 43 of 90
+
+System Time: 623
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 447
+proc3 wait time: 444
+CPU burst: 44 of 90
+
+System Time: 624
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 448
+proc3 wait time: 445
+CPU burst: 45 of 90
+
+System Time: 625
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 449
+proc3 wait time: 446
+CPU burst: 46 of 90
+
+System Time: 626
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 450
+proc3 wait time: 447
+CPU burst: 47 of 90
+
+System Time: 627
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 451
+proc3 wait time: 448
+CPU burst: 48 of 90
+
+System Time: 628
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 452
+proc3 wait time: 449
+CPU burst: 49 of 90
+
+System Time: 629
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 453
+proc3 wait time: 450
+CPU burst: 50 of 90
+
+System Time: 630
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 451
+proc1 wait time: 437
+CPU burst: 11 of 68
+
+System Time: 631
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 452
+proc1 wait time: 438
+CPU burst: 12 of 68
+
+System Time: 632
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 453
+proc1 wait time: 439
+CPU burst: 13 of 68
+
+System Time: 633
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 454
+proc1 wait time: 440
+CPU burst: 14 of 68
+
+System Time: 634
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 455
+proc1 wait time: 441
+CPU burst: 15 of 68
+
+System Time: 635
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 456
+proc1 wait time: 442
+CPU burst: 16 of 68
+
+System Time: 636
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 457
+proc1 wait time: 443
+CPU burst: 17 of 68
+
+System Time: 637
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 458
+proc1 wait time: 444
+CPU burst: 18 of 68
+
+System Time: 638
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 459
+proc1 wait time: 445
+CPU burst: 19 of 68
+
+System Time: 639
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 460
+proc1 wait time: 446
+CPU burst: 20 of 68
+
+System Time: 640
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 447
+proc4 wait time: 454
+CPU burst: 71 of 75
+
+System Time: 641
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 448
+proc4 wait time: 455
+CPU burst: 72 of 75
+
+System Time: 642
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 449
+proc4 wait time: 456
+CPU burst: 73 of 75
+
+System Time: 643
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 450
+proc4 wait time: 457
+CPU burst: 74 of 75
+
+System Time: 644
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 451
+proc4 wait time: 458
+CPU burst: 75 of 75
+
+System Time: 645
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 459
+CPU burst: 51 of 90
+I/O burst: 1 of 6
+
+System Time: 646
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 460
+CPU burst: 52 of 90
+I/O burst: 2 of 6
+
+System Time: 647
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 461
+CPU burst: 53 of 90
+I/O burst: 3 of 6
+
+System Time: 648
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 462
+CPU burst: 54 of 90
+I/O burst: 4 of 6
+
+System Time: 649
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 463
+CPU burst: 55 of 90
+I/O burst: 5 of 6
+
+System Time: 650
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [proc3]
+proc4 wait time: 464
+CPU burst: 56 of 90
+I/O burst: 6 of 6
+
+System Time: 651
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 465
+proc3 wait time: 461
+CPU burst: 57 of 90
+
+System Time: 652
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 466
+proc3 wait time: 462
+CPU burst: 58 of 90
+
+System Time: 653
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 467
+proc3 wait time: 463
+CPU burst: 59 of 90
+
+System Time: 654
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 468
+proc3 wait time: 464
+CPU burst: 60 of 90
+
+System Time: 655
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 465
+proc1 wait time: 452
+CPU burst: 21 of 68
+
+System Time: 656
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 466
+proc1 wait time: 453
+CPU burst: 22 of 68
+
+System Time: 657
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 467
+proc1 wait time: 454
+CPU burst: 23 of 68
+
+System Time: 658
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 468
+proc1 wait time: 455
+CPU burst: 24 of 68
+
+System Time: 659
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 469
+proc1 wait time: 456
+CPU burst: 25 of 68
+
+System Time: 660
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 470
+proc1 wait time: 457
+CPU burst: 26 of 68
+
+System Time: 661
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 471
+proc1 wait time: 458
+CPU burst: 27 of 68
+
+System Time: 662
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 472
+proc1 wait time: 459
+CPU burst: 28 of 68
+
+System Time: 663
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 473
+proc1 wait time: 460
+CPU burst: 29 of 68
+
+System Time: 664
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 474
+proc1 wait time: 461
+CPU burst: 30 of 68
+
+System Time: 665
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 462
+proc4 wait time: 469
+CPU burst: 1 of 63
+
+System Time: 666
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 463
+proc4 wait time: 470
+CPU burst: 2 of 63
+
+System Time: 667
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 464
+proc4 wait time: 471
+CPU burst: 3 of 63
+
+System Time: 668
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 465
+proc4 wait time: 472
+CPU burst: 4 of 63
+
+System Time: 669
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 466
+proc4 wait time: 473
+CPU burst: 5 of 63
+
+System Time: 670
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 467
+proc4 wait time: 474
+CPU burst: 6 of 63
+
+System Time: 671
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 468
+proc4 wait time: 475
+CPU burst: 7 of 63
+
+System Time: 672
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 469
+proc4 wait time: 476
+CPU burst: 8 of 63
+
+System Time: 673
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 470
+proc4 wait time: 477
+CPU burst: 9 of 63
+
+System Time: 674
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 471
+proc4 wait time: 478
+CPU burst: 10 of 63
+
+System Time: 675
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 479
+proc3 wait time: 475
+CPU burst: 61 of 90
+
+System Time: 676
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 480
+proc3 wait time: 476
+CPU burst: 62 of 90
+
+System Time: 677
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 481
+proc3 wait time: 477
+CPU burst: 63 of 90
+
+System Time: 678
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 482
+proc3 wait time: 478
+CPU burst: 64 of 90
+
+System Time: 679
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 483
+proc3 wait time: 479
+CPU burst: 65 of 90
+
+System Time: 680
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 484
+proc3 wait time: 480
+CPU burst: 66 of 90
+
+System Time: 681
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 485
+proc3 wait time: 481
+CPU burst: 67 of 90
+
+System Time: 682
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 486
+proc3 wait time: 482
+CPU burst: 68 of 90
+
+System Time: 683
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 487
+proc3 wait time: 483
+CPU burst: 69 of 90
+
+System Time: 684
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 488
+proc3 wait time: 484
+CPU burst: 70 of 90
+
+System Time: 685
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 485
+proc1 wait time: 472
+CPU burst: 31 of 68
+
+System Time: 686
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 486
+proc1 wait time: 473
+CPU burst: 32 of 68
+
+System Time: 687
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 487
+proc1 wait time: 474
+CPU burst: 33 of 68
+
+System Time: 688
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 488
+proc1 wait time: 475
+CPU burst: 34 of 68
+
+System Time: 689
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 489
+proc1 wait time: 476
+CPU burst: 35 of 68
+
+System Time: 690
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 490
+proc1 wait time: 477
+CPU burst: 36 of 68
+
+System Time: 691
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 491
+proc1 wait time: 478
+CPU burst: 37 of 68
+
+System Time: 692
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 492
+proc1 wait time: 479
+CPU burst: 38 of 68
+
+System Time: 693
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 493
+proc1 wait time: 480
+CPU burst: 39 of 68
+
+System Time: 694
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 494
+proc1 wait time: 481
+CPU burst: 40 of 68
+
+System Time: 695
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 482
+proc4 wait time: 489
+CPU burst: 11 of 63
+
+System Time: 696
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 483
+proc4 wait time: 490
+CPU burst: 12 of 63
+
+System Time: 697
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 484
+proc4 wait time: 491
+CPU burst: 13 of 63
+
+System Time: 698
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 485
+proc4 wait time: 492
+CPU burst: 14 of 63
+
+System Time: 699
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 486
+proc4 wait time: 493
+CPU burst: 15 of 63
+
+System Time: 700
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 487
+proc4 wait time: 494
+CPU burst: 16 of 63
+
+System Time: 701
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 488
+proc4 wait time: 495
+CPU burst: 17 of 63
+
+System Time: 702
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 489
+proc4 wait time: 496
+CPU burst: 18 of 63
+
+System Time: 703
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 490
+proc4 wait time: 497
+CPU burst: 19 of 63
+
+System Time: 704
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 491
+proc4 wait time: 498
+CPU burst: 20 of 63
+
+System Time: 705
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 499
+proc3 wait time: 495
+CPU burst: 71 of 90
+
+System Time: 706
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 500
+proc3 wait time: 496
+CPU burst: 72 of 90
+
+System Time: 707
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 501
+proc3 wait time: 497
+CPU burst: 73 of 90
+
+System Time: 708
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 502
+proc3 wait time: 498
+CPU burst: 74 of 90
+
+System Time: 709
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 503
+proc3 wait time: 499
+CPU burst: 75 of 90
+
+System Time: 710
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 504
+proc3 wait time: 500
+CPU burst: 76 of 90
+
+System Time: 711
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 505
+proc3 wait time: 501
+CPU burst: 77 of 90
+
+System Time: 712
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 506
+proc3 wait time: 502
+CPU burst: 78 of 90
+
+System Time: 713
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 507
+proc3 wait time: 503
+CPU burst: 79 of 90
+
+System Time: 714
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 508
+proc3 wait time: 504
+CPU burst: 80 of 90
+
+System Time: 715
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 505
+proc1 wait time: 492
+CPU burst: 41 of 68
+
+System Time: 716
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 506
+proc1 wait time: 493
+CPU burst: 42 of 68
+
+System Time: 717
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 507
+proc1 wait time: 494
+CPU burst: 43 of 68
+
+System Time: 718
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 508
+proc1 wait time: 495
+CPU burst: 44 of 68
+
+System Time: 719
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 509
+proc1 wait time: 496
+CPU burst: 45 of 68
+
+System Time: 720
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 510
+proc1 wait time: 497
+CPU burst: 46 of 68
+
+System Time: 721
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 511
+proc1 wait time: 498
+CPU burst: 47 of 68
+
+System Time: 722
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 512
+proc1 wait time: 499
+CPU burst: 48 of 68
+
+System Time: 723
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 513
+proc1 wait time: 500
+CPU burst: 49 of 68
+
+System Time: 724
+Ready Queue:  [proc3] [proc1]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 514
+proc1 wait time: 501
+CPU burst: 50 of 68
+
+System Time: 725
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 502
+proc4 wait time: 509
+CPU burst: 21 of 63
+
+System Time: 726
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 503
+proc4 wait time: 510
+CPU burst: 22 of 63
+
+System Time: 727
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 504
+proc4 wait time: 511
+CPU burst: 23 of 63
+
+System Time: 728
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 505
+proc4 wait time: 512
+CPU burst: 24 of 63
+
+System Time: 729
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 506
+proc4 wait time: 513
+CPU burst: 25 of 63
+
+System Time: 730
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 507
+proc4 wait time: 514
+CPU burst: 26 of 63
+
+System Time: 731
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 508
+proc4 wait time: 515
+CPU burst: 27 of 63
+
+System Time: 732
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 509
+proc4 wait time: 516
+CPU burst: 28 of 63
+
+System Time: 733
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 510
+proc4 wait time: 517
+CPU burst: 29 of 63
+
+System Time: 734
+Ready Queue:  [proc1] [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc1 wait time: 511
+proc4 wait time: 518
+CPU burst: 30 of 63
+
+System Time: 735
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 519
+proc3 wait time: 515
+CPU burst: 81 of 90
+
+System Time: 736
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 520
+proc3 wait time: 516
+CPU burst: 82 of 90
+
+System Time: 737
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 521
+proc3 wait time: 517
+CPU burst: 83 of 90
+
+System Time: 738
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 522
+proc3 wait time: 518
+CPU burst: 84 of 90
+
+System Time: 739
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 523
+proc3 wait time: 519
+CPU burst: 85 of 90
+
+System Time: 740
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 524
+proc3 wait time: 520
+CPU burst: 86 of 90
+
+System Time: 741
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 525
+proc3 wait time: 521
+CPU burst: 87 of 90
+
+System Time: 742
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 526
+proc3 wait time: 522
+CPU burst: 88 of 90
+
+System Time: 743
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 527
+proc3 wait time: 523
+CPU burst: 89 of 90
+
+System Time: 744
+Ready Queue:  [proc4] [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc1]   I/O: [     ]
+proc4 wait time: 528
+proc3 wait time: 524
+CPU burst: 90 of 90
+** proc1 is finished. **
+
+System Time: 745
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 525
+CPU burst: 51 of 68
+
+System Time: 746
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 526
+CPU burst: 52 of 68
+
+System Time: 747
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 527
+CPU burst: 53 of 68
+
+System Time: 748
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 528
+CPU burst: 54 of 68
+
+System Time: 749
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 529
+CPU burst: 55 of 68
+
+System Time: 750
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 530
+CPU burst: 56 of 68
+
+System Time: 751
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 531
+CPU burst: 57 of 68
+
+System Time: 752
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 532
+CPU burst: 58 of 68
+
+System Time: 753
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 533
+CPU burst: 59 of 68
+
+System Time: 754
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 534
+CPU burst: 60 of 68
+
+System Time: 755
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 529
+CPU burst: 31 of 63
+
+System Time: 756
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 530
+CPU burst: 32 of 63
+
+System Time: 757
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 531
+CPU burst: 33 of 63
+
+System Time: 758
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 532
+CPU burst: 34 of 63
+
+System Time: 759
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 533
+CPU burst: 35 of 63
+
+System Time: 760
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 534
+CPU burst: 36 of 63
+
+System Time: 761
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 535
+CPU burst: 37 of 63
+
+System Time: 762
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 536
+CPU burst: 38 of 63
+
+System Time: 763
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 537
+CPU burst: 39 of 63
+
+System Time: 764
+Ready Queue:  [proc4]
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+proc4 wait time: 538
+CPU burst: 40 of 63
+
+System Time: 765
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 535
+CPU burst: 61 of 68
+
+System Time: 766
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 536
+CPU burst: 62 of 68
+
+System Time: 767
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 537
+CPU burst: 63 of 68
+
+System Time: 768
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 538
+CPU burst: 64 of 68
+
+System Time: 769
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 539
+CPU burst: 65 of 68
+
+System Time: 770
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 540
+CPU burst: 66 of 68
+
+System Time: 771
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 541
+CPU burst: 67 of 68
+
+System Time: 772
+Ready Queue:  [proc3]
+I/O Wait Queue:  EMPTY
+CPU: [proc4]   I/O: [     ]
+proc3 wait time: 542
+CPU burst: 68 of 68
+** proc4 is finished. **
+
+System Time: 773
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 41 of 63
+
+System Time: 774
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 42 of 63
+
+System Time: 775
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 43 of 63
+
+System Time: 776
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 44 of 63
+
+System Time: 777
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 45 of 63
+
+System Time: 778
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 46 of 63
+
+System Time: 779
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 47 of 63
+
+System Time: 780
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 48 of 63
+
+System Time: 781
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 49 of 63
+
+System Time: 782
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 50 of 63
+
+System Time: 783
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 51 of 63
+
+System Time: 784
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 52 of 63
+
+System Time: 785
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 53 of 63
+
+System Time: 786
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 54 of 63
+
+System Time: 787
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 55 of 63
+
+System Time: 788
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 56 of 63
+
+System Time: 789
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 57 of 63
+
+System Time: 790
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 58 of 63
+
+System Time: 791
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 59 of 63
+
+System Time: 792
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 60 of 63
+
+System Time: 793
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 61 of 63
+
+System Time: 794
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 62 of 63
+
+System Time: 795
+Ready Queue:  EMPTY
+I/O Wait Queue:  EMPTY
+CPU: [proc3]   I/O: [     ]
+CPU burst: 63 of 63
+** proc3 is finished. **
+
+** ALL JOBS FINISHED. **
+
+ Simulator End Time: 795
+
+SIMULATION METRICS: 
+ - proc1
+   State: DONE
+   Finish Time: 744
+   Turnaround Time: 742
+   Wait Time: 511
+   I/O Wait Time: 0
+
+ - proc2
+   State: DONE
+   Finish Time: 555
+   Turnaround Time: 551
+   Wait Time: 408
+   I/O Wait Time: 0
+
+ - proc3
+   State: DONE
+   Finish Time: 795
+   Turnaround Time: 788
+   Wait Time: 542
+   I/O Wait Time: 0
+
+ - proc4
+   State: DONE
+   Finish Time: 772
+   Turnaround Time: 756
+   Wait Time: 538
+   I/O Wait Time: 0
+
+Average Wait Time: 499.75
+CPU Utilization: 99.74843 %
+Throughput: 716.5
+Average Turnaround Time: 709.25
+
+** CHECK PROJECT FOLDER FOR 'schedulerLog.txt' **
