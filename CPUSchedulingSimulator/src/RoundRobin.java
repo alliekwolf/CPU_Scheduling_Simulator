@@ -37,8 +37,18 @@ public class RoundRobin extends Scheduler {
 			this.currentCPUProcess = this.readyQueue.poll();
 			this.currentCPUProcess.setState(State.RUNNING);		// Set process state to RUNNING.
 			
+			// If this is the first burst cycle, set the Process's start time.
+			if (this.currentCPUProcess.getBurstCycle() == 0) {
+				this.currentCPUProcess.setStartTime(this.systemTimer);
+			}
+			
 			this.updateJobQueue(this.currentCPUProcess);
 			this.setEndOfSlice();
+			
+			String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
+					+ this.currentCPUProcess.getId() + " added to the CPU.\n\n\n\n";
+			System.out.println("\n" + loggerInfo);
+			SimulatorClient.log.logger.info(loggerInfo);
 		}
 	}
 	
@@ -80,11 +90,15 @@ public class RoundRobin extends Scheduler {
 					
 					this.updateJobQueue(this.currentCPUProcess);
 					
-					this.computeAverageWaitTime();								// Compute the avg. wait time of terminated processes.
+					this.computeAvgWaitTime();								// Compute the avg. wait time of terminated processes.
 					this.computeThroughput();
-					this.computeAverageTurnaroundTime();
+					this.computeAvgTurnaroundTime();
 					
-					System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
+					String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
+							+ this.currentCPUProcess.getId() + " terminated.\n\n\n\n";
+					System.out.println("\n" + loggerInfo);
+					SimulatorClient.log.logger.info(loggerInfo);
+					
 					this.currentCPUProcess = null;
 				}
 			}

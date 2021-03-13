@@ -68,14 +68,6 @@ public class Process {
 	}
 	
 	/**
-	 * Set the id (name) of the process.
-	 * @param id String holding the id of the process.
-	 */
-	public void setId(String id) {
-		this.id = id;
-	}
-	
-	/**
 	 * Get the state of the process. The returned value should be one of
 	 * 			the following: ["READY", "RUNNING", "WAITING"]
 	 * @return String containing the state of the process.
@@ -94,14 +86,6 @@ public class Process {
 	 */
 	public int getArrivalTime() {
 		return arrivalTime;
-	}
-	
-	/**
-	 * Set the time slice at which the Process arrives at the CPU.
-	 * @param arrivalTime int containing time slice at which the Process arrives at the CPU.
-	 */
-	public void setArrivalTime(int arrivalTime) {
-		this.arrivalTime = arrivalTime;
 	}
 	
 	/**
@@ -168,29 +152,12 @@ public class Process {
 	}
 	
 	/**
-	 * Set the accumulated wait time that the Process has been waiting for the CPU.
-	 * @param waitTime int the accumulated time that the process has been waiting for the CPU.
-	 */
-	public void setWaitTime(int waitTime) {
-		this.waitTime = waitTime;
-	}
-	
-	/**
 	 * Get the accumulated time that the Process has been waiting in the IO queue.
 	 * @return ioWaitTime int the accumulated time the Process has been waiting in the
 	 * 			IO queue.
 	 */
 	public int getIoWaitTime() {
 		return ioWaitTime;
-	}
-	
-	/**
-	 * Set the accumulated time that the Process has been waiting in the IO queue.
-	 * @param ioWaitTime int the accumulated time the Process has been waiting in the 
-	 * 			IO queue.
-	 */
-	public void setIoWaitTime(int ioWaitTime) {
-		this.ioWaitTime = ioWaitTime;
 	}
 	
 	/**
@@ -277,7 +244,6 @@ public class Process {
 	// Methods
 	/**
 	 * Check if Process state is READY.
-	 * 
 	 * @return true if state == READY.
 	 */
 	public boolean isReady() {
@@ -289,7 +255,6 @@ public class Process {
 	
 	/**
 	 * Check if Process state is RUNNING.
-	 * 
 	 * @return true if state == RUNNING.
 	 */
 	public boolean isRunning() {
@@ -300,8 +265,7 @@ public class Process {
 	}
 	
 	/**
-	 * * Check if Process state is WAITING.
-	 * 
+	 * Check if Process state is WAITING.
 	 * @return true if state == WAITING.
 	 */
 	public boolean isWaiting() {
@@ -312,8 +276,7 @@ public class Process {
 	}
 	
 	/**
-	 * * Check if Process state is DONE.
-	 * 
+	 * Check if Process state is DONE.
 	 * @return true if state == DONE.
 	 */
 	public boolean isDone() {

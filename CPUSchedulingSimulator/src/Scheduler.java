@@ -1,7 +1,9 @@
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.logging.Level;
 
 /**
  * 
@@ -23,7 +25,6 @@ public abstract class Scheduler {
 	protected float avgWaitTime;
 	protected float avgTurnaroundTime;
 	protected int simulationMode;
-	protected float simulationTime;
 	protected int idleTime;
 	protected int quantumTimeSlice;
 	protected Process currentCPUProcess;
@@ -44,7 +45,6 @@ public abstract class Scheduler {
 		this.avgWaitTime = 0;
 		this.avgTurnaroundTime = 0;
 		this.simulationMode = 0;
-		this.simulationTime = 0;
 		this.quantumTimeSlice = 0;
 		this.currentCPUProcess = null;
 		this.currentIOProcess = null;
@@ -75,23 +75,13 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * Get the throughput of the cpu, which is the total
+	 * Get the throughput of the CPU, which is the total
 	 * number of process that have been completed in the scenario.
 	 * 
 	 * @return throughput float the number of processes that complete in the scenario
 	 */
 	public float getThroughput() {
 		return this.throughput;
-	}
-	
-	/**
-	 * Set the throughput of the cpu, which the total number of processes
-	 * that have been completed during the scenario.
-	 * @param throughput float containing the number of processes that
-	 * complete during the scenario.
-	 */
-	public void setThroughput(float throughput) {
-		this.throughput = throughput;
 	}
 	
 	/**
@@ -107,20 +97,14 @@ public abstract class Scheduler {
 	}
 	
 	/**
+	 * Get the average turnaround time for all processes. To compute the average turnaround
+	 * time, get the turnaround times for all processes, sum those numbers, and divide the 
+	 * result by the total number of processes.
 	 * 
 	 * @return avgTurnaroundTime - float, the average turnaround time for the processes in the scenario.
 	 */
 	public float getAvgTurnaroundTime() {
 		return this.avgTurnaroundTime;
-	}
-	
-	/**
-	 * Sets the avgTurnaroundTime
-	 * 
-	 * @param avgTurnaroundTime float, the average turn around time for the scenario.
-	 */
-	public void setAvgTurnaroundTime(float avgTurnaroundTime) {
-		this.avgTurnaroundTime = avgTurnaroundTime;
 	}
 	
 	/**
@@ -139,22 +123,6 @@ public abstract class Scheduler {
 	 */
 	public void setSimulationMode(int simulationMode) {
 		this.simulationMode = simulationMode;
-	}
-	
-	/**
-	 * This has probably never been implemented.
-	 * @return float getSimulationTime
-	 */
-	public float getSimulationTime() {
-		return this.simulationTime;
-	}
-	
-	/**
-	 * This has probably never been implemented.
-	 * @param simulationTime float
-	 */
-	public void setSimulationTime(float simulationTime) {
-		this.simulationTime = simulationTime;
 	}
 	
 	/**
@@ -222,7 +190,7 @@ public abstract class Scheduler {
 	
 	/**
 	 * Set the readyQueue for this scenario. The queue of processes ready to 
-	 * use the cpu.
+	 * use the CPU.
 	 * 
 	 * @param readyQueue Queue<Process> the ready queue for this scenario.
 	 */
@@ -273,9 +241,14 @@ public abstract class Scheduler {
 		for (Process p: this.jobQueue) {
 			if (this.systemTimer == p.getArrivalTime()) {
 				p.setRemainingBursts(p.getCpuBurstList().get(p.getBurstCycle()));		// Set current burst to first burst cycle.
+				
+				String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
+						+ p.getId() + " created.\n\n\n\n";
+				System.out.println("\n" + loggerInfo);
+				SimulatorClient.log.logger.info(loggerInfo);
+				
 				this.addToReadyQueue(p);
 				this.sort();
-//				this.jobQueue.remove(p);
 			}
 		}
 	}
@@ -291,6 +264,11 @@ public abstract class Scheduler {
 		this.sort();
 		
 		this.updateJobQueue(process);
+		
+		String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
+				+ process.getId() + " added to the Ready Queue.\n\n\n\n";
+		System.out.println("\n" + loggerInfo);
+		SimulatorClient.log.logger.info(loggerInfo);
 	}
 	
 	/**
@@ -302,6 +280,16 @@ public abstract class Scheduler {
 		if (this.currentCPUProcess == null && !this.readyQueue.isEmpty()) {
 			this.currentCPUProcess = this.readyQueue.poll();
 			this.currentCPUProcess.setState(State.RUNNING);		// Set process state to RUNNING.
+			
+			// If this is the first burst cycle, set the Process's start time.
+			if (this.currentCPUProcess.getBurstCycle() == 0) {
+				this.currentCPUProcess.setStartTime(this.systemTimer);
+			}
+			
+			String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
+					+ this.currentCPUProcess.getId() + " added to the CPU.\n\n\n\n";
+			System.out.println("\n" + loggerInfo);
+			SimulatorClient.log.logger.info(loggerInfo);
 		}
 	}
 	
@@ -316,8 +304,13 @@ public abstract class Scheduler {
 		process.setState(State.WAITING);													// Set process state to WAITING.
 		process.setRemainingBursts(process.getIoBurstList().get(process.getBurstCycle()));	// Set num. of I/O bursts to next I/O burst cycle.
 		this.ioWaitQueue.add(process);
-		this.addToIO();
 		
+		String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
+				+ process.getId() + " added to the I/O Wait Queue.\n\n\n\n";
+		System.out.println("\n" + loggerInfo);
+		SimulatorClient.log.logger.info(loggerInfo);
+		
+		this.addToIO();
 		this.updateJobQueue(process);
 	}
 	
@@ -332,6 +325,11 @@ public abstract class Scheduler {
 			this.currentIOProcess = ioWaitQueue.poll();
 			
 			this.updateJobQueue(this.currentIOProcess);
+			
+			String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
+					+ this.currentIOProcess.getId() + " added to the I/O.\n\n\n\n";
+			System.out.println("\n" + loggerInfo);
+			SimulatorClient.log.logger.info(loggerInfo);
 		}
 	}
 	
@@ -385,11 +383,15 @@ public abstract class Scheduler {
 				
 				this.updateJobQueue(this.currentCPUProcess);
 				
-				this.computeAverageWaitTime();								// Compute the avg. wait time of terminated processes.
+				this.computeAvgWaitTime();								// Compute the avg. wait time of terminated processes.
 				this.computeThroughput();
-				this.computeAverageTurnaroundTime();
+				this.computeAvgTurnaroundTime();
 				
-				System.out.println("** " + this.currentCPUProcess.getId() + " is finished. **");
+				String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
+						+ this.currentCPUProcess.getId() + " terminated.\n\n\n\n";
+				System.out.println("\n" + loggerInfo);
+				SimulatorClient.log.logger.info(loggerInfo);
+				
 				this.currentCPUProcess = null;
 			}
 		}
@@ -425,6 +427,10 @@ public abstract class Scheduler {
 		}
 	}
 	
+	/**
+	 * Update the status of a particular process in the Job Queue.
+	 * @param process
+	 */
 	public void updateJobQueue(Process process) {
 		for (Process p: this.jobQueue) {
 			if (process == p) {
@@ -454,7 +460,7 @@ public abstract class Scheduler {
 	
 	/**
 	 * Iterate through the processes in the ioReadyQueue and add one
-	 * to the value of the process ioWaitTime
+	 * to the value of the process ioWaitTime.
 	 */
 	public void incrementIoWaitTimes() {
 		for (Process p: ioWaitQueue ) {
@@ -463,11 +469,10 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * Sum all of the wait times for Processes in the terminatedProcess Queue, 
-	 * and divide them by the size of the list to get the average wait time for 
-	 * processes in the simulation.
+	 * Compute the average wait time by summing the wait times for all completed 
+	 * processes and dividing the result by the total number of completed processes.
 	 */
-	public void computeAverageWaitTime() {
+	public void computeAvgWaitTime() {
 		float sum = 0;
 		float numProcesses = 0;
 		
@@ -482,7 +487,8 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * 
+	 * Compute the throughput by summing the finish times for all completed processes 
+	 * and dividing the result by the total number of completed processes.
 	 */
 	public void computeThroughput() {
 		float sum = 0;
@@ -499,9 +505,10 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * 
+	 * Compute the average turnaround time by summing the turnaround times for all completed
+	 * processes and dividing the result by the total number of completed processes.
 	 */
-	public void computeAverageTurnaroundTime() {
+	public void computeAvgTurnaroundTime() {
 		float sum = 0;
 		float numProcesses = 0;
 		
