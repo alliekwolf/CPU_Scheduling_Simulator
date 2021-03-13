@@ -1,6 +1,6 @@
 /**
  * Enumerations to set the state of the process.
-  * @author Brian Steele
+ * @author Brian Steele
  * @author Cole Walsh
  * @author Allie Wolf
  *
