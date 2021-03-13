@@ -115,7 +115,7 @@ public abstract class Scheduler {
 	}
 	
 	/**
-	 * 
+	 * Sets the avgTurnaroundTime
 	 * 
 	 * @param avgTurnaroundTime float, the average turn around time for the scenario.
 	 */

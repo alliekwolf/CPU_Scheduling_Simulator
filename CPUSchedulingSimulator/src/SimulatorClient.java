@@ -24,6 +24,14 @@ public class SimulatorClient {
 	public static Scheduler scheduler;
 	private static Log log;
 	
+	/**
+	 * Main method for the project
+	 * 
+	 * @param args
+	 * @throws InterruptedException
+	 * @throws SecurityException
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws InterruptedException, SecurityException, IOException {
 		log = new Log("schedulerLog.txt");
 		log.logger.setLevel(Level.FINE);
@@ -354,7 +362,7 @@ public class SimulatorClient {
 	}
 	
 	/**
-	 * 
+	 * Log the information about the time slice in an external log file.
 	 */
 	public static void logTimeSlice() {
 		String loggerInfo = "";

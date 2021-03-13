@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 
 /**
- * 
+ * Extends the scheduler to implement Shortest Job First.
  * @author Brian Steele
  * @author Cole Walsh
  * @author Allie Wolf
@@ -23,6 +23,9 @@ public class SJF extends Scheduler implements Comparator<Process> {
 	
 	
 	// Scheduler Class Methods
+	/**
+	 * Sort the list of processes
+	 */
 	@Override
 	public void sort() {
 		LinkedList<Process> q = (LinkedList<Process>)this.getReadyQueue();
@@ -32,6 +35,9 @@ public class SJF extends Scheduler implements Comparator<Process> {
 	}
 	
 	// Comparator Class Method
+	/**
+	 * Compare one process to another to determine the sort order.
+	 */
 	@Override
 	public int compare(Process o1, Process o2) {
 		int difference = -1;

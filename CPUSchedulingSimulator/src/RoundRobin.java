@@ -1,6 +1,6 @@
 
 /**
- * 
+ * Extends scheduler to implement Round Robin.
  * @author Brian Steele
  * @author Cole Walsh
  * @author Allie Wolf

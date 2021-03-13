@@ -19,6 +19,12 @@ public class Log {
 	public Logger logger;
 	FileHandler fileHandler;
 	
+	/**
+	 * Constructor for Log object
+	 * @param file_name
+	 * @throws SecurityException
+	 * @throws IOException
+	 */
 	public Log(String file_name) throws SecurityException, IOException {
 		
 		File f = new File(file_name);
