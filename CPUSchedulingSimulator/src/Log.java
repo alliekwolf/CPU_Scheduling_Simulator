@@ -29,7 +29,7 @@ public class Log {
 		
 		File f = new File(file_name);
 		
-		fileHandler = new FileHandler(file_name, true);
+		fileHandler = new FileHandler(file_name, false);
 		logger = Logger.getLogger("test");
 		logger.addHandler(fileHandler);
 		SimpleFormatter formatter = new SimpleFormatter();

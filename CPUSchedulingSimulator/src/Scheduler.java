@@ -243,8 +243,8 @@ public abstract class Scheduler {
 				p.setRemainingBursts(p.getCpuBurstList().get(p.getBurstCycle()));		// Set current burst to first burst cycle.
 				
 				String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
-						+ p.getId() + " created.\n\n\n\n";
-				System.out.println("\n" + loggerInfo);
+						+ p.getId() + " created.\n\n\n";
+				System.out.println(loggerInfo);
 				SimulatorClient.log.logger.info(loggerInfo);
 				
 				this.addToReadyQueue(p);
@@ -266,8 +266,8 @@ public abstract class Scheduler {
 		this.updateJobQueue(process);
 		
 		String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
-				+ process.getId() + " added to the Ready Queue.\n\n\n\n";
-		System.out.println("\n" + loggerInfo);
+				+ process.getId() + " added to the Ready Queue.\n\n\n";
+		System.out.println(loggerInfo);
 		SimulatorClient.log.logger.info(loggerInfo);
 	}
 	
@@ -287,8 +287,8 @@ public abstract class Scheduler {
 			}
 			
 			String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
-					+ this.currentCPUProcess.getId() + " added to the CPU.\n\n\n\n";
-			System.out.println("\n" + loggerInfo);
+					+ this.currentCPUProcess.getId() + " added to the CPU.\n\n\n";
+			System.out.println(loggerInfo);
 			SimulatorClient.log.logger.info(loggerInfo);
 		}
 	}
@@ -306,8 +306,8 @@ public abstract class Scheduler {
 		this.ioWaitQueue.add(process);
 		
 		String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
-				+ process.getId() + " added to the I/O Wait Queue.\n\n\n\n";
-		System.out.println("\n" + loggerInfo);
+				+ process.getId() + " added to the I/O Wait Queue.\n\n\n";
+		System.out.println(loggerInfo);
 		SimulatorClient.log.logger.info(loggerInfo);
 		
 		this.addToIO();
@@ -327,8 +327,8 @@ public abstract class Scheduler {
 			this.updateJobQueue(this.currentIOProcess);
 			
 			String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
-					+ this.currentIOProcess.getId() + " added to the I/O.\n\n\n\n";
-			System.out.println("\n" + loggerInfo);
+					+ this.currentIOProcess.getId() + " added to the I/O.\n\n\n";
+			System.out.println(loggerInfo);
 			SimulatorClient.log.logger.info(loggerInfo);
 		}
 	}
@@ -361,10 +361,6 @@ public abstract class Scheduler {
 	public void executeCPU() {
 		this.currentCPUProcess.decrementRemainingBursts();
 		
-		// Output current burst of cycle.
-		System.out.println("CPU burst: " + (this.currentCPUProcess.getCpuBurstList().get(this.currentCPUProcess.getBurstCycle()) - this.currentCPUProcess.getRemainingBursts())
-							+ " of " + this.currentCPUProcess.getCpuBurstList().get(this.currentCPUProcess.getBurstCycle()));
-		
 		this.executeIO();
 		
 		// If current process has no more bursts remaining in this cycle...
@@ -388,8 +384,8 @@ public abstract class Scheduler {
 				this.computeAvgTurnaroundTime();
 				
 				String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
-						+ this.currentCPUProcess.getId() + " terminated.\n\n\n\n";
-				System.out.println("\n" + loggerInfo);
+						+ this.currentCPUProcess.getId() + " terminated.\n\n\n";
+				System.out.println(loggerInfo);
 				SimulatorClient.log.logger.info(loggerInfo);
 				
 				this.currentCPUProcess = null;
@@ -412,10 +408,6 @@ public abstract class Scheduler {
 			this.currentIOProcess.decrementRemainingBursts();			// Decrement current burst in the cycle.
 			
 			this.updateJobQueue(this.currentIOProcess);
-			
-			// Output current burst of cycle.
-			System.out.println("I/O burst: " + (this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()) - this.currentIOProcess.getRemainingBursts())
-								+ " of " + this.currentIOProcess.getIoBurstList().get(this.currentIOProcess.getBurstCycle()));
 			
 			if (this.currentIOProcess.getRemainingBursts() == 0) {		// If this was the last burst of the cycle...
 				this.currentIOProcess.incrementBurstCycle();			// Set next burst cycle and reset current burst.

@@ -41,7 +41,7 @@ public class SimulatorClient {
 		// open a scenario file to run.
 		// https://www.codejava.net/java-se/swing/show-simple-open-file-dialog-using-jfilechooser
 		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.setCurrentDirectory(new File("."));
+		fileChooser.setCurrentDirectory(new File("./scenarios"));
 		int result = fileChooser.showOpenDialog(null);
 		File selectedFile = fileChooser.getSelectedFile();
 		
@@ -86,7 +86,7 @@ public class SimulatorClient {
 		int userInput = -1;
 		System.out.println("\n-- CPU Scheduling Simulator --\n");
 		System.out.println(" Choose a scheduling algorithm: \n\n" 
-							+ "   1 -- First Come, First Serve\n" 
+							+ "   1 -- First Come, First Served\n" 
 							+ "   2 -- Shortest Job First\n" 
 							+ "   3 -- Priority\n" 
 							+ "   4 -- Round Robin\n");
@@ -152,7 +152,7 @@ public class SimulatorClient {
 	 * @param scheduler
 	 * @throws InterruptedException
 	 */
-	private static void runScheduler(Scheduler scheduler) throws InterruptedException {
+	public static void runScheduler(Scheduler scheduler) throws InterruptedException {
 		
 		int sleepTime = 0;
 		
@@ -173,7 +173,7 @@ public class SimulatorClient {
 					break;
 				case "A":
 				case "a":
-					scheduler.setSimulationMode(2);
+					scheduler.setSimulationMode(0);
 					boolean flag2 = false;
 					while(!flag2) {
 						System.out.print("   Enter sleep time (in ms): ");
@@ -202,7 +202,7 @@ public class SimulatorClient {
 		// Print out the name of selected Scheduler.
 		String sName = scheduler.getClass().getName();
 		switch (scheduler.getClass().getName()) {
-			case "FCFS": sName = "First Come, First Serve";
+			case "FCFS": sName = "First Come, First Served";
 				break;
 			case "SJF": sName = "Shortest Job First";
 				break;
@@ -214,7 +214,6 @@ public class SimulatorClient {
 		
 		// The while loop that runs the simulator, incrementing the system timer and 
 		// executing bursts as it runs.
-		System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
 		boolean doneFlag = false;		// A flag for continuing and exiting the while loop.
 		while (!doneFlag) {
 			scheduler.addNewProcess();
@@ -222,9 +221,6 @@ public class SimulatorClient {
 			scheduler.addToIO();
 			
 			logTimeSlice();
-			
-			// Output which processes are in which queues, the CPU, and I/O.
-			printSchedulerOutput(scheduler);
 			
 			scheduler.executeBursts();		// Execute next cycle of bursts (both CPU and I/O, if applicable).
 			
@@ -242,8 +238,6 @@ public class SimulatorClient {
 					}
 				}
 			}
-			
-			
 			
 			// If flag has not been set to true, increment system timer and continue while loop.
 			if (!doneFlag) {
@@ -287,13 +281,11 @@ public class SimulatorClient {
 							default:
 								System.out.println("  * Press 'N' for next time slice, or 'A' for Automatic Mode. *");
 						}
+						System.out.println("\n\n");
 					}
-					System.out.println();
 				}
-				
 				Thread.sleep(sleepTime);				// Pause thread for alloted time.
 				scheduler.incrementSystemTimer();		// Increment the system timer.
-				System.out.println("\nSystem Time: " + scheduler.getSystemTimer());
 			}
 		}
 		
@@ -322,46 +314,6 @@ public class SimulatorClient {
 	
 	
 	/**
-	 * Outputs print statements in the console to show which processes are in the 
-	 * Scheduler's ready and I/O wait queues, which process is in the CPU, and 
-	 * which process is in I/O.
-	 * 
-	 * @param scheduler
-	 */
-	public static void printSchedulerOutput(Scheduler scheduler) {
-		// Output data to show which processes are in which queues.
-		String rqStr = "Ready Queue: ";
-		if (scheduler.getReadyQueue().isEmpty()) {
-			rqStr += " EMPTY";
-		} else {
-			for (Process p: scheduler.getReadyQueue()) {
-				rqStr += " [" + p.getId() + "]";
-			}
-		}
-		System.out.println(rqStr);
-		String wqStr = "I/O Wait Queue: ";
-		if (scheduler.getIoWaitQueue().isEmpty()) {
-			wqStr += " EMPTY";
-		} else {
-			for (Process p: scheduler.getIoWaitQueue()) {
-				wqStr += " [" + p.getId() + "]";
-			}
-		}
-		// Output data to show which processes are in the CPU and I/O.
-		System.out.println(wqStr);
-		if (scheduler.getCurrentCPUProcess() != null) {
-			System.out.print("CPU: [" + scheduler.getCurrentCPUProcess().getId() + "]");
-		} else {
-			System.out.print("CPU: [     ]");
-		}
-		if (scheduler.getCurrentIOProcess() != null) {
-			System.out.print("   I/O: [" + scheduler.getCurrentIOProcess().getId() + "]\n");
-		} else {
-			System.out.print("   I/O: [     ]\n");
-		}
-	}
-	
-	/**
 	 * Log the information about the time slice in an external log file.
 	 */
 	public static void logTimeSlice() {
@@ -385,42 +337,44 @@ public class SimulatorClient {
 		loggerInfo += "\nREADY QUEUE: \n";
 		
 		if (scheduler.getReadyQueue().size() > 0) {
-			loggerInfo += String.format("%-15s %-13s %-13s %-15s %s\n",
-								"Name:", "State:", "Arrival:", "CPU Bursts:", "I/O Bursts:");
+			loggerInfo += String.format("%-15s %-13s %-13s %-13s %-15s %s\n",
+								"Name:", "State:", "Arrival:", "Priority:", "CPU Bursts:", "I/O Bursts:");
 		} else {
 			loggerInfo += " EMPTY\n";
 		}
 		for (Process p : scheduler.getReadyQueue()) {
-			loggerInfo += String.format(" %-15s %-13s %6s       %-15s %s\n",
-								p.getId(), p.getState(), p.getArrivalTime(), p.getCpuBurstList(), p.getIoBurstList());
+			loggerInfo += String.format("%-15s %-13s %7s %14s      %-15s %s\n",
+								p.getId(), p.getState(), p.getArrivalTime(), p.getPriorityLevel(), p.getCpuBurstList(), p.getIoBurstList());
 		}
 
 		loggerInfo += "\nI/O QUEUE: \n";
 		if (scheduler.getIoWaitQueue().size() > 0) {
-			loggerInfo += String.format("%-15s %-13s %-13s %-15s %s\n",
-					"Name:", "State:", "Arrival:", "CPU Bursts:", "I/O Bursts:");
+			loggerInfo += String.format("%-15s %-13s %-13s %-13s %-15s %s\n",
+					"Name:", "State:", "Arrival:", "Priority:", "CPU Bursts:", "I/O Bursts:");
 		} else {
 			loggerInfo += " EMPTY\n";
 		}
 		for (Process p : scheduler.getIoWaitQueue()) {
-			loggerInfo += String.format(" %-15s %-13s %6s       %-15s %s\n",
-					p.getId(), p.getState(), p.getArrivalTime(), p.getCpuBurstList(), p.getIoBurstList());
+			loggerInfo += String.format("%-15s %-13s %7s %14s      %-15s %s\n",
+					p.getId(), p.getState(), p.getArrivalTime(), p.getPriorityLevel(), p.getCpuBurstList(), p.getIoBurstList());
 		}
 		
 		loggerInfo += "\nPROCESSES: \n";
 		if (scheduler.getJobQueue().size() > 0) {
 			
-			loggerInfo += String.format("%-15s %-13s %-13s %-15s %s\n",
-					"Name:", "State:", "Arrival:", "CPU Bursts:", "I/O Bursts:");
+			loggerInfo += String.format("%-15s %-13s %-13s %-13s %-15s %s\n",
+					"Name:", "State:", "Arrival:", "Priority:", "CPU Bursts:", "I/O Bursts:");
 		} else {
-			loggerInfo += " EMPTY\n\n";
+			loggerInfo += " EMPTY\n";
 		}
 		for (Process p : scheduler.getJobQueue()) {	
-			loggerInfo += String.format(" %-15s %-13s %6s       %-15s %s\n",
-					p.getId(), p.getState(), p.getArrivalTime(), p.getCpuBurstList(), p.getIoBurstList());
+			loggerInfo += String.format("%-15s %-13s %7s %14s      %-15s %s\n",
+					p.getId(), p.getState(), p.getArrivalTime(), p.getPriorityLevel(), p.getCpuBurstList(), p.getIoBurstList());
 		}
 		
-		loggerInfo += "\n\n\n";
+		loggerInfo += "\n\n";
+		
+		System.out.println(loggerInfo);
 		log.logger.info(loggerInfo);
 	}
 	

@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 
 /**
- * Extends the scheduler to implement Shortest Job First.
+ * Extends the Scheduler to implement Shortest Job First scheduling.
  * @author Brian Steele
  * @author Cole Walsh
  * @author Allie Wolf

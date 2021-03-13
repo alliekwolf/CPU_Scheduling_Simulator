@@ -292,7 +292,6 @@ public class Process {
 	 */
 	public void incrementProcessWaitTime() {
 		this.waitTime++;
-		System.out.println(this.getId() + " wait time: " + this.getWaitTime() );
 	}
 	
 	/**
@@ -301,7 +300,6 @@ public class Process {
 	 */
 	public void incrementProcessIoWaitTime() {
 		this.ioWaitTime++;
-		System.out.println(this.getId() + " io wait time: " + this.getIoWaitTime() );
 	}
 	
 	/**

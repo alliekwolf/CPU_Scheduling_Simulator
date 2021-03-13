@@ -1,0 +1,2161 @@
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 0 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           null                2              1      [6, 2, 4]       [5, 8]
+proc2           null                4              3      [5, 4]          [7]
+proc3           null                7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 1 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           null                2              1      [6, 2, 4]       [5, 8]
+proc2           null                4              3      [5, 4]          [7]
+proc3           null                7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addNewProcess
+INFO: 
+System Time: 2 -------------
+
+proc1 created.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 2 -------------
+
+proc1 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 2 -------------
+
+proc1 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 2 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 1 of 6
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           null                4              3      [5, 4]          [7]
+proc3           null                7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 3 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 2 of 6
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           null                4              3      [5, 4]          [7]
+proc3           null                7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addNewProcess
+INFO: 
+System Time: 4 -------------
+
+proc2 created.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 4 -------------
+
+proc2 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 4 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 3 of 6
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           null                7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 4 -------------
+
+proc1 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 5 -------------
+
+proc2 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 5 -------------
+
+Current CPU Process: [ proc2 ]
+CPU burst: 1 of 5
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+proc2           RUNNING             4              3      [5, 4]          [7]
+proc3           null                7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 6 -------------
+
+Current CPU Process: [ proc2 ]
+CPU burst: 2 of 5
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+proc2           RUNNING             4              3      [5, 4]          [7]
+proc3           null                7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addNewProcess
+INFO: 
+System Time: 7 -------------
+
+proc3 created.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 7 -------------
+
+proc3 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 7 -------------
+
+Current CPU Process: [ proc2 ]
+CPU burst: 3 of 5
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+proc2           RUNNING             4              3      [5, 4]          [7]
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 7 -------------
+
+proc2 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 8 -------------
+
+proc1 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 8 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 4 of 6
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 9 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 5 of 6
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 10 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 6 of 6
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIoWaitQueue
+INFO: 
+System Time: 10 -------------
+
+proc1 added to the I/O Wait Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIO
+INFO: 
+System Time: 10 -------------
+
+proc1 added to the I/O.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 11 -------------
+
+proc3 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 11 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 1 of 5
+
+Current I/O Process: [ proc1 ]
+I/O burst: 1 of 5
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 12 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 2 of 5
+
+Current I/O Process: [ proc1 ]
+I/O burst: 2 of 5
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 13 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 3 of 5
+
+Current I/O Process: [ proc1 ]
+I/O burst: 3 of 5
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 13 -------------
+
+proc3 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 14 -------------
+
+proc2 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 14 -------------
+
+Current CPU Process: [ proc2 ]
+CPU burst: 4 of 5
+
+Current I/O Process: [ proc1 ]
+I/O burst: 4 of 5
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           RUNNING             4              3      [5, 4]          [7]
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 15 -------------
+
+Current CPU Process: [ proc2 ]
+CPU burst: 5 of 5
+
+Current I/O Process: [ proc1 ]
+I/O burst: 5 of 5
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           RUNNING             4              3      [5, 4]          [7]
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc4           null               16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 15 -------------
+
+proc1 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIoWaitQueue
+INFO: 
+System Time: 15 -------------
+
+proc2 added to the I/O Wait Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIO
+INFO: 
+System Time: 15 -------------
+
+proc2 added to the I/O.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addNewProcess
+INFO: 
+System Time: 16 -------------
+
+proc4 created.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 16 -------------
+
+proc4 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 16 -------------
+
+proc3 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 16 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 4 of 5
+
+Current I/O Process: [ proc2 ]
+I/O burst: 1 of 7
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+proc2           WAITING             4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 17 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 5 of 5
+
+Current I/O Process: [ proc2 ]
+I/O burst: 2 of 7
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           READY               2              1      [6, 2, 4]       [5, 8]
+proc2           WAITING             4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIoWaitQueue
+INFO: 
+System Time: 17 -------------
+
+proc3 added to the I/O Wait Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 18 -------------
+
+proc1 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 18 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 1 of 2
+
+Current I/O Process: [ proc2 ]
+I/O burst: 3 of 7
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           WAITING             4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 19 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 2 of 2
+
+Current I/O Process: [ proc2 ]
+I/O burst: 4 of 7
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           WAITING             4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIoWaitQueue
+INFO: 
+System Time: 19 -------------
+
+proc1 added to the I/O Wait Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 20 -------------
+
+proc4 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 20 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 1 of 8
+
+Current I/O Process: [ proc2 ]
+I/O burst: 5 of 7
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           WAITING             4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 21 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 2 of 8
+
+Current I/O Process: [ proc2 ]
+I/O burst: 6 of 7
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           WAITING             4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 22 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 3 of 8
+
+Current I/O Process: [ proc2 ]
+I/O burst: 7 of 7
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           WAITING             4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 22 -------------
+
+proc2 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 22 -------------
+
+proc4 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 23 -------------
+
+proc2 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIO
+INFO: 
+System Time: 23 -------------
+
+proc3 added to the I/O.
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 23 -------------
+
+Current CPU Process: [ proc2 ]
+CPU burst: 1 of 4
+
+Current I/O Process: [ proc3 ]
+I/O burst: 1 of 8
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           RUNNING             4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 24 -------------
+
+Current CPU Process: [ proc2 ]
+CPU burst: 2 of 4
+
+Current I/O Process: [ proc3 ]
+I/O burst: 2 of 8
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           RUNNING             4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 25 -------------
+
+Current CPU Process: [ proc2 ]
+CPU burst: 3 of 4
+
+Current I/O Process: [ proc3 ]
+I/O burst: 3 of 8
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           RUNNING             4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 25 -------------
+
+proc2 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 26 -------------
+
+proc4 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 26 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 4 of 8
+
+Current I/O Process: [ proc3 ]
+I/O burst: 4 of 8
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 27 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 5 of 8
+
+Current I/O Process: [ proc3 ]
+I/O burst: 5 of 8
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 28 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 6 of 8
+
+Current I/O Process: [ proc3 ]
+I/O burst: 6 of 8
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc2           READY               4              3      [5, 4]          [7]
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           READY               4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 28 -------------
+
+proc4 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 29 -------------
+
+proc2 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 29 -------------
+
+Current CPU Process: [ proc2 ]
+CPU burst: 4 of 4
+
+Current I/O Process: [ proc3 ]
+I/O burst: 7 of 8
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           RUNNING             4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           READY              16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin executeCPU
+INFO: 
+System Time: 29 -------------
+
+proc2 terminated.
+
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 30 -------------
+
+proc4 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 30 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 7 of 8
+
+Current I/O Process: [ proc3 ]
+I/O burst: 8 of 8
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 30 -------------
+
+proc3 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIO
+INFO: 
+System Time: 31 -------------
+
+proc1 added to the I/O.
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 31 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 8 of 8
+
+Current I/O Process: [ proc1 ]
+I/O burst: 1 of 8
+
+
+READY QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           READY               7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIoWaitQueue
+INFO: 
+System Time: 31 -------------
+
+proc4 added to the I/O Wait Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 32 -------------
+
+proc3 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 32 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 1 of 4
+
+Current I/O Process: [ proc1 ]
+I/O burst: 2 of 8
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 33 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 2 of 4
+
+Current I/O Process: [ proc1 ]
+I/O burst: 3 of 8
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 34 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 3 of 4
+
+Current I/O Process: [ proc1 ]
+I/O burst: 4 of 8
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 34 -------------
+
+proc3 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 35 -------------
+
+proc3 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 35 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 4 of 4
+
+Current I/O Process: [ proc1 ]
+I/O burst: 5 of 8
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIoWaitQueue
+INFO: 
+System Time: 35 -------------
+
+proc3 added to the I/O Wait Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 36 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc1 ]
+I/O burst: 6 of 8
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 37 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc1 ]
+I/O burst: 7 of 8
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 38 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc1 ]
+I/O burst: 8 of 8
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           WAITING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 38 -------------
+
+proc1 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 39 -------------
+
+proc1 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIO
+INFO: 
+System Time: 39 -------------
+
+proc4 added to the I/O.
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 39 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 1 of 4
+
+Current I/O Process: [ proc4 ]
+I/O burst: 1 of 5
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 40 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 2 of 4
+
+Current I/O Process: [ proc4 ]
+I/O burst: 2 of 5
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 41 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 3 of 4
+
+Current I/O Process: [ proc4 ]
+I/O burst: 3 of 5
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 41 -------------
+
+proc1 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 42 -------------
+
+proc1 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 42 -------------
+
+Current CPU Process: [ proc1 ]
+CPU burst: 4 of 4
+
+Current I/O Process: [ proc4 ]
+I/O burst: 4 of 5
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           RUNNING             2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin executeCPU
+INFO: 
+System Time: 42 -------------
+
+proc1 terminated.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 43 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc4 ]
+I/O burst: 5 of 5
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 43 -------------
+
+proc4 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 44 -------------
+
+proc4 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIO
+INFO: 
+System Time: 44 -------------
+
+proc3 added to the I/O.
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 44 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 1 of 2
+
+Current I/O Process: [ proc3 ]
+I/O burst: 1 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 45 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 2 of 2
+
+Current I/O Process: [ proc3 ]
+I/O burst: 2 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIoWaitQueue
+INFO: 
+System Time: 45 -------------
+
+proc4 added to the I/O Wait Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 46 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc3 ]
+I/O burst: 3 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 47 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc3 ]
+I/O burst: 4 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 48 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc3 ]
+I/O burst: 5 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 49 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc3 ]
+I/O burst: 6 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           WAITING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 49 -------------
+
+proc3 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 50 -------------
+
+proc3 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToIO
+INFO: 
+System Time: 50 -------------
+
+proc4 added to the I/O.
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 50 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 1 of 3
+
+Current I/O Process: [ proc4 ]
+I/O burst: 1 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 51 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 2 of 3
+
+Current I/O Process: [ proc4 ]
+I/O burst: 2 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 52 -------------
+
+Current CPU Process: [ proc3 ]
+CPU burst: 3 of 3
+
+Current I/O Process: [ proc4 ]
+I/O burst: 3 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           RUNNING             7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin executeCPU
+INFO: 
+System Time: 52 -------------
+
+proc3 terminated.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 53 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc4 ]
+I/O burst: 4 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           DONE                7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 54 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc4 ]
+I/O burst: 5 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           DONE                7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 55 -------------
+
+Current CPU Process: [ EMPTY ]
+
+Current I/O Process: [ proc4 ]
+I/O burst: 6 of 6
+
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           DONE                7              4      [5, 4, 3]       [8, 6]
+proc4           WAITING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 55 -------------
+
+proc4 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 56 -------------
+
+proc4 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 56 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 1 of 5
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           DONE                7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 57 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 2 of 5
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           DONE                7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 58 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 3 of 5
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           DONE                7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM Scheduler addToReadyQueue
+INFO: 
+System Time: 58 -------------
+
+proc4 added to the Ready Queue.
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin addToCPU
+INFO: 
+System Time: 59 -------------
+
+proc4 added to the CPU.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 59 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 4 of 5
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           DONE                7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient logTimeSlice
+INFO: 
+System Time: 60 -------------
+
+Current CPU Process: [ proc4 ]
+CPU burst: 5 of 5
+
+Current I/O Process: [ EMPTY ]
+
+READY QUEUE: 
+ EMPTY
+
+I/O QUEUE: 
+ EMPTY
+
+PROCESSES: 
+Name:           State:        Arrival:      Priority:     CPU Bursts:     I/O Bursts:
+proc1           DONE                2              1      [6, 2, 4]       [5, 8]
+proc2           DONE                4              3      [5, 4]          [7]
+proc3           DONE                7              4      [5, 4, 3]       [8, 6]
+proc4           RUNNING            16              2      [8, 2, 5]       [5, 6]
+
+
+
+Mar 13, 2021 4:32:14 PM RoundRobin executeCPU
+INFO: 
+System Time: 60 -------------
+
+proc4 terminated.
+
+
+
+
+Mar 13, 2021 4:32:14 PM SimulatorClient runScheduler
+INFO: 
+SIMULATION METRICS: 
+ - proc1
+   State: DONE
+   Finish Time: 42
+   Turnaround Time: 40
+   Wait Time: 5
+   I/O Wait Time: 11
+
+ - proc2
+   State: DONE
+   Finish Time: 29
+   Turnaround Time: 25
+   Wait Time: 9
+   I/O Wait Time: 0
+
+ - proc3
+   State: DONE
+   Finish Time: 52
+   Turnaround Time: 45
+   Wait Time: 6
+   I/O Wait Time: 13
+
+ - proc4
+   State: DONE
+   Finish Time: 60
+   Turnaround Time: 44
+   Wait Time: 7
+   I/O Wait Time: 11
+
+Average Wait Time: 6.75
+CPU Utilization: 78.333336 %
+Throughput: 45.75
+Average Turnaround Time: 38.5

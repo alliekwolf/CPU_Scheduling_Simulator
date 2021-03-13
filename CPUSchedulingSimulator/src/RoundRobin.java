@@ -1,6 +1,6 @@
 
 /**
- * Extends scheduler to implement Round Robin.
+ * Extends Scheduler to implement Round Robin scheduling.
  * @author Brian Steele
  * @author Cole Walsh
  * @author Allie Wolf
@@ -47,7 +47,7 @@ public class RoundRobin extends Scheduler {
 			
 			String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
 					+ this.currentCPUProcess.getId() + " added to the CPU.\n\n\n\n";
-			System.out.println("\n" + loggerInfo);
+			System.out.println(loggerInfo);
 			SimulatorClient.log.logger.info(loggerInfo);
 		}
 	}
@@ -59,10 +59,6 @@ public class RoundRobin extends Scheduler {
 	 */
 	public void executeCPU() {
 		this.currentCPUProcess.decrementRemainingBursts();
-		
-		// Output current burst.
-		System.out.println("CPU burst: " + (this.currentCPUProcess.getCpuBurstList().get(this.currentCPUProcess.getBurstCycle()) - this.currentCPUProcess.getRemainingBursts())
-							+ " of " + this.currentCPUProcess.getCpuBurstList().get(this.currentCPUProcess.getBurstCycle()));
 		
 		this.executeIO();
 		
@@ -96,7 +92,7 @@ public class RoundRobin extends Scheduler {
 					
 					String loggerInfo = "\nSystem Time: " + this.systemTimer + " -------------\n\n" 
 							+ this.currentCPUProcess.getId() + " terminated.\n\n\n\n";
-					System.out.println("\n" + loggerInfo);
+					System.out.println(loggerInfo);
 					SimulatorClient.log.logger.info(loggerInfo);
 					
 					this.currentCPUProcess = null;
